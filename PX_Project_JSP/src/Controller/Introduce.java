@@ -1,4 +1,4 @@
-package Controller.Client;
+package Controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Detailproduct
+ * Servlet implementation class Introduce_controller
  */
-@WebServlet("/Detailproduct")
-public class Detailproduct extends HttpServlet {
+@WebServlet("/introduce")
+public class Introduce extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Detailproduct() {
+    public Introduce() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,8 +26,8 @@ public class Detailproduct extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("page", "introduce");
+		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
 	}
 
 	/**
