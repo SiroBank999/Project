@@ -1,4 +1,4 @@
-package Controller.Client;
+package Controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Index_controller
+ * Servlet implementation class Signin_controller
  */
-@WebServlet("/index")
-public class Index_controller extends HttpServlet {
+@WebServlet("/signin")
+public class Signin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Index_controller() {
+    public Signin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,7 +26,7 @@ public class Index_controller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("page", "index");
+		request.setAttribute("page", "signin");
 		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
 	}
 
