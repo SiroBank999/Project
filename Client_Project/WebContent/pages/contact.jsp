@@ -62,8 +62,8 @@
           </div>
           <div class="box-send-contact">
             <h2>Gửi thắc mắc cho chúng tôi</h2>
-             <p style="font-size:15px; font-weight: bold; color: #a11d33;"> ${fail} </p>
-            <p style="font-size:15px; font-weight: bold; color: #087e8b;"> ${success} </p>
+            <p style="font-size:15px; font-weight: bold; color: #d00000;"> ${fail} </p>
+            <p style="font-size:15px; font-weight: bold; color: #0066ff;"> ${success} </p>
             <div id="col-left contactFormWrapper menuList-links">
               <form accept-charset="UTF-8" action="contact" class="contact-form" method="post">
                 <div class="contact-form">
