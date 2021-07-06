@@ -5,10 +5,10 @@ import java.sql.DriverManager;
 
 public class Database {
 	private static String DATABASE_LINK ="jdbc:sqlserver://localhost:1433;databaseName=csdl_banhang";
-	private static String USER_NAME = "nhatthinh";
-    private static String PASSWORD = "nhatthinh201";
+	private static String USER_NAME = "sa";
+    private static String PASSWORD = "123456";
     public static Connection Connect() {
-    	Connection conn =null;
+    	Connection conn = null;
     	
     	try {
     		 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -23,12 +23,7 @@ public class Database {
     	return conn;
     }
     public static void main(String[] args) {
-		try {
-			new Database().Connect();
-
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+    	Database.Connect();
 	}
 
 }
