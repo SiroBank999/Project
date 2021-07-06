@@ -53,6 +53,19 @@
 	font-size: 14px;
 	margin-bottom: 5px;
 }
+.gia {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+
+.giaSP {
+	margin-right: 8px;
+	color: #00CC33;
+}
+.giaSale{
+text-decoration:line-through;
+}
 
 .registratior_custom form .content .x-close {
 	position: absolute;
