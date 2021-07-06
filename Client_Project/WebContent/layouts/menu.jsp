@@ -108,7 +108,7 @@
             <form action="search" class="searchform searchform-categoris ultimate-search">
               <div class="wpo-search-inner" style="display:inline">
                 <input type="hidden" name="type" value="product">
-                <input required="" id="inputSearchAuto" name="q" maxlength="40" autocomplete="off"
+                <input required="" id="inputSearchAuto" value="${txtsearch}" name="timkiem" maxlength="40" autocomplete="off"
                   class="searchinput input-search search-input" type="text" size="20"
                   placeholder="Tìm kiếm sản phẩm...">
               </div>
