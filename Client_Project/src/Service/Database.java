@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class Database {
 	private static String DATABASE_LINK ="jdbc:sqlserver://localhost:1433;databaseName=csdl_banhang";
 	private static String USER_NAME = "sa";
-    private static String PASSWORD = "2912";
+    private static String PASSWORD = "123456";
     public static Connection Connect() {
     	Connection conn = null;
     	
