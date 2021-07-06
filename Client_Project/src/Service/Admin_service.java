@@ -30,7 +30,7 @@ public class Admin_service {
 	}
 	public static void main(String[] args) {
 		Admin_service admin = new Admin_service();
-		String a = admin.CheckAcc("admin", "123456").toString();
+		String a = admin.CheckAcc("letho2912", "29122001").toString();
 		System.out.print(a);
 
 	}
