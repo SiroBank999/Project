@@ -1,10 +1,7 @@
 package Controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Model.Product;
 import Service.Product_service;
-import Service.Search;
+
 
 @WebServlet(urlPatterns = { "/search" })
 public class Search_product_controller extends HttpServlet {
