@@ -44,12 +44,11 @@
             <ul class="list-info">
               <li>
                 <p>Địa chỉ chúng tôi</p>
-                <p><strong>232/6 đường Võ Thị Sáu, phường 7, quận 3, Tp. Hồ
-                    Chí Minh.</strong></p>
+                <p><strong>232/6 Nguyễn Huệ, TP.Huế </strong></p>
               </li>
               <li>
                 <p>Email chúng tôi</p>
-                <p><strong>contact@aziworld.com</strong></p>
+                <p><strong>germeshop@gmail.com</strong></p>
               </li>
               <li>
                 <p>Điện thoại</p>
@@ -63,31 +62,33 @@
           </div>
           <div class="box-send-contact">
             <h2>Gửi thắc mắc cho chúng tôi</h2>
+             <p style="font-size:15px; font-weight: bold; color: #a11d33;"> ${fail} </p>
+            <p style="font-size:15px; font-weight: bold; color: #087e8b;"> ${success} </p>
             <div id="col-left contactFormWrapper menuList-links">
-              <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
+              <form accept-charset="UTF-8" action="contact" class="contact-form" method="post">
                 <div class="contact-form">
                   <div class="row">
                     <div class="col-sm-12 col-xs-12">
                       <div class="input-group">
-                        <input required="" type="text" class="form-control"
+                        <input name="subject" type="text" class="form-control"
                           placeholder="Tên của bạn">
                       </div>
                     </div>
                     <div class="col-sm-6 col-xs-12">  
                       <div class="input-group">
-                        <input required="" type="text" class="form-control"
+                        <input name="mail" type="text" class="form-control"
                           placeholder="Email của bạn">
                       </div>
                     </div>
                     <div class="col-sm-6 col-xs-12">
                       <div class="input-group">
-                        <input  required="" type="text" class="form-control"
+                        <input name="phone" type="text" class="form-control"
                           placeholder="Số điện thoại của bạn">
                       </div>
                     </div>
                     <div class="col-sm-12 col-xs-12">
                       <div class="input-group">
-                        <textarea placeholder="Nội dung"></textarea>
+                        <textarea name="content" placeholder="Nội dung"></textarea>
                       </div>
                     </div>
                     <div class="col-sm-12">
