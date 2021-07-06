@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Model.Product;
+import Service.Product_service;
 import Service.Search;
 
 @WebServlet(urlPatterns = { "/search" })
@@ -32,21 +33,11 @@ public class Search_product_controller extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		String name_product = request.getParameter("timkiem");
-
-		Search home = new Search();
+		Product_service home = new Product_service();
 		List<Product> list = null;
 		int list1=0;
-		try { 
-		  list1=home.kqSearch(name_product); }
-		  catch (SQLException e1) { 
-			  e1.printStackTrace(); 
-			  }
-		 
-		try {
-			list = home.querySearch(name_product);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		list1=home.kqSearch(name_product); 
+		list = home.querySearch(name_product);
 		request.setAttribute("search", list);
 		request.setAttribute("tong", list1);
 		request.setAttribute("page", "search");
