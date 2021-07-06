@@ -113,6 +113,19 @@
 	padding: initial;
 	font-weight: 600 !important;
 }
+.gia {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+
+.giaSP {
+	margin-right: 8px;
+	color: #00CC33;
+}
+.giaSale{
+text-decoration:line-through;
+}
 /*  */
 nav.navbar {
 	padding: initial;
