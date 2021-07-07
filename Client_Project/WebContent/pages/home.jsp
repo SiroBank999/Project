@@ -22,11 +22,13 @@
     <!--Product-->
     <div class="container" style="padding-bottom: 50px;">
       <div class="row">
+    
+      <c:forEach items="${productsale}" var="list">
         <div class="col-md-3 col-sm-6 col-xs-6 col-6">
           <div class="product-block">
             <div class="product-img">
               <a href="#">
-                <img src="templates/images/shoes/801740_1_e4adfa6d09b7468a8c9fb21bf8e02bd4_medium (1).jpg"
+               <img src="Uploads/product/${list.img}"
                   alt="Adidas EQT Cushion ADV">         
               </a>         
             </div>
@@ -36,64 +38,41 @@
                 <a style=" color: black;
                                                   font-size: 14px;text-decoration: none;" href="#"
                   title="Adidas EQT Cushion ADV" inspiration pack>
-                  Adidas EQT Cushion ADV "North America"
+                 	${list.productName}
                 </a>
               </div>
-              <div class="pro-price">
-                <p class="">7,000,000₫</p>
+              <div class="gia">
+                <p class="giaSP">${list.sale}</p>
+                <p class="giaSale">${list.price}</p>
               </div>
             </div>
         </div>
+        </c:forEach>
       </div>
+      
+      
     </div>
-    <section class="section wrapper-home-banner">
+   <section class="section wrapper-home-banner">
       <div class="container-fluid" style="padding-bottom: 50px;">
         <div class="row">
+        <c:forEach items ="${cate}" var= "cate">
           <div class="col-xs-12 col-sm-4 home-banner-pd">
             <div class="block-banner-category">
               <a href="#" class="link-banner wrap-flex-align flex-column">
                 <div class="fg-image fade-box">
-                  <img class="lazyloaded" src="templates/images/shoes/block_home_category1_grande.jpg" alt="Shoes">
+                  <img class="lazyloaded" src="Uploads/${cate.img}" alt="Shoes">
                 </div>
                 <figcaption class="caption_banner site-animation">
-                  <p>Bộ sưu tập</p>
+                  <p>${cate.categoryname}</p>
                   <h2>
-                    Đại sứ thương hiệu
+                   
                   </h2>
                 </figcaption>
               </a>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-4 home-banner-pd">
-            <div class="block-banner-category">
-              <a href="#" class="link-banner wrap-flex-align flex-column">
-                <div class="fg-image fade-box">
-                  <img class="lazyloaded" src="templates/images/shoes/block_home_category2_grande.jpg" alt="Shoes">
-                </div>
-                <figcaption class="caption_banner site-animation">
-                  <p>Bộ sưu tập</p>
-                  <h2>
-                    Thương hiệu
-                  </h2>
-                </figcaption>
-              </a>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4 home-banner-pd">
-            <div class="block-banner-category">
-              <a href="#" class="link-banner wrap-flex-align flex-column">
-                <div class="fg-image">
-                  <img class="lazyloaded" src="templates/images/shoes/block_home_category3_grande.jpg" alt="Shoes">
-                </div>
-                <figcaption class="caption_banner site-animation">
-                  <p></p>
-                  <h2>
-                    Blog
-                  </h2>
-                </figcaption>
-              </a>
-            </div>
-          </div>
+         </c:forEach> 
+       
         </div>
       </div>
     </section>
@@ -112,30 +91,32 @@
       </div>
        <!--Product-->
       <div class="container product" style="width: 100%;margin: auto;">
-        <div class="owl-carousel owl-theme owl-product-setting">
-          <div class="item">
-            <div class="">
-              <div class="product-block">
-                <div class="product-img fade-box">
-                  <a href="#" title="Adidas Ultraboost W" class="img-resize">
-                    <img src="templates/images/shoes/801432_01_b16d089f8bda434bacfe4620e8480be1_grande.jpg" alt="Adidas Ultraboost W"
-                      class="lazyloaded">
-                  </a>                
-                </div>
-                <div class="product-detail clearfix">
-                  <div class="pro-text">
-                    <a style=" color: black;
-                           font-size: 14px;text-decoration: none;" href="#" title="Adidas Ultraboost W" inspiration pack>
-                      Adidas Ultraboost W
-                    </a>
-                  </div>
-                  <div class="pro-price">
-                    <p class="">5,300,000₫</p>
-                  </div>
-                </div>
-              </div>
+       <div class="row">
+    
+      <c:forEach items="${productnew}" var="list">
+        <div class="col-md-3 col-sm-6 col-xs-6 col-6">
+          <div class="product-block">
+            <div class="product-img">
+              <a href="#">
+               <img src="Uploads/product/${list.img}"
+                  alt="Adidas EQT Cushion ADV">         
+              </a>         
             </div>
           </div>
+           <div class="product-detail clearfix">
+              <div class="pro-text">
+                <a style=" color: black;
+                                                  font-size: 14px;text-decoration: none;" href="#"
+                  title="Adidas EQT Cushion ADV" inspiration pack>
+                 	${list.productName}
+                </a>
+              </div>
+              <div class="pro-price">
+                <p class="">${list.price}</p>
+              </div>
+            </div>
+        </div>
+        </c:forEach>
       </div>
   </div>
     </section>
@@ -156,94 +137,37 @@
         <div class="container">
 
           <div class="row">
+           
+         <c:forEach items="${listnews}" var="listnews">
             <div class="col-md-4">
               <div class="post_item">
                 <div class="post_featured">
                   <a href="#" title="Adidas EQT Cushion ADV">
-                    <img class="img-resize" style="padding-bottom:15px;" src="templates/images/shoes/new-1.jpg"
-                      alt="Adidas Falcon nổi bật mùa Hè với phối màu color block">
-                  </a>
-                </div>
-                <div class="pro-text">
-                  <span class="post_info_item">
-
-                    Thứ Ba 11,06,2019
-
-                  </span>
-                </div>
-                <div class="pro-text">
-                  <h3 class="post_title">
-                    <a style=" color: black;
-                                  font-size: 18px;text-decoration: none;" href="#" inspiration pack>
-                      Adidas Falcon nổi bật mùa Hè với phối màu color block
-                    </a>
-                  </h3>
-                </div>
-                <div style="text-align:center; padding-bottom: 30px;">
-                  <span>Cuối tháng 5, adidas Falcon đã cho ra mắt nhiều phối màu đón chào mùa Hè khiến giới trẻ yêu
-                    thích không thôi. Tưởng chừng thương hiệu sẽ tiếp tục...</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="post_item">
-                <div class="post_featured">
-                  <a href="#" title="Adidas EQT Cushion ADV">
-                    <img class="img-resize" style="padding-bottom:15px;" src="templates/images/shoes/new-2.jpg"
-                      alt="Saucony hồi sinh mẫu giày chạy bộ cổ điển của mình – Aya Runner">
-                  </a>
-                </div>
-                <div class="pro-text">
-                  <span class="post_info_item">
-
-                    Thứ Ba 11,06,2019
-
-                  </span>
-                </div>
-                <div class="pro-text">
-                  <h3 class="post_title">
-                    <a style=" color: black;
-                                                  font-size: 18px;text-decoration: none;" href="#" inspiration pack>
-                      Saucony hồi sinh mẫu giày chạy bộ cổ điển của mình – Aya Runner
-                    </a>
-                  </h3>
-                </div>
-                <div style="text-align:center; padding-bottom: 30px;">
-                  <span>Là một trong những đôi giày chạy bộ tốt nhất vào những năm 1994, 1995, Saucony Aya Runner vừa có
-                    màn trở lại
-                    vô cùng ấn tượngCó vẻ như 2019...</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="post_item">
-                <div class="post_featured">
-                  <a href="#" title="Adidas EQT Cushion ADV">
-                    <img class="img-resize" style="padding-bottom:15px;" src="templates/images/shoes/new-3.jpg"
+                    <img class="img-resize" style="padding-bottom:15px;" src="Uploads/${listnews.image}"
                       alt="Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt">
                   </a>
                 </div>
                 <div class="pro-text">
                   <span class="post_info_item">
 
-                    Thứ Ba 11,06,2019
+                   ${listnews.datesub}
 
                   </span>
                 </div>
                 <div class="pro-text">
                   <h3 class="post_title">
                     <a style=" color: black;
-                                      font-size: 18px;text-decoration: none;" href="#" inspiration pack>
-                      Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt
+                                      font-size: 18px;text-decoration: none;" href="detailblog?id=${listnews.id}" inspiration pack>
+                     ${listnews.title}
                     </a>
                   </h3>
                 </div>
                 <div style="text-align:center; padding-bottom: 30px;">
-                  <span>Là một trong những mẫu giày retro có nhiều phối màu gradient đẹp nhất từ trước đến này, Nike
-                    Vapormax Plus vừa có màn trở lại bá đạo dành cho...</span>
+                  <span>${listnews.describe}</span>
                 </div>
               </div>
             </div>
+            </c:forEach>
           </div>
         </div>
       </div>

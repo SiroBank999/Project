@@ -1,11 +1,17 @@
 package Controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
+import Model.News;
+import Service.News_service;
 
 /**
  * Servlet implementation class Detailblog_controller
@@ -26,6 +32,14 @@ public class Detail_blog_controller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int getId = Integer.parseInt(request.getParameter("id"));
+		
+		
+		News_service nm = new News_service();
+		List<News> listnews = nm.getNews();
+		News nw = nm.getNewbyId(getId);
+		request.setAttribute("detail_news", nw);
+		request.setAttribute("listnews", listnews);
 		request.setAttribute("page", "detail_blog");
 		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
 	}
