@@ -51,4 +51,35 @@ public class Product_service {
 		}
 		return count;
 	}
+	public List<Product> getProductsale() {
+		List<Product> list = new ArrayList<>();
+		String query = "select top 4 * from product where sale is not null ";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Product(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4),rs.getString(5),
+						rs.getDate(6),rs.getString(7),rs.getString(8),rs.getInt(9),rs.getInt(10),rs.getInt(11)));
+			}
+		} catch (Exception e) {
+		}
+		return list ;
+	}
+	public List<Product> getProductnew() {
+		List<Product> list = new ArrayList<>();
+		String query = "select top 4 * from product  ";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Product(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getInt(4),rs.getString(5),
+						rs.getDate(6),rs.getString(7),rs.getString(8),rs.getInt(9),rs.getInt(10),rs.getInt(11)));
+			}
+		} catch (Exception e) {
+		}
+		return list ;
+	}
+	
 }

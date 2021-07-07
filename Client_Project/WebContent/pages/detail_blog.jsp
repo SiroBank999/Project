@@ -35,75 +35,24 @@
             <div class="sidebarblog-title title_block">
               <h2>Bài viết mới nhất</h2>
             </div>
-            <div class="list-news-latest layered">
-              <div class="item-article clearfix">
-                <div class="post-image">
-                  <a href="">
-                    <img src="templates/images/blog/n-1.jpg" alt="Adidas Falcon nổi bật mùa Hè với phối màu color block"></a>
+            <div class="list-news-latest layered">							
+                     
+                <c:forEach items= "${listnews }" var="listnews">
+                <div class="item-article clearfix">                  
+                  <div class="post-image">
+                    <a href=""><img src="Uploads/${listnews.image }" alt="Bài viết mẫu"></a>
+                  </div>                 
+                  <div class="post-content">
+                    <h3>
+                      <a href="detailblog?id=${listnews.id}">${listnews.title }</a>
+                    </h3>
+                    <span class="date">
+                      ${listnews.datesub }
+                    </span>
+                  </div>
                 </div>
-                <div class="post-content">
-                  <h3>
-                    <a href="">Adidas Falcon nổi bật mùa Hè với phối màu color block</a>
-                  </h3>
-                  <span class="author">
-                    <a href="">Be Nguyen</a>
-                  </span>
-                  <span class="date">
-                    11.06.2019
-                  </span>
-                </div>
+                </c:forEach>
               </div>
-              <div class="item-article clearfix">
-                <div class="post-image">
-                  <a href=""><img src="templates/images/blog/n-2.jpg"
-                      alt="Saucony hồi sinh mẫu giày chạy bộ cổ điển của mình – Aya Runner"></a>
-                </div>
-                <div class="post-content">
-                  <h3>
-                    <a href="">Saucony hồi sinh mẫu giày chạy bộ cổ điển của mình – Aya Runner</a>
-                  </h3>
-                  <span class="author">
-                    <a href="">Be Nguyen</a>
-                  </span>
-                  <span class="date">
-                    11.06.2019
-                  </span>
-                </div>
-              </div>
-              <div class="item-article clearfix">
-                <div class="post-image">
-                  <a href=""><img src="templates/images/blog/n-3.jpg"
-                      alt="Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt"></a>
-                </div>
-                <div class="post-content">
-                  <h3>
-                    <a href="">Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt</a>
-                  </h3>
-                  <span class="author">
-                    <a href="">Runner Inn</a>
-                  </span>
-                  <span class="date">
-                    11.06.2019
-                  </span>
-                </div>
-              </div>
-              <div class="item-article clearfix">
-                <div class="post-image">
-                  <a href=""><img src="templates/images/blog/n-4.jpg" alt="Bài viết mẫu"></a>
-                </div>
-                <div class="post-content">
-                  <h3>
-                    <a href="">Bài viết mẫu</a>
-                  </h3>
-                  <span class="author">
-                    <a href="">Runner Inn</a>
-                  </span>
-                  <span class="date">
-                    10.06.2019
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="menu-blog">
             <div class="group-menu">
@@ -141,41 +90,22 @@
         <div class="content-page">
           <div class="article-content">
             <div class="box-article-heading clearfix">
-              <div class="background-img">
-                <img
-                  src="templates/images/blog/detail-1.jpg"
-                  alt="Adidas Falcon nổi bật mùa Hè với phối màu color block">
-              </div>
-              <h1 class="sb-title-article">Adidas Falcon nổi bật mùa Hè với phối màu color block</h1>
+          
+              <h1 class="sb-title-article">${detail_news.title }</h1>
               <ul class="article-info-more" style="padding-left: 0">
-                <li> Người viết: Be Nguyen lúc <time pubdate="" datetime="2019-06-11">11.06.2019</time></li>
+                <li> Người viết: Khanh <time pubdate="" datetime="2019-06-11">${detail_news.datesub }</time></li>
                 <li><i class="far fa-file-alt"></i><a style="color:black;text-decoration: none;" href="#"> Tin tức</a> </li>
               </ul>
             </div>
             <div class="article-pages">
-              <p>Cuối tháng 5, adidas Falcon đã cho ra mắt nhiều phối màu đón chào mùa Hè khiến giới trẻ yêu thích không
-                thôi. Tưởng chừng thương hiệu sẽ tiếp tục theo đuổi phong cách ombre cho hàng loạt mối màu nối tiếp,
-                nhưng không, lần này thiết kế Falcon còn rực rỡ hơn trước.</p>
-              <p>Từ lúc ra mắt đến nay, đôi Falcon luôn gắng với những sắc màu nhạt mang phong cách retro. Nhưng gần
-                đây,&nbsp;nhà “3 sọc”&nbsp;rất siêng năng trình làng nhiều phối màu sử dụng tông sắc nổi bật hơn. Đôi
-                sneakers đang ngày càng nhận được nhiều sự quan tâm nhờ diện mạo chunky đậm chất retro. Để đón chào mùa
-                Hè, thương hiệu cho ra mắt hai phối màu áp dụng phong cách color block vô cùng bắt mắt.</p>
-              <p>Mỗi thiết kế đều sử dụng chất liệu da trơn, da lộn và lưới mesh quen thuộc. Mỗi lớp layers được tạo nên
-                từ nhiều sắc màu nóng, nổi bật hơn. Đây cũng là lần đầu tiên, adidas Falcon được xuất hiện với vẻ ngoài
-                độc đáo như vậy. Đặc biệt hơn là phần đế hai màu chưa từng có trước đây. Hai thiết kế dự sẽ được ra mắt
-                vào đầu tháng 6 tại&nbsp;website&nbsp;và một số nhà bán lẻ.</p>
-              <p>
-                <img src="templates/images/blog/detail-2.jpg" alt="Falcon color block">
-                <img src="templates/images/blog/detail-3.jpg" alt="Falcon color block">
-                <img src="templates/images/blog/detail-4.jpg" alt="Falcon color block">
-                <img src="templates/images/blog/detail-5.jpg" alt="Falcon color block">
+            <p>
+                <img src="Uploads/${detail_news.image}" alt="Falcon color block">
+                
               </p>
-              <h4>Đôi nét về dòng giày Falcon</h4>
-              <p>Bắt nguồn từ những đôi Yeezy Boost 700 và 500 của Kanye West,&nbsp;adidas&nbsp;liên tiếp giới thiệu các
-                phiên bản làm sóng gió suốt một năm vừa qua như: Yung 1, Yung 96… Và đặc biệt nhất đó chính là phiên bản
-                chunky sneakers dành riêng cho nữ:&nbsp;Falcon W.&nbsp;Dù lấy cảm hứng từ đôi Falcon Dorf ra mắt năm
-                1997, nhưng FALCON W đã được biến tấu và thay đổi ít nhiều về ngoại hình và màu sắc cho hợp với xu hướng
-                hiện đại hơn.</p>
+              <p>${detail_news.content }</p>
+              
+              
+              
             </div>
           </div>
         </div>
