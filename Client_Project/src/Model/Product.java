@@ -3,52 +3,48 @@ package Model;
 import java.sql.Date;
 
 public class Product {
-	private int idSanpham;
-	private String productName;
+	private int id;
+	private String productname;
 	private int price;
 	private int sale;
-	private String img;
+	private String image;
 	private Date date;
 	private String describe;
+	private int id_category;
 	private String fabric;
-	private int status;
-	private int views;
-	private int id;
+	private String status;
 
 	public Product() {
 
 	}
-
-	public Product(int idSanpham, String productName, int price, int sale, String img, Date date, String describe,
-			String fabric, int status, int views, int id) {
-		super();
-		this.idSanpham = idSanpham;
-		this.productName = productName;
+	public Product(int id, String productname, int price, int sale, String image, Date date, String describe,
+			int id_category, String fabric, String status) {
+		this.id = id;
+		this.productname = productname;
 		this.price = price;
 		this.sale = sale;
-		this.img = img;
+		this.image = image;
 		this.date = date;
 		this.describe = describe;
+		this.id_category = id_category;
 		this.fabric = fabric;
 		this.status = status;
-		this.views = views;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public int getIdSanpham() {
-		return idSanpham;
+	public String getProductname() {
+		return productname;
 	}
 
-	public void setIdSanpham(int idSanpham) {
-		this.idSanpham = idSanpham;
-	}
-
-	public String getProductName() {
-		return productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setProductname(String productname) {
+		this.productname = productname;
 	}
 
 	public int getPrice() {
@@ -67,12 +63,12 @@ public class Product {
 		this.sale = sale;
 	}
 
-	public String getImg() {
-		return img;
+	public String getImage() {
+		return image;
 	}
 
-	public void setImg(String img) {
-		this.img = img;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public Date getDate() {
@@ -91,6 +87,14 @@ public class Product {
 		this.describe = describe;
 	}
 
+	public int getId_category() {
+		return id_category;
+	}
+
+	public void setId_category(int id_category) {
+		this.id_category = id_category;
+	}
+
 	public String getFabric() {
 		return fabric;
 	}
@@ -99,28 +103,27 @@ public class Product {
 		this.fabric = fabric;
 	}
 
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public int getViews() {
-		return views;
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", productname=" + productname + ", price=" + price + ", sale=" + sale + ", image="
+				+ image + ", date=" + date + ", describe=" + describe + ", id_category=" + id_category + ", fabric="
+				+ fabric + ", status=" + status + "]";
 	}
+	
+	
+	
+ 
+	
+	
+	
 
-	public void setViews(int views) {
-		this.views = views;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 }

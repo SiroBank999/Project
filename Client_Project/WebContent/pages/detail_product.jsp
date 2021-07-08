@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <main class="">
 
 	<div id="product" class="productDetail-page">
@@ -16,8 +17,7 @@
 							</a></li>
 							<li><a href=""> <span>Sản phẩm</span>
 							</a></li>
-							<li class="active"><span> <span itemprop="name">Nike
-										Air Max 90</span>
+							<li class="active"><span> <span itemprop="name">${product.productname}</span>
 							</span>
 								<meta itemprop="position" content="3"></li>
 
@@ -37,96 +37,22 @@
 									class="product-gallery__thumbs-container hidden-sm
                     hidden-xs">
 									<div class="product-gallery__thumbs thumb-fix">
-
-										<div class="product-gallery__thumb  active" id="imgg1">
+										<c:forEach items="${Limages}" var="lista">
+										<div class="product-gallery__thumb" id="imgg${lista.id}">
 											<a class="product-gallery__thumb-placeholder"
 												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/1.jpg"
-												data-zoom-image="templates/images/detailproduct/1.jpg">
-												<img src="templates/images/detailproduct/1.jpg"
-												data-image="templates/images/detailproduct/1.jpg"
+												data-image="uploads/product/${lista.image}"
+												data-zoom-image="uploads/product/${lista.image}"> <img
+												src="uploads/product/${lista.image}"
+												data-image="uploads/product/${lista.image}"
 												alt="Nike Air Max 90 Essential" grape="">
 											</a>
 										</div>
 
-										<div class="product-gallery__thumb " id="imgg2">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/5.jpg"
-												data-zoom-image="templates/images/detailproduct/5.jpg">
-												<img src="templates/images/detailproduct/5.jpg"
-												data-image="templates/images/detailproduct/5.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
+										</c:forEach>
 
-										<div class="product-gallery__thumb " id="imgg3">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/2.jpg"
-												data-zoom-image="templates/images/detailproduct/2.jpg">
-												<img src="templates/images/detailproduct/2.jpg"
-												data-image="templates/images/detailproduct/2.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
+										
 
-										<div class="product-gallery__thumb " id="imgg4">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/4.jpg"
-												data-zoom-image="templates/images/detailproduct/4.jpg">
-												<img src="templates/images/detailproduct/4.jpg"
-												data-image="templates/images/detailproduct/4.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-
-										<div class="product-gallery__thumb " id="imgg5">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/7.jpg"
-												data-zoom-image="templates/images/detailproduct/7.jpg">
-												<img src="templates/images/detailproduct/7.jpg"
-												data-image="templates/images/detailproduct/7.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-
-										<div class="product-gallery__thumb " id="imgg6">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/3.jpg"
-												data-zoom-image="templates/images/detailproduct/3.jpg">
-												<img src="templates/images/detailproduct/3.jpg"
-												data-image="templates/images/detailproduct/3.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-
-										<div class="product-gallery__thumb " id="imgg7">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/8.jpg"
-												data-zoom-image="templates/images/detailproduct/8.jpg">
-												<img src="templates/images/detailproduct/8.jpg"
-												data-image="templates/images/detailproduct/8.jpg"
-												alt="Nike
-                            Air Max 90 Essential"
-												grape="">
-											</a>
-										</div>
-
-										<div class="product-gallery__thumb " id="imgg8">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/6.jpg"
-												data-zoom-image="templates/images/detailproduct/6.jpg">
-												<img src="templates/images/detailproduct/6.jpg"
-												data-image="templates/images/detailproduct/6.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
 
 									</div>
 								</div>
@@ -136,56 +62,17 @@
 									<ul id="sliderproduct"
 										class="site-box-content
                       slide_product">
-
-										<li
-											class="product-gallery-item gallery-item
-                        current "
-											id="imgg1a"><img class="product-image-feature "
-											src="templates/images/detailproduct/1.jpg"
-											alt="Nike Air Max 90 Essential" grape=""></li>
-
-										<li class="product-gallery-item gallery-item " id="imgg2a">
-											<img class="product-image-feature"
-											src="templates/images/detailproduct/5.jpg"
+										<c:forEach items="${Limages}" var="lista">
+										<li class="product-gallery-item gallery-item"
+											id="imgg${lista.id}a"><img class="product-image-feature "
+											src="uploads/product/${lista.image}"
 											alt="Nike Air Max 90 Essential" grape="">
-										</li>
+											</li>
+											</c:forEach>
 
-										<li class="product-gallery-item gallery-item " id="imgg3a">
-											<img class="product-image-feature"
-											src="templates/images/detailproduct/2.jpg"
-											alt="Nike Air Max 90 Essential" grape="">
-										</li>
+									
 
-										<li class="product-gallery-item gallery-ite " id="imgg4a">
-											<img class="product-image-feature"
-											src="templates/images/detailproduct/4.jpg"
-											alt="Nike Air Max 90 Essential" grape="">
-										</li>
-
-										<li class="product-gallery-item gallery-item " id="imgg5a">
-											<img class="product-image-feature"
-											src="templates/images/detailproduct/7.jpg"
-											alt="Nike Air Max 90 Essential" grape="">
-										</li>
-
-										<li class="product-gallery-item gallery-item " id="imgg6a">
-											<img class="product-image-feature"
-											src="templates/images/detailproduct/3.jpg"
-											alt="Nike Air Max 90 Essential" grape="">
-										</li>
-
-										<li class="product-gallery-item gallery-item " id="imgg7a">
-											<img class="product-image-feature"
-											src="templates/images/detailproduct/8.jpg"
-											alt="Nike Air Max 90 Essential" grape="">
-										</li>
-
-										<li class="product-gallery-item gallery-item " id="imgg8a">
-											<img class="product-image-feature"
-											src="templates/images/detailproduct/6.jpg"
-											alt="Nike Air Max 90 Essential" grape="">
-										</li>
-
+			
 									</ul>
 									<div class="product-image__button">
 										<div id="product-zoom-in"
@@ -223,107 +110,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="product-gallery-slide">
-								<div class="owl-carousel owl-theme owl-product-gallery-slide"">
-									<div class="item">
-										<div class="product-gallery__thumb">
-											<a class=" product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/1.jpg"
-												data-zoom-image="templates/images/detailproduct/1.jpg">
-												<img src="templates/images/detailproduct/1.jpg"
-												data-image="templates/images/detailproduct/1.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-									</div>
-									<div class="item">
-										<div class="product-gallery__thumb ">
-											<a class=" product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/2.jpg"
-												data-zoom-image="templates/images/detailproduct/2.jpg">
-												<img src="templates/images/detailproduct/2.jpg"
-												data-image="templates/images/detailproduct/2.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-									</div>
-									<div class="item">
-										<div class="product-gallery__thumb ">
-											<a class=" product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/3.jpg"
-												data-zoom-image="templates/images/detailproduct/3.jpg">
-												<img src="templates/images/detailproduct/3.jpg"
-												data-image="templates/images/detailproduct/3.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-									</div>
-									<div class="item">
-										<div class="product-gallery__thumb ">
-											<a class=" product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/4.jpg"
-												data-zoom-image="templates/images/detailproduct/4.jpg">
-												<img src="templates/images/detailproduct/4.jpg"
-												data-image="templates/images/detailproduct/4.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-									</div>
-									<div class="item">
-										<div class="product-gallery__thumb ">
-											<a class=" product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/5.jpg"
-												data-zoom-image="templates/images/detailproduct/5.jpg">
-												<img src="templates/images/detailproduct/5.jpg"
-												data-image="templates/images/detailproduct/5.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-									</div>
-									<div class="item">
-										<div class="product-gallery__thumb  " id="imgg1">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/6.jpg"
-												data-zoom-image="templates/images/detailproduct/6.jpg">
-												<img src="templates/images/detailproduct/6.jpg"
-												data-image="templates/images/detailproduct/6.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-									</div>
-									<div class="item">
-										<div class="product-gallery__thumb  " id="imgg1">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/7.jpg"
-												data-zoom-image="templates/images/detailproduct/7.jpg">
-												<img src="templates/images/detailproduct/7.jpg"
-												data-image="templates/images/detailproduct/7.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-									</div>
-									<div class="item">
-										<div class="product-gallery__thumb  " id="imgg1">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="templates/images/detailproduct/8.jpg"
-												data-zoom-image="templates/images/detailproduct/8.jpg">
-												<img src="templates/images/detailproduct/8.jpg"
-												data-image="templates/images/detailproduct/8.jpg"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
-									</div>
-
-								</div>
-							</div>
+							
 						</div>
 						<div
 							class="col-md-5 col-sm-12 col-xs-12
@@ -331,127 +118,51 @@
 							id="detail-product">
 							<div class="product-content-desc-1">
 								<div class="product-title">
-									<h1>Nike Air Max 90 Essential "Grape"</h1>
-									<span id="pro_sku">SKU: S-0015-1</span>
+									<h1>${product.productname}</h1>
+									<span id="pro_sku">MSP: S-0015-${product.id}</span>
 								</div>
 								<div class="product-price" id="price-preview">
-									<span class="pro-price">4,800,000₫</span>
+									<span class="pro-price"> <c:set var="saleprice"
+											value="${product.sale}" /> <c:choose>
+											<c:when test="${saleprice>0 }">
+												<fmt:formatNumber type="number" maxFractionDigits="3"
+													value="${product.sale}" /> đ										<p class="giaSale">
+													<fmt:formatNumber type="number" maxFractionDigits="3"
+														value="${product.price}" />
+													đ
+											</c:when>
+											<c:otherwise>
+
+												<fmt:formatNumber type="number" maxFractionDigits="3"
+													value="${product.price}" /> đ
+										</c:otherwise>
+										</c:choose>
+
+
+									</span>
 								</div>
 								<form id="add-item-form" action="/cart/add" method="post"
 									class="variants clearfix">
-									<div class="select clearfix">
-										<div class="selector-wrapper">
-											<label for="product-select-option-0">Màu sắc</label><span
-												class="custom-dropdown custom-dropdown--white"><select
-												class="single-option-selector
-                            custom-dropdown__select
-                            custom-dropdown__select--white"
-												data-option="option1" id="product-select-option-0">
-													<option value="Tím">Tím</option>
-													<option value="Xanh">Xanh</option>
-											</select></span>
-										</div>
-										<div class="selector-wrapper">
-											<label for="product-select-option-1">Kích thước</label><span
-												class="custom-dropdown custom-dropdown--white"><select
-												class="single-option-selector
-                            custom-dropdown__select
-                            custom-dropdown__select--white"
-												data-option="option2" id="product-select-option-1">
-													<option value="36">36</option>
-													<option value="37">37</option>
-													<option value="38">38</option>
-													<option value="35">35</option>
-											</select></span>
-										</div>
-										<select id="product-select" name="id" style="display: none;">
+									
+									<div class="">
+										
+					
+											
 
-											<option value="1040377813">Tím / 36 - 4,800,000₫</option>
-											<option value="1040377814">Tím / 37 - 4,800,000₫</option>
-											<option value="1040377815">Tím / 38 - 4,800,000₫</option>
-											<option value="1040409049">Xanh / 35 - 4,800,000₫</option>
-											<option value="1040409050">Xanh / 36 - 4,800,000₫</option>
-											<option value="1040409053">Xanh / 37 - 4,800,000₫</option>
-											<option value="1040409054">Xanh / 38 - 4,800,000₫</option>
-										</select>
 									</div>
-									<div class="select-swatch clearfix">
-										<div id="variant-swatch-0" class="swatch clearfix"
-											data-option="option1" data-option-index="0">
-
-
-											<div class="header"
-												style="background: white; color: #272727;">
-												<span>Tím</span>
-											</div>
-
-											<div class="select-swap">
-												<div data-value="Tím"
-													class="n-sd swatch-element
-                            color tim">
-													<input class="variant-0" id="swatch-0-tim" type="radio"
-														name="option1" value="Tím" data-vhandle="tim" checked="">
-													<label class="tim sd" for="swatch-0-tim"> <span>Tím</span>
-													</label>
-
-												</div>
-												<div data-value="Xanh"
-													class="n-sd swatch-element
-                            color xanh">
-													<input class="variant-0" id="swatch-0-xanh" type="radio"
-														name="option1" value="Xanh" data-vhandle="xanh"> <label
-														class="xanh" for="swatch-0-xanh"> <span>Xanh</span>
-													</label>
-
-												</div>
-											</div>
-										</div>
-										<div id="variant-swatch-1" class="swatch clearfix"
-											data-option="option2" data-option-index="1">
-
-
-											<div class="select-swap">
-												<div data-value="36"
-													class="n-sd swatch-element
-                            36">
-													<input class="variant-1" id="swatch-1-36" type="radio"
-														name="option2" value="36" data-vhandle="36" checked="">
-
-													<label for="swatch-1-36" class="sd"> <span>36</span>
-													</label>
-
-												</div>
-												<div data-value="37"
-													class="n-sd swatch-element
-                            37">
-													<input class="variant-1" id="swatch-1-37" type="radio"
-														name="option2" value="37" data-vhandle="37"> <label
-														for="swatch-1-37"> <span>37</span>
-													</label>
-
-												</div>
-												<div data-value="38"
-													class="n-sd swatch-element
-                            38">
-													<input class="variant-1" id="swatch-1-38" type="radio"
-														name="option2" value="38" data-vhandle="38"> <label
-														for="swatch-1-38"> <span>38</span>
-													</label>
-
-												</div>
-												<div data-value="35"
-													class="n-sd swatch-element 35
-                            soldout">
-													<input class="variant-1" id="swatch-1-35" type="radio"
-														name="option2" value="35" data-vhandle="35" disabled="">
-
-													<label for="swatch-1-35"> <span>35</span>
-													</label>
-
-												</div>
-											</div>
-										</div>
-									</div>
+									<div class="form-group select-swatch clearfix">
+									 <div class="quantity-area clearfix">
+									 <br>
+									    <label for="exampleFormControlSelect1" id="pro_sku"><span id="pro_sku">KÍCH THƯỚC</span></label>
+									    <select class="form-control" id="exampleFormControlSelect1">
+									      <option>M</option>
+									      <option>L</option>
+									      <option>X</option>
+									      <option>XL</option>
+									      <option>2XL</option>
+									    </select>
+									   </div>
+									  </div>
 									<div class="selector-actions">
 										<div class="quantity-area clearfix">
 											<input type="button" value="-" onclick="minusQuantity()"
@@ -470,9 +181,6 @@
 
 											</div>
 
-											<a href="" target="_blank" class="button btn-check"
-												style="color: #ffffff; text-decoration: none;"><span>Click
-													nhận mã giảm giá ngay !</span></a>
 
 										</div>
 									</div>
@@ -484,22 +192,11 @@
 									<div class="description-content">
 										<div class="description-productdetail">
 											<p>
-												<span>Hiện đại và thời trang khi diện item mới của
-													Nike. Màu sắc lạ mắt, chất liệu thoáng mát, nhẹ nhàng, phù
-													hợp với những chàng trai yêu phong cách sports.</span><br>
-												<br>
+												<span>${product.describe }</span><br> <br>
 											</p>
 											<ul>
-												<li>Chất liệu cao cấp EVA, PU, Cushlon, Phylon.</li>
-												<li>Bền, chống bám bẩn, dễ dàng lau chùi. Mũi giày đầy
-													đặn, form dáng chuẩn.</li>
-												<li>Bảo vệ đầu ngón chân khi hoạt động. Có lớp lót đệm
-													bên trong.</li>
-												<li>Êm, di chuyển nhiều không bị đau chân. Cổ giày
-													thiết kế đơn giản, vừa vặn.</li>
-												<li>Di chuyển dễ dàng, thoải mái.</li>
-												<li>Đế bằng chất liệu cao su<br></li>
-												<li>Êm ái, độ bám tốt, chống trơn trượt.</li>
+												<li>${product.describe}</li>
+											
 											</ul>
 										</div>
 									</div>
@@ -513,28 +210,51 @@
 						</div>
 						<div class="container">
 							<div class="row">
+							<c:forEach items="${listproduct}" var="lp">
 								<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 									<div class="product-block">
 										<div class="product-img fade-box">
 											<a href="#" title="Adidas EQT Cushion ADV" class="img-resize">
 												<img
-												src="templates/images/shoes/800502_01_e92c3b2bb8764b52a791846d84a3a360_grande.jpg"
-												alt="Adidas EQT Cushion ADV" class="lazyloaded">
+												src="uploads/product/${lp.image}"
+												alt="Adidas EQT Cushion ADV" class="lazyloaded" width="100%">
 											</a>
 										</div>
 										<div class="product-detail clearfix">
 											<div class="pro-text">
 												<a
-													style="color: black; font-size: 14px; text-decoration: none;"
+													style="color: black; font-size: 14px; text-decoration: none;
 													href="#" title="Adidas EQT Cushion ADV" inspiration pack>
-													Adidas EQT Cushion ADV "North America" </a>
+													${lp.productname}</a>
 											</div>
-											<div class="pro-price">
-												<p class="">7,000,000₫</p>
+												<div class="pro-price">
+													<c:set var="saleprice" value="${lp.sale}" />
+													<c:choose>
+														<c:when test="${saleprice>0 }">
+															<p class="">
+																<fmt:formatNumber type="number" maxFractionDigits="3"
+																	value="${lp.sale}" />
+																đ
+															</p>
+															<p class="giaSale">
+																<fmt:formatNumber type="number" maxFractionDigits="3"
+																	value="${lp.price}" />
+																đ
+															</p>
+														</c:when>
+														<c:otherwise>
+															<p class="" style="margin-top: 20px;">
+																<fmt:formatNumber type="number" maxFractionDigits="3"
+																	value="${lp.price}" />
+																đ
+															</p>
+														</c:otherwise>
+													</c:choose>
+												</div>
 											</div>
-										</div>
 									</div>
 								</div>
+								</c:forEach>
 							</div>
 						</div>
 					</div>
