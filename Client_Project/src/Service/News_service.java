@@ -6,9 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import Model.News;
-import Model.Product;
 
 public class News_service {
 	Connection conn = null;
@@ -32,8 +30,6 @@ public class News_service {
 		News nw = new News();
 		String query = "select*from news where id= ? ";
 		try {
-			
-		
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
 			ps.setInt(1, id);
@@ -52,8 +48,6 @@ public class News_service {
 		}
 		catch (Exception e) {
 		}
-		
-		
 		return nw;
 	
 	}

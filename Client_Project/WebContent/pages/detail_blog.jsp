@@ -37,10 +37,10 @@
             </div>
             <div class="list-news-latest layered">							
                      
-                <c:forEach items= "${listnews }" var="listnews">
+                <c:forEach items= "${listnews}" var="listnews">
                 <div class="item-article clearfix">                  
                   <div class="post-image">
-                    <a href=""><img src="Uploads/${listnews.image }" alt="Bài viết mẫu"></a>
+                    <a href=""><img src="uploads/news/ ${listnews.image }" alt="Bài viết mẫu"></a>
                   </div>                 
                   <div class="post-content">
                     <h3>
@@ -93,13 +93,13 @@
           
               <h1 class="sb-title-article">${detail_news.title }</h1>
               <ul class="article-info-more" style="padding-left: 0">
-                <li> Người viết: Khanh <time pubdate="" datetime="2019-06-11">${detail_news.datesub }</time></li>
+                <li> Người viết: Admin <time pubdate="" datetime="2019-06-11">${detail_news.datesub }</time></li>
                 <li><i class="far fa-file-alt"></i><a style="color:black;text-decoration: none;" href="#"> Tin tức</a> </li>
               </ul>
             </div>
             <div class="article-pages">
             <p>
-                <img src="Uploads/${detail_news.image}" alt="Falcon color block">
+                <img src="uploads/news/${detail_news.image}" alt="Falcon color block">
                 
               </p>
               <p>${detail_news.content }</p>

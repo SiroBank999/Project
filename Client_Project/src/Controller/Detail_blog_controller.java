@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import Model.News;
 import Service.News_service;
 
@@ -32,7 +31,7 @@ public class Detail_blog_controller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int getId = Integer.parseInt(request.getParameter("id"));
+int getId = Integer.parseInt(request.getParameter("id"));
 		
 		
 		News_service nm = new News_service();

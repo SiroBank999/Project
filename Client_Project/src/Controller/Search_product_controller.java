@@ -31,11 +31,10 @@ public class Search_product_controller extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		String name_product = request.getParameter("timkiem");
 		Product_service home = new Product_service();
-		List<Product> list = null;
+		List<Product> list = home.querySearch(name_product);
 		int list1=0;
 		list1=home.kqSearch(name_product); 
-		list = home.querySearch(name_product);
-		request.setAttribute("search", list);
+		request.setAttribute("list_search", list);
 		request.setAttribute("tong", list1);
 		request.setAttribute("page", "search");
 		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);

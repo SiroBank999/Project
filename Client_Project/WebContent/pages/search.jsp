@@ -89,13 +89,13 @@
 
 			</div>
 			<div class="row">
-				<c:forEach items="${search}" var="list">
+				<c:forEach items="${list_search}" var="list">
 					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img fade-box">
-								<a href="#" title="Áo ${list.productName }" class="img-resize">
+								<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="Áo ${list.productname}" class="img-resize">
 									<img
-									src="<%=request.getContextPath()%>/Uploads/product/${list.img}"
+									src="<%=request.getContextPath()%>/uploads/product/${list.image}"
 									class="lazyloaded">
 								</a>
 							</div>
@@ -104,26 +104,26 @@
 								<div class="pro-text">
 									<a
 										style="text-transform: uppercase; color: black; font-size: 14px; text-decoration: none;"
-										href="#" title="Adidas EQT Cushion ADV" inspiration pack>
-										${list.productName } </a>
+										href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="Adidas EQT Cushion ADV" inspiration pack>
+										${list.productname } </a>
 								</div>
 								<div class="gia">
-									<c:set var="saleprice" value="${list.sale }" />
+									<c:set var="saleprice" value="${list.sale}" />
 									<c:choose>
 										<c:when test="${saleprice>0 }">
 											<p class="giaSP">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.sale}" />
+													value="${list.sale}" /> đ
 											</p>
 											<p class="giaSale">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.price}" />
+													value="${list.price}" /> đ
 											</p>
 										</c:when>
 										<c:otherwise>
 											<p class="giaSP" style="margin-top: 20px;">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.price}" />
+													value="${list.price}" /> đ
 											</p>
 										</c:otherwise>
 									</c:choose>

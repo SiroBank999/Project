@@ -1,6 +1,6 @@
 package Model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class News {
 	private int id ;
@@ -12,7 +12,17 @@ public class News {
 	private int id_admin ;
 	private int status ;
 	public News() {
-	
+	}
+	public News(int id, String title, String describe, String image, String content, Date datesub, int id_admin,
+			int status) {
+		this.id = id;
+		this.title = title;
+		this.describe = describe;
+		this.image = image;
+		this.content = content;
+		this.datesub = datesub;
+		this.id_admin = id_admin;
+		this.status = status;
 	}
 	public int getId() {
 		return id;
@@ -62,18 +72,11 @@ public class News {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	public News(int id, String title, String describe, String image, String content, Date datesub, int id_admin,
-			int status) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.describe = describe;
-		this.image = image;
-		this.content = content;
-		this.datesub = datesub;
-		this.id_admin = id_admin;
-		this.status = status;
-	} 
+	@Override
+	public String toString() {
+		return "News [id=" + id + ", title=" + title + ", describe=" + describe + ", image=" + image + ", content="
+				+ content + ", datesub=" + datesub + ", id_admin=" + id_admin + ", status=" + status + "]";
+	}
 	
 	
 	
