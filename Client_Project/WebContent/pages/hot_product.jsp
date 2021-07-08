@@ -1,4 +1,4 @@
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -150,11 +150,12 @@
 				</div>
 			</div>
 			<div class="row">
-				<c:forEach items="${hot}" var="hot">
-					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
+				<div class="col-md-3 col-sm-6 col-xs-6 col-6">
+					<c:forEach items="${hot}" var="hot">
 						<div class="product-block">
 							<div class="product-img fade-box">
-								<a href="detail_product?name=${hot.productName}"
+								<a
+									href="detail_product?name=${hot.productName}&category=${hot.categoryname}"
 									title="${hot.productName}" class="img-resize"> <img
 									src="<%=request.getContextPath()%>/Uploads/product/${hot.img}"
 									alt="${hot.productName}" class="lazyloaded">
@@ -164,50 +165,38 @@
 								<div class="pro-text">
 									<a
 										style="color: black; font-size: 14px; text-decoration: none;"
-										href="detail_product?name=${hot.productName}"
+										href="detail_product?name=${hot.productName}&category=${hot.categoryname}"
 										title="Adidas EQT Cushion ADV" inspiration pack>
 										${hot.productName} </a>
 								</div>
-								<div class="pro-price">
-									<c:set var="saleprice" value="${hot.sale}" />
+								<div class="gia">
+									<c:set var="saleprice" value="${list.sale}" />
 									<c:choose>
-										<c:when test="${saleprice > 0 }">
+										<c:when test="${saleprice >0 }">
 											<p class="giaSP">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${hot.sale}" />
+													value="${list.sale}" />
 											</p>
 											<p class="giaSale">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${hot.price}" />
+													value="${list.price}" />
 											</p>
 										</c:when>
 										<c:otherwise>
 											<p class="giaSP" style="margin-top: 20px;">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${hot.price}" />
+													value="${list.price}" />
 											</p>
 										</c:otherwise>
 									</c:choose>
 								</div>
 							</div>
 						</div>
-					</div>
-				</c:forEach>
+					</c:forEach>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<div class="pagination">
-	<c:if test="${tag > 1}">
-		<a href="product?page=${tag-1}">&laquo;</a>
-	</c:if>
-	<c:forEach begin="1" end="${endpage}" var="i">
-		<a class="${tag==i?"
-			active":""}" href="product?page=${i}">${i}</a>
-	</c:forEach>
-	<c:if test="${tag < endpage}">
-		<a href="product?page=${tag+1}">&raquo;</a>
-	</c:if>
 </div>
 <!--gallery-->
 <section class="section section-gallery">

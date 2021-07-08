@@ -38,20 +38,20 @@
                     hidden-xs">
 									<div class="product-gallery__thumbs thumb-fix">
 										<c:forEach items="${Limages}" var="lista">
-										<div class="product-gallery__thumb" id="imgg${lista.id}">
-											<a class="product-gallery__thumb-placeholder"
-												href="javascript:void(0);"
-												data-image="uploads/product/${lista.image}"
-												data-zoom-image="uploads/product/${lista.image}"> <img
-												src="uploads/product/${lista.image}"
-												data-image="uploads/product/${lista.image}"
-												alt="Nike Air Max 90 Essential" grape="">
-											</a>
-										</div>
+											<div class="product-gallery__thumb" id="imgg${lista.id}">
+												<a class="product-gallery__thumb-placeholder"
+													href="javascript:void(0);"
+													data-image="uploads/product/${lista.image}"
+													data-zoom-image="uploads/product/${lista.image}"> <img
+													src="uploads/product/${lista.image}"
+													data-image="uploads/product/${lista.image}"
+													alt="Nike Air Max 90 Essential" grape="">
+												</a>
+											</div>
 
 										</c:forEach>
 
-										
+
 
 
 									</div>
@@ -63,16 +63,16 @@
 										class="site-box-content
                       slide_product">
 										<c:forEach items="${Limages}" var="lista">
-										<li class="product-gallery-item gallery-item"
-											id="imgg${lista.id}a"><img class="product-image-feature "
-											src="uploads/product/${lista.image}"
-											alt="Nike Air Max 90 Essential" grape="">
-											</li>
-											</c:forEach>
+											<li class="product-gallery-item gallery-item"
+												id="imgg${lista.id}a"><img
+												class="product-image-feature "
+												src="uploads/product/${lista.image}"
+												alt="Nike Air Max 90 Essential" grape=""></li>
+										</c:forEach>
 
-									
 
-			
+
+
 									</ul>
 									<div class="product-image__button">
 										<div id="product-zoom-in"
@@ -110,7 +110,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 						<div
 							class="col-md-5 col-sm-12 col-xs-12
@@ -126,10 +126,12 @@
 											value="${product.sale}" /> <c:choose>
 											<c:when test="${saleprice>0 }">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${product.sale}" /> đ										<p class="giaSale">
+													value="${product.sale}" />
+												<sup>đ</sup>
+												<p class="giaSale">
 													<fmt:formatNumber type="number" maxFractionDigits="3"
 														value="${product.price}" />
-													đ
+													<sup>đ</sup>
 											</c:when>
 											<c:otherwise>
 
@@ -141,35 +143,26 @@
 
 									</span>
 								</div>
+								<h6 style="margin-top: 5px;">Chọn size</h6>
+								<div class="styled-select" style="margin-top: -3px;">
+									<select>
+										<c:forEach items="${sz}" var="size">
+											<option>${size.name}</option>
+										</c:forEach>
+									</select> <span class="fa fa-sort-desc" style="margin-top: 3px;"><i
+										class="fas fa-caret-down"></i></span>
+								</div>
 								<form id="add-item-form" action="/cart/add" method="post"
-									class="variants clearfix">
-									
-									<div class="">
-										
-					
-											
-
-									</div>
-									<div class="form-group select-swatch clearfix">
-									 <div class="quantity-area clearfix">
-									 <br>
-									    <label for="exampleFormControlSelect1" id="pro_sku"><span id="pro_sku">KÍCH THƯỚC</span></label>
-									    <select class="form-control" id="exampleFormControlSelect1">
-									      <option>M</option>
-									      <option>L</option>
-									      <option>X</option>
-									      <option>XL</option>
-									      <option>2XL</option>
-									    </select>
-									   </div>
-									  </div>
+									class="variants clearfix" style="margin-top: -3px;">
 									<div class="selector-actions">
 										<div class="quantity-area clearfix">
-											<input type="button" value="-" onclick="minusQuantity()"
-												class="qty-btn"> <input type="text" id="quantity"
-												name="quantity" value="1" min="1" class="quantity-selector">
-											<input type="button" value="+" onclick="plusQuantity()"
-												class="qty-btn">
+											<div class="quantity buttons_added">
+												<input type="button" value="-" class="minus"> <input
+													type="number" step="1" min="1" max="8" name="quantity"
+													value="1" title="Qty" class="input-text qty text" size="4"
+													pattern="" inputmode=""> <input type="button"
+													value="+" class="plus">
+											</div>
 										</div>
 										<div class="wrap-addcart clearfix">
 											<div class="row-flex">
@@ -178,10 +171,7 @@
 													vào</button>
 												<button type="button" class="buy-now button"
 													style="display: block;">Mua ngay</button>
-
 											</div>
-
-
 										</div>
 									</div>
 								</form>
@@ -196,7 +186,7 @@
 											</p>
 											<ul>
 												<li>${product.describe}</li>
-											
+
 											</ul>
 										</div>
 									</div>
@@ -210,23 +200,24 @@
 						</div>
 						<div class="container">
 							<div class="row">
-							<c:forEach items="${listproduct}" var="lp">
-								<div class="col-md-3 col-sm-6 col-xs-6 col-6">
-									<div class="product-block">
-										<div class="product-img fade-box">
-											<a href="#" title="Adidas EQT Cushion ADV" class="img-resize">
-												<img
-												src="uploads/product/${lp.image}"
-												alt="Adidas EQT Cushion ADV" class="lazyloaded" width="100%">
-											</a>
-										</div>
-										<div class="product-detail clearfix">
-											<div class="pro-text">
-												<a
-													style="color: black; font-size: 14px; text-decoration: none;
-													href="#" title="Adidas EQT Cushion ADV" inspiration pack>
-													${lp.productname}</a>
+								<c:forEach items="${listproduct}" var="lp">
+									<div class="col-md-3 col-sm-6 col-xs-6 col-6">
+										<div class="product-block">
+											<div class="product-img fade-box">
+												<a href="#" title="Adidas EQT Cushion ADV"
+													class="img-resize"> <img
+													src="uploads/product/${lp.image}"
+													alt="Adidas EQT Cushion ADV" class="lazyloaded"
+													width="100%">
+												</a>
 											</div>
+											<div class="product-detail clearfix">
+												<div class="pro-text">
+													<a
+														style="color: black; font-size: 14px; text-decoration: none;"
+														#" title="Adidas EQT Cushion ADV" inspiration pack>
+														${lp.productname}</a>
+												</div>
 												<div class="pro-price">
 													<c:set var="saleprice" value="${lp.sale}" />
 													<c:choose>
@@ -252,8 +243,8 @@
 													</c:choose>
 												</div>
 											</div>
+										</div>
 									</div>
-								</div>
 								</c:forEach>
 							</div>
 						</div>

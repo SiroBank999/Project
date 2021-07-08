@@ -4,30 +4,30 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
 
     <div class="container">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index">
         <img src="templates/images/logo.png" class="logo-top" alt="">
       </a>
       <div class="desk-menu collapse navbar-collapse justify-content-md-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">TRANG CHỦ</a>
+            <a class="nav-link" href="index">TRANG CHỦ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="product.html">BỘ SƯU TẬP</a>
           </li>
           <li class="nav-item lisanpham">
-            <a class="nav-link" href="detailproduct.html">SẢN PHẨM
+            <a class="nav-link" href="product">SẢN PHẨM
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </a>
             <ul class="sub_menu">
               <li class="">
-                <a href="detailproduct.html" title="Sản phẩm - Style 1"> 
-                  Sản phẩm - Style 1
+                <a href="Product_sale_controller" title="Sản phẩm khuyến mãi"> 
+                  Sản phẩm khuyến mãi
                 </a>
               </li>
               <li class="">
-                <a href="detailproduct.html" title="Sản phẩm - Style 2"> 
-                  Sản phẩm - Style 2
+                <a href="Product_new_controller" title="Sản phẩm mới"> 
+                  Sản phẩm mới
                 </a>
               </li>
               <li class="">
@@ -38,13 +38,13 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="introduce.html">GIỚI THIỆU</a>
+            <a class="nav-link" href="introduce">GIỚI THIỆU</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog.html">BLOG</a>
+            <a class="nav-link" href="blog">BLOG</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">LIÊN HỆ</a>
+            <a class="nav-link" href="contact">LIÊN HỆ</a>
           </li>
         </ul>
       </div>

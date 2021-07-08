@@ -113,17 +113,17 @@
 										<c:when test="${saleprice>0 }">
 											<p class="giaSP">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.sale}" /> đ
+													value="${list.sale}" /> <sup>đ</sup>
 											</p>
 											<p class="giaSale">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.price}" /> đ
+													value="${list.price}" /> <sup>đ</sup>
 											</p>
 										</c:when>
 										<c:otherwise>
 											<p class="giaSP" style="margin-top: 20px;">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.price}" /> đ
+													value="${list.price}" /> <sup>đ</sup>
 											</p>
 										</c:otherwise>
 									</c:choose>

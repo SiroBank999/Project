@@ -7,9 +7,9 @@
 					<div class="footer-col footer-block">
 						<h4 class="footer-title">Giới thiệu</h4>
 						<div class="footer-content">
-							<p>Thư viện ĐH Phú Xuân luôn chào đón tất cả mọi người đến
-								đây để khám phá, làm việc và học tập, hãy tận hưởng thư viên ở
-								PXU nhé!</p>
+							<p>Shop chúng tôi luôn bán hàng với châm ngôn "Uy tín là trên hết", vì vậy 
+							các bạn không phải lo ngại khi mua phải hàng kém chất lượng, nếu phát hiện
+							hàng giả chúng tôi sẽ hoàn trả sản phẩm mới và 100% số tiền!</p>
 							<div class="social-list">
 								<a href="https://www.facebook.com/phuxuan.edu.vn/"
 									class="fab fa-facebook"></a> <a href="https://phuxuan.edu.vn/"
@@ -44,11 +44,10 @@
 						<h4 class="footer-title">Thông tin liên hệ</h4>
 						<div class="footer-content toggle-footer">
 							<ul>
-								<li><span>Địa chỉ:</span> 176 Trần Phú, Phước Vĩnh, TP.
-									Huế, Vietnam</li>
+								<li><span>Địa chỉ:</span> 232/6 Nguyễn Huệ, TP.Huế, Vietnam</li>
 								<li><span>Điện thoại:</span> 84 234 7306888 – 84 905984286</li>
 								<li><span>Fax:</span> 84 234 7306888 – 84 905984286</li>
-								<li><span>Mail:</span> lienhe@pxu.edu.vn</li>
+								<li><span>Mail:</span> germeshop@gmail.com</li>
 							</ul>
 						</div>
 					</div>
@@ -64,7 +63,7 @@
 										data-small-header="false" data-adapt-container-width="true"
 										data-hide-cover="false" data-show-facepile="true">
 										<blockquote cite="   " class="fb-xfbml-parse-ignore">
-											<a href="https://phuxuan.edu.vn/">Đại học Phú Xuân</a>
+											<a href="https://phuxuan.edu.vn/">MERGE 5 SHOP</a>
 										</blockquote>
 									</div>
 								</div>

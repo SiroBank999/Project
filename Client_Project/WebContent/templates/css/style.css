@@ -113,6 +113,7 @@
 	padding: initial;
 	font-weight: 600 !important;
 }
+
 .gia {
 	display: flex;
 	justify-content: center;
@@ -122,9 +123,12 @@
 .giaSP {
 	margin-right: 8px;
 	color: #00CC33;
+	font-size: 15px;
+    font-weight: bold;
 }
-.giaSale{
-text-decoration:line-through;
+
+.giaSale {
+	text-decoration: line-through;
 }
 /*  */
 nav.navbar {
@@ -452,6 +456,7 @@ a:-webkit-any-link {
 	font-size: 16px;
 	font-weight: 700;
 	text-align: center;
+	display: inline;
 }
 
 .pro-price a {
@@ -1490,6 +1495,7 @@ span.pro-price-view {
 	margin: 0;
 	list-style-type: none;
 	padding-left: 0;
+	width: 204px;
 }
 
 .menuList-links li {
@@ -1504,6 +1510,7 @@ span.pro-price-view {
 
 .menuList-links>li {
 	border-bottom: 1px dashed #e7e7e7;
+	display: flex;
 }
 
 .menuList-links>li:last-child {
@@ -3440,7 +3447,7 @@ div.item:hover {
 	display: inline-block;
 	margin-top: 50px;
 	margin-bottom: 40px;
-	margin-left: 880px;
+	margin-left: 842px;
 }
 
 .pagination a.active {
@@ -4109,4 +4116,116 @@ div.item:hover {
 
 #b-sign {
 	display: none;
+}
+
+.quantity {
+	display: inline-block;
+}
+
+.quantity .input-text.qty {
+	width: 35px;
+	height: 39px;
+	padding: 0 5px;
+	text-align: center;
+	background-color: transparent;
+	border: 1px solid #efefef;
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.quantity.buttons_added {
+	text-align: left;
+	position: relative;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.quantity.buttons_added input {
+	display: inline-block;
+	margin: 0;
+	vertical-align: top;
+	box-shadow: none;
+}
+
+.quantity.buttons_added .minus, .quantity.buttons_added .plus {
+	padding: 7px 10px 8px;
+	height: 41px;
+	background-color: #ffffff;
+	border: 1px solid #efefef;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.quantity.buttons_added .minus {
+	border-right: 0;
+}
+
+.quantity.buttons_added .plus {
+	border-left: 0;
+}
+
+.quantity.buttons_added .minus:hover, .quantity.buttons_added .plus:hover
+	{
+	background: #eeeeee;
+}
+
+.quantity input::-webkit-outer-spin-button, .quantity input::-webkit-inner-spin-button
+	{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	margin: 0;
+}
+
+.quantity.buttons_added .minus:focus, .quantity.buttons_added .plus:focus
+	{
+	outline: none;
+}
+
+.carousel-control-next {
+	margin-right: 7%;
+}
+
+.carousel-item img {
+	height: 520px;
+}
+
+.styled-select {
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 3px;
+	overflow: hidden;
+	position: relative;
+}
+
+.styled-select, .styled-select select {
+	width: 140px;
+	font-weight: 500;
+	font-size: 17px;
+}
+
+select:focus {
+	outline: none;
+}
+
+.styled-select select {
+	height: 34px;
+	padding: 5px 0 5px 5px;
+	background: transparent;
+	border: none;
+	-webkit-appearance: none;
+}
+
+.fa-sort-desc {
+	position: absolute;
+	top: 0;
+	right: 12px;
+	font-size: 24px;
+}
+.img-cate{
+	width: 30px;
+	height: 30px;
+	margin-left: auto;
+    margin-top: 7px;
+    border-radius: 40px;
 }

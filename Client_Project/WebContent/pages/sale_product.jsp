@@ -199,14 +199,14 @@
 </div>
 <div class="pagination">
 	<c:if test="${tag > 1}">
-		<a href="product?page=${tag-1}">&laquo;</a>
+		<a href="Product_sale_controller?page=${tag-1}">&laquo;</a>
 	</c:if>
 	<c:forEach begin="1" end="${endpage}" var="i">
 		<a class="${tag==i?"
-			active":""}" href="product?page=${i}">${i}</a>
+			active":""}" href="Product_sale_controller?page=${i}">${i}</a>
 	</c:forEach>
 	<c:if test="${tag < endpage}">
-		<a href="product?page=${tag+1}">&raquo;</a>
+		<a href="Product_sale_controller?page=${tag+1}">&raquo;</a>
 	</c:if>
 </div>
 <!--gallery-->

@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import Model.ImageProduct;
 import Model.Product;
+import Model.Size;
 import Service.ImageProduct_service;
 import Service.Product_service;
+import Service.Size_service;
 
 /**
  * Servlet implementation class Detailpro_controller
@@ -37,11 +39,14 @@ public class Detail_product_controller extends HttpServlet {
 		int id_cate = Integer.parseInt(request.getParameter("id_category"));
 		Product_service pds = new Product_service();
 		ImageProduct_service ipds = new ImageProduct_service();
+		Size_service service = new Size_service();
 		Product pd =pds.getProductById(id);
 		List<ImageProduct> ipd =ipds.getImage(id);
-		List<Product> listpd =pds.getProductByIdCate(id_cate);
+		List<Product> listpd = pds.getProductByIdCate(id_cate);
+		List<Size> sz = service.Size();
 		request.setAttribute("Limages", ipd);
 		request.setAttribute("product", pd);
+		request.setAttribute("sz", sz);
 		request.setAttribute("listproduct",listpd);
 		request.setAttribute("page", "detail_product");
 		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
