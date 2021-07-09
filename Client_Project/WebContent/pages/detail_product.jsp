@@ -74,6 +74,7 @@
 									<h1 style="font-size: 23px">${product.productname}</h1>
 									<span id="pro_sku" style="color: #495057; font-size: 16px">Mã: S-0015-${product.id}</span>
 								</div>
+						
 								<c:set var="saleprice" value="${product.sale}" />
 								<c:choose>
 									<c:when test="${saleprice > 0 }">
@@ -100,16 +101,17 @@
 									</c:otherwise>
 								</c:choose>											
 								<h6 style="margin-top: 5px;">Chọn size</h6>
-								<div class="styled-select" style="margin-top: -3px; font-size: 17px">
-									<select>
+								
+								<form id="add-item-form" action="cart_add?id_product=${product.id}" method="post"
+									class="variants clearfix" style="margin-top: -3px;">
+									<div class="styled-select" style="margin-top: -3px; font-size: 17px">
+									<select name="size">
 										<c:forEach items="${sz}" var="size">
 											<option>${size.name}</option>
 										</c:forEach>
 									</select> <span class="fa fa-sort-desc" style="margin-top: 3px;"><i
 										class="fas fa-caret-down"></i></span>
 								</div>
-								<form id="add-item-form" action="/cart/add" method="post"
-									class="variants clearfix" style="margin-top: -3px;">
 									<div class="selector-actions">
 										<div class="quantity-area clearfix">
 											<div class="quantity buttons_added">
@@ -119,12 +121,13 @@
 													pattern="" inputmode=""> <input type="button"
 													value="+" class="plus">
 											</div>
+											
 										</div>
 										<div class="wrap-addcart clearfix">
 											<div class="row-flex">
-												<button type="button"
+												<button type="submit"
 													class="button btn-addtocart addtocart-modal">Thêm
-													vào</button>
+													vào</a></button>
 												<button type="button" class="buy-now button"
 													style="display: block;">Mua ngay</button>
 											</div>
