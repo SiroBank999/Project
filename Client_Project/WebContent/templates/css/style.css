@@ -118,12 +118,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: baseline;
+	font-weight: 800;
+	font-size: 15px
 }
 
 .giaSP {
 	margin-right: 8px;
 	color: #00CC33;
-	font-size: 15px;
+	font-size: 16px;
     font-weight: bold;
 }
 
@@ -2116,6 +2118,10 @@ ul.article-info-more li i {
 	font-weight: 700;
 	margin: 0;
 	font-family: "Quicksand", sans-serif;
+}
+
+.wrap-collection-title {
+	margin-bottom: 11px;
 }
 
 .bl-filter [type="checkbox"]:not(:checked)+label:after {

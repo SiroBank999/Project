@@ -45,7 +45,7 @@
 										style="border: 0; padding: 0">
 										<c:forEach items="${category}" var="category">
 											<ul class="menuList-links">
-												<li class=""><a href="home.html" title="Trang chủ"><span>${category.categoryname}</span></a>
+												<li class=""><a href="category?id=${category.id}" title="Trang chủ"><span>${category.categoryname}</span></a>
 													<img class="img-cate" src="uploads/category/${category.img}"></li>
 												<br>
 											</ul>
