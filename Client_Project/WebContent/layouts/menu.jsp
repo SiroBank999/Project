@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
 
     <div class="container">
@@ -132,19 +133,21 @@
             <div class="cart-view clearfix">
               <table id="cart-view">
                 <tbody>
+				<c:forEach items="${sessionScope.order.items}" var="item">
                   <tr class="item_1">
                     <td class="img"><a href="" title="Nike Air Max 90 Essential &quot;Grape&quot;"><img
-                          src="images/shoes/1.jpg" alt="/products/nike-air-max-90-essential-grape"></a></td>
+                          src="uploads/product/${item.product.image}"></a></td>
                     <td>
                       <a class="pro-title-view" style="color: #272727" href=""
-                        title="Nike Air Max 90 Essential &quot;Grape&quot;">Nike Air Max 90 Essential "Grape"</a>
-                      <span class="variant">Tím / 36</span>
-                      <span class="pro-quantity-view">1</span>
-                      <span class="pro-price-view">4,800,000₫</span>
+                        title="Nike Air Max 90 Essential &quot;Grape&quot;">${item.product.productname}</a>
+                      <span class="variant">SIZE/${item.size.name}</span>
+                      <span class="pro-quantity-view">${item.quantity}</span>
+                      <span class="pro-price-view"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${item.product.price}"></fmt:formatNumber>đ</span>
                       <span class="remove_link remove-cart"><a href=""><i style="color: #272727;"
                             class="fas fa-times"></i></a></span>
                     </td>
                   </tr>
+                  </c:forEach>
                 </tbody>
               </table>
               <span class="line"></span>
@@ -152,7 +155,7 @@
                 <tbody>
                   <tr>
                     <td class="text-left">TỔNG TIỀN:</td>
-                    <td class="text-right" id="total-view-cart">4,800,000₫</td>
+                    <td class="text-right" id="total-view-cart"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()}"></fmt:formatNumber>đ</td>
                   </tr>
                   <tr>
                     <td class="distance-td"><a href="" class="linktocart button dark">Xem giỏ hàng</a></td>
