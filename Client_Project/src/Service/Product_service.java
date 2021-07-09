@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import Model.Category;
 import Model.Product;
 import Model.Size;
 
@@ -288,6 +290,35 @@ public class Product_service {
 		return 0;
 
 	}
+	
+	public List<Product> getproductbycategory(int id) {
+		List<Product> list = new ArrayList<>();
+		String query = "select * from product inner join category on "
+				+ "product.id_category = category.id where [category].[id]=?";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+		} catch (Exception e) {
+		}
+		return list;
+	}
+	
 
 	public static void main(String[] agrs) {
 		Product_service p = new Product_service();

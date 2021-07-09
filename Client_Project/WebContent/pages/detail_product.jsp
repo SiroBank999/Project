@@ -13,10 +13,10 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5">
 						<ol class="breadcrumb breadcrumb-arrows">
-							<li><a href="home.html"> <span">Trang chủ</span>
-							</a></li>
-							<li><a href=""> <span>Sản phẩm</span>
-							</a></li>
+							<li><a href="index"> <span>Trang chủ</span>
+					</a></li>
+					<li><a href="product"> <span>Sản phẩm</span>
+					</a></li>
 							<li class="active"><span> <span itemprop="name">${product.productname}</span>
 							</span>
 								<meta itemprop="position" content="3"></li>
