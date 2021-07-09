@@ -41,7 +41,7 @@ public class Product_new_controller extends HttpServlet {
 		
 		request.setAttribute("category", category);
 		request.setAttribute("hot", sale);
-		request.setAttribute("page", "sale_product");
+		request.setAttribute("page", "new_product");
 		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
 	}
 

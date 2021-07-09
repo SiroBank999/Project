@@ -16,7 +16,7 @@
 					</a></li>
 					<li><a href="Product.html"> <span>Sản phẩm</span>
 					</a></li>
-					<li><span><span style="color: #777777"><%=request.getParameter("timkiem") %></span></span></li>
+					<li><span><span style="color: #777777"><%=request.getParameter("timkiem")%></span></span></li>
 				</ol>
 			</div>
 		</div>
@@ -43,35 +43,13 @@
 									id="collapseExample1">
 									<div class="layered-content card card-body"
 										style="border: 0; padding: 0">
-										<ul class="menuList-links">
-											<li class=""><a href="home.html" title="Trang chủ"><span>Trang
-														chủ</span></a></li>
-											<li class=" active "><a href="product.html"
-												title="Bộ sưu tập"><span>Bộ sưu tập</span></a></li>
-											<li class="has-submenu level0 "><a title="Sản phẩm">Sản
-													phẩm<span class="icon-plus-submenu" data-toggle="collapse"
-													href="#collapseExample" role="button" aria-expanded="false"
-													aria-controls="collapseExample"></span>
-											</a>
-												<div class="collapse" id="collapseExample">
-													<div class="card card-body"
-														style="border: 0; padding-top: 0;">
-														<ul class="menu-product">
-															<li><a href="detailproduct.html"
-																title="Sản phẩm - Style 1">Sản phẩm - Style 1</a></li>
-															<li><a href="detailproduct.html"
-																title="Sản phẩm - Style 2">Sản phẩm - Style 2</a></li>
-															<li><a href="detailproduct.html"
-																title="Sản phẩm - Style 3">Sản phẩm - Style 3</a></li>
-														</ul>
-													</div>
-												</div></li>
-											<li class=""><a href="introduce.html" title="Giới thiệu"><span>Giới
-														thiệu</span></a></li>
-											<li class=""><a href="blog.html" title="Blog"><span>Blog</span></a></li>
-											<li class=""><a href="contact.html" title="Liên hệ"><span>Liên
-														hệ</span></a></li>
-										</ul>
+										<c:forEach items="${category}" var="category">
+											<ul class="menuList-links">
+												<li class=""><a href="home.html" title="Trang chủ"><span>${category.categoryname}</span></a>
+													<img class="img-cate" src="uploads/category/${category.img}"></li>
+												<br>
+											</ul>
+										</c:forEach>
 									</div>
 								</div>
 							</div>
@@ -83,7 +61,10 @@
 		<div class="col-md-9 col-sm-12 col-xs-12">
 			<div class="wrap-collection-title row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<h1 class="title">Kết quả tìm kiếm: <span style="color: red;">Có <%=request.getAttribute("tong") %> kết quả cho từ khóa <%=request.getParameter("timkiem") %></span></h1>
+					<h1 class="title">
+						Kết quả tìm kiếm: <span style="color: red;">Có <%=request.getAttribute("tong")%>
+							kết quả cho từ khóa <%=request.getParameter("timkiem")%></span>
+					</h1>
 					<div class="alert-no-filter"></div>
 				</div>
 
@@ -93,8 +74,9 @@
 					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img fade-box">
-								<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="Áo ${list.productname}" class="img-resize">
-									<img
+								<a
+									href="detail_product?id_product=${list.id}&id_category=${list.id_category}"
+									title="Áo ${list.productname}" class="img-resize"> <img
 									src="<%=request.getContextPath()%>/uploads/product/${list.image}"
 									class="lazyloaded">
 								</a>
@@ -104,7 +86,8 @@
 								<div class="pro-text">
 									<a
 										style="text-transform: uppercase; color: black; font-size: 14px; text-decoration: none;"
-										href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="Adidas EQT Cushion ADV" inspiration pack>
+										href="detail_product?id_product=${list.id}&id_category=${list.id_category}"
+										title="Adidas EQT Cushion ADV" inspiration pack>
 										${list.productname } </a>
 								</div>
 								<div class="gia">
@@ -113,17 +96,20 @@
 										<c:when test="${saleprice>0 }">
 											<p class="giaSP">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.sale}" /> <sup>đ</sup>
+													value="${list.sale}" />
+												<sup>đ</sup>
 											</p>
 											<p class="giaSale">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.price}" /> <sup>đ</sup>
+													value="${list.price}" />
+												<sup>đ</sup>
 											</p>
 										</c:when>
 										<c:otherwise>
 											<p class="giaSP" style="margin-top: 20px;">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.price}" /> <sup>đ</sup>
+													value="${list.price}" />
+												<sup>đ</sup>
 											</p>
 										</c:otherwise>
 									</c:choose>

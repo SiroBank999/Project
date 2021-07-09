@@ -30,12 +30,12 @@ public class Contact_service {
 		
 	}
 	
-	public void insertContact(String name,String phone, String email,String content) {
-		String query = "insert into contact(name,phone,email,content) values(?,?,?,?)";
+	public void insertContact(String fullname,String phone, String email,String content) {
+		String query = "insert into contact(fullname,phone,email,content) values(?,?,?,?)";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
-			ps.setString(1, name);
+			ps.setString(1, fullname);
 			ps.setString(2, phone);
 			ps.setString(3, email);
 			ps.setString(4, content);

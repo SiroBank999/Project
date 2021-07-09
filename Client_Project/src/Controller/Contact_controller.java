@@ -63,7 +63,7 @@ public class Contact_controller extends HttpServlet {
 		} else if (!p.matcher(phone).find()) {
 			request.setAttribute("fail", "Số điện thoại không hợp lệ!");
 		} else {
-			request.setAttribute("success", "Phản hồi của bạn thành công, cảm ơn!");
+			request.setAttribute("success", "Phản hồi của bạn thành công, chúng tôi sẽ liên hệ cho bạn sớm nhất!");
 			Contact_service contact = new Contact_service();
 			contact.insertContact(name, phone, mail, content);
 		}

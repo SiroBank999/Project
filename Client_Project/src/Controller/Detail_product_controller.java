@@ -44,11 +44,11 @@ public class Detail_product_controller extends HttpServlet {
 		List<ImageProduct> ipd =ipds.getImage(id);
 		List<Product> listpd = pds.getProductByIdCate(id_cate);
 		List<Size> sz = service.Size();
-		request.setAttribute("Limages", ipd);
-		request.setAttribute("product", pd);
-		request.setAttribute("sz", sz);
-		request.setAttribute("listproduct",listpd);
-		request.setAttribute("page", "detail_product");
+		request.setAttribute("Limages", ipd); // ảnh
+		request.setAttribute("product", pd); // chi tiet sp
+		request.setAttribute("sz", sz); // size
+		request.setAttribute("listproduct",listpd); // sp liên quan
+		request.setAttribute("page", "detail_product"); 
 		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
 	}
 

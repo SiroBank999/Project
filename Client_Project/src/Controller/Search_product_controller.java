@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Model.Category;
 import Model.Product;
+import Service.Category_service;
 import Service.Product_service;
 
 
@@ -32,8 +34,11 @@ public class Search_product_controller extends HttpServlet {
 		String name_product = request.getParameter("timkiem");
 		Product_service home = new Product_service();
 		List<Product> list = home.querySearch(name_product);
+		Category_service cs = new Category_service();
+		List<Category> category = cs.getListCategory();
 		int list1=0;
 		list1=home.kqSearch(name_product); 
+		request.setAttribute("category", category);
 		request.setAttribute("list_search", list);
 		request.setAttribute("tong", list1);
 		request.setAttribute("page", "search");

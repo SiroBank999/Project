@@ -1,11 +1,18 @@
 package Controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Model.Category;
+import Model.News;
+import Service.Category_service;
+import Service.News_service;
 
 /**
  * Servlet implementation class Blog_controller
@@ -27,6 +34,28 @@ public class Blog_controller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
+		String indexPage = request.getParameter("index");
+		if(indexPage == null) {
+			indexPage = "1";
+		}
+		int index = Integer.parseInt(indexPage);
+		News_service cm = new News_service();
+		int count =cm.getTotalNews();
+		int andPage =count/3;
+		if(count % 3 != 0) {
+			andPage++;
+		}
+		List<News> list = cm.pagingNews(index);
+		News_service nm = new News_service();
+		List<News> listnews = nm.getNews();
+		Category_service cs = new Category_service();
+		List<Category> category = cs.getListCategory();
+		request.setAttribute("category", category);
+		request.setAttribute("listnews", listnews);
+		request.setAttribute("listNews", list);
+		request.setAttribute("andPag",andPage);
+		request.setAttribute("tag", index);
 		request.setAttribute("page", "blog");
 		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
 	}

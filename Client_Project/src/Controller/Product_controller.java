@@ -39,7 +39,6 @@ public class Product_controller extends HttpServlet {
 		if (indexpage == null) {
 			indexpage = "1";
 		}
-
 		int page = Integer.parseInt(indexpage);
 
 		Product_service db = new Product_service();
@@ -55,8 +54,8 @@ public class Product_controller extends HttpServlet {
 		
 		request.setAttribute("endpage", endpage); // pagination
 		request.setAttribute("tag", page); // active
-		request.setAttribute("category", category);
-		request.setAttribute("hot", sale);
+		request.setAttribute("category", category); // category
+		request.setAttribute("hot", sale); // product
 		request.setAttribute("page", "product");
 		request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
 	}

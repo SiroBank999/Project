@@ -20,7 +20,7 @@
 		<div class="hot_sp" style="padding-bottom: 10px;">
 			<h2 style="text-align: center; padding-top: 10px">
 				<a style="font-size: 28px; color: black; text-decoration: none"
-					href="">Sản phẩm bán chạy</a>
+					href="Product_sale_controller">Sản phẩm khuyến mãi</a>
 			</h2>
 			<div class="view-all" style="text-align: center; padding-top: -10px;">
 				<a style="color: black; text-decoration: none" href="">Xem thêm</a>
@@ -35,7 +35,7 @@
 				<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 					<div class="product-block">
 						<div class="product-img">
-							<a href="#"> <img src="uploads/product/${list.image}"
+							<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}"> <img src="uploads/product/${list.image}"
 								alt="Adidas EQT Cushion ADV" width=100%>
 							</a>
 						</div>
@@ -43,7 +43,7 @@
 					<div class="product-detail clearfix">
 						<div class="pro-text">
 							<a style="color: black; font-size: 14px; text-decoration: none;"
-								href="#" title="Adidas EQT Cushion ADV" inspiration pack>
+								href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="Adidas EQT Cushion ADV" inspiration pack>
 								${list.productname} </a>
 						</div>
 						<div class="gia">
@@ -81,7 +81,7 @@
 				<c:forEach items="${cate}" var="cate">
 					<div class="col-xs-12 col-sm-4 home-banner-pd">
 						<div class="block-banner-category">
-							<a href="#" class="link-banner wrap-flex-align flex-column">
+							<a href="category?id=${cate.id}" class="link-banner wrap-flex-align flex-column">
 								<div class="fg-image fade-box">
 									<img class="lazyloaded" src="uploads/category/${cate.img}"
 										alt="Shoes">
@@ -104,7 +104,7 @@
 				<div class="hot_sp">
 					<h2 style="text-align: center;">
 						<a style="font-size: 28px; color: black; text-decoration: none"
-							href="">Sản phẩm mới</a>
+							href="Product_new_controller">Sản phẩm mới</a>
 					</h2>
 					<div class="view-all" style="text-align: center;">
 						<a style="color: black; text-decoration: none" href="">Xem
@@ -139,19 +139,19 @@
 										<p class="giaSP">
 											<fmt:formatNumber type="number" maxFractionDigits="3"
 												value="${list.sale}" />
-											đ
+											<sup>đ</sup>
 										</p>
 										<p class="giaSale">
 											<fmt:formatNumber type="number" maxFractionDigits="3"
 												value="${list.price}" />
-											đ
+											<sup>đ</sup>
 										</p>
 									</c:when>
 									<c:otherwise>
 										<p class="giaSP" style="margin-top: 20px;">
 											<fmt:formatNumber type="number" maxFractionDigits="3"
 												value="${list.price}" />
-											đ
+											<sup>đ</sup>
 										</p>
 									</c:otherwise>
 								</c:choose>
@@ -176,8 +176,7 @@
 		</div>
 		<!--New-->
 		<div>
-
-			<div class="container">
+		<div class="container">
 
 				<div class="row">
 

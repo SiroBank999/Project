@@ -37,7 +37,7 @@
 							<div class="item-article clearfix">
 								<div class="post-image">
 									<a href="detailblog?id=${listnews.id}"><img
-										src="Uploads/${listnews.image }" alt="Bài viết mẫu"></a>
+										src="uploads/news/${listnews.image }" alt="Bài viết mẫu"></a>
 								</div>
 								<div class="post-content">
 									<h3>
@@ -60,7 +60,9 @@
 						<div class="layered-category">
 							<c:forEach items="${category}" var="category">
 								<ul class="menuList-links">
-									<li class=""><a href="home.html" title="Trang chủ"><span>${category.categoryname}</span></a></li>
+									<li class=""><a href="category?id=${category.id}" title="Trang chủ"><span>${category.categoryname}</span></a>
+										<img class="img-cate" src="uploads/category/${category.img}"></li>
+									<br>
 								</ul>
 							</c:forEach>
 						</div>
@@ -84,7 +86,8 @@
 								<div class="col-md-4 col-xs-12 col-sm-12">
 									<a href="detailblog.html" class="blog-post-thumbnail"
 										title="Bài viết mẫu" rel="nofollow"> <img
-										src="Uploads/${news.image}" style="margin-bottom: 20px" alt="">
+										src="uploads/news/${news.image}" style="margin-bottom: 20px"
+										alt="">
 									</a>
 								</div>
 								<div class="col-md-8 col-xs-12 col-sm-12">

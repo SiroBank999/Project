@@ -28,7 +28,7 @@ public class News_service {
 	}
 	public News getNewbyId(int id) {
 		News nw = new News();
-		String query = "select*from news where id= ? ";
+		String query = "select * from news where id= ?";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
