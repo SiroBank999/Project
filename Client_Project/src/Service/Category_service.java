@@ -27,5 +27,7 @@ public class Category_service {
 		}
 		return list;
 	}
+	
+	
 
 }

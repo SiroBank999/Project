@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <main class="">
 
 	<div id="product" class="productDetail-page">
@@ -26,91 +26,44 @@
 				</div>
 			</div>
 		</div>
+
+
 		<!-- detail product chính -->
 		<div class="container">
-			<div class="row product-detail-wrapper">
+			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="row product-detail-main pr_style_01">
+					<div class="row">
 						<div class="col-md-7 col-sm-12 col-xs-12">
-							<div class="product-gallery">
-								<div
-									class="product-gallery__thumbs-container hidden-sm
-                    hidden-xs">
-									<div class="product-gallery__thumbs thumb-fix">
-										<c:forEach items="${Limages}" var="lista">
-											<div class="product-gallery__thumb" id="imgg${lista.id}">
-												<a class="product-gallery__thumb-placeholder"
-													href="javascript:void(0);"
-													data-image="uploads/product/${lista.image}"
-													data-zoom-image="uploads/product/${lista.image}"> <img
-													src="uploads/product/${lista.image}"
-													data-image="uploads/product/${lista.image}"
-													alt="Nike Air Max 90 Essential" grape="">
-												</a>
+							<div class="carousel">
+								<div id="carousel-simple" class="carousel slide"
+									data-ride="carousel">
+									<div class="carousel-inner" role="listbox">
+
+										<div class="carousel-item active">
+											<center>
+												<img
+													src="<%=request.getContextPath()%>/uploads/product/${product.image}">
+											</center>
+										</div>
+										<c:forEach items="${Limages}" var="Limages">
+											<div class="carousel-item">
+												<center>
+													<img
+														src="<%=request.getContextPath()%>/uploads/product/${Limages.image}">
+												</center>
 											</div>
-
 										</c:forEach>
-
-
-
-
-									</div>
-								</div>
-								<div
-									class="product-image-detail box__product-gallery
-                    scroll hidden-xs">
-									<ul id="sliderproduct"
-										class="site-box-content
-                      slide_product">
-										<c:forEach items="${Limages}" var="lista">
-											<li class="product-gallery-item gallery-item"
-												id="imgg${lista.id}a"><img
-												class="product-image-feature "
-												src="uploads/product/${lista.image}"
-												alt="Nike Air Max 90 Essential" grape=""></li>
-										</c:forEach>
-
-
-
-
-									</ul>
-									<div class="product-image__button">
-										<div id="product-zoom-in"
-											class="product-zoom
-                        icon-pr-fix"
-											aria-label="Zoom in" title="Zoom in">
-											<span class="zoom-in" aria-hidden="true"> <svg
-													version="1.1" xmlns="http://www.w3.org/2000/svg"
-													xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-													viewBox="0 0 36 36"
-													style="enable-background: new 0 0 36 36; width: 30px; height: 30px;"
-													xml:space="preserve">
-                            <polyline
-														points="6,14 9,11 14,16 16,14 11,9
-                              14,6 6,6">
-                            </polyline>
-                            <polyline
-														points="22,6 25,9 20,14 22,16 27,11
-                              30,14 30,6">
-                            </polyline>
-                            <polyline
-														points="30,22 27,25 22,20 20,22
-                              25,27 22,30 30,30">
-                            </polyline>
-                            <polyline
-														points="14,30 11,27 16,22 14,20 9,25
-                              6,22 6,30">
-                            </polyline>
-                          </svg>
-											</span>
-										</div>
-										<div class="gallery-index icon-pr-fix">
-											<span class="current">1</span> / <span class="total">8</span>
-										</div>
+										<!-- nút điều khiển -->
+										<a class="carousel-control-prev" href="#carousel-simple"
+											data-slide="prev"> <span
+											class="carousel-control-prev-icon"></span>
+										</a> <a class="carousel-control-next" href="#carousel-simple"
+											data-slide="next"> <span
+											class="carousel-control-next-icon"></span>
+										</a>
 									</div>
 								</div>
 							</div>
-
 						</div>
 						<div
 							class="col-md-5 col-sm-12 col-xs-12
@@ -118,33 +71,36 @@
 							id="detail-product">
 							<div class="product-content-desc-1">
 								<div class="product-title">
-									<h1>${product.productname}</h1>
-									<span id="pro_sku">MSP: S-0015-${product.id}</span>
+									<h1 style="font-size: 23px">${product.productname}</h1>
+									<span id="pro_sku" style="color: #495057; font-size: 16px">Mã: S-0015-${product.id}</span>
 								</div>
-								<div class="product-price" id="price-preview">
-									<span class="pro-price"> <c:set var="saleprice"
-											value="${product.sale}" /> <c:choose>
-											<c:when test="${saleprice>0 }">
-												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${product.sale}" />
+								<c:set var="saleprice" value="${product.sale}" />
+								<c:choose>
+									<c:when test="${saleprice > 0 }">
+										<div class="product-price" id="price-preview"
+											style="color: #545051; font-size: 15px; font-weight: bold">
+											Giá sale: <s style="margin-right: 16px"> <fmt:formatNumber
+													type="number" maxFractionDigits="3" value="${product.price}" />
 												<sup>đ</sup>
-												<p class="giaSale">
-													<fmt:formatNumber type="number" maxFractionDigits="3"
-														value="${product.price}" />
-													<sup>đ</sup>
-											</c:when>
-											<c:otherwise>
-
+											</s> <b class="product-price" id="price-preview"
+												style="color: #d02b28; font-size: 19px; font-weight: bold">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${product.price}" /> đ
-										</c:otherwise>
-										</c:choose>
-
-
-									</span>
-								</div>
+													value="${product.sale}" /> <sup>đ</sup>
+											</b>
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div class="product-price" id="price-preview"
+											style="color: #000000; font-size: 19px; font-weight: bold">
+											Giá:
+											<fmt:formatNumber type="number" maxFractionDigits="3"
+												value="${product.price}" />
+											<sup>đ</sup>
+										</div>
+									</c:otherwise>
+								</c:choose>											
 								<h6 style="margin-top: 5px;">Chọn size</h6>
-								<div class="styled-select" style="margin-top: -3px;">
+								<div class="styled-select" style="margin-top: -3px; font-size: 17px">
 									<select>
 										<c:forEach items="${sz}" var="size">
 											<option>${size.name}</option>
@@ -177,17 +133,16 @@
 								</form>
 								<div class="product-description">
 									<div class="title-bl">
-										<h2>Mô tả</h2>
+										<h2 style="font-size: 17px">Mô tả</h2>
 									</div>
+									
 									<div class="description-content">
 										<div class="description-productdetail">
-											<p>
-												<span>${product.describe }</span><br> <br>
+											<p style="font-size: 16px; text-align: justify;">
+											<span> <b> Chất
+													liệu:</b> ${product.fabric}</span><br> <br>
+												<span>${product.describe}</span> 
 											</p>
-											<ul>
-												<li>${product.describe}</li>
-
-											</ul>
 										</div>
 									</div>
 								</div>
@@ -195,49 +150,47 @@
 						</div>
 					</div>
 					<div class="list-productRelated clearfix">
-						<div class="heading-title text-center">
+						<div class="heading-title text-center" style="margin-top: 40px">
 							<h2>Sản phẩm liên quan</h2>
 						</div>
 						<div class="container">
 							<div class="row">
-								<c:forEach items="${listproduct}" var="lp">
+								<c:forEach items="${listproduct}" var="list">
 									<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 										<div class="product-block">
 											<div class="product-img fade-box">
-												<a href="#" title="Adidas EQT Cushion ADV"
-													class="img-resize"> <img
-													src="uploads/product/${lp.image}"
-													alt="Adidas EQT Cushion ADV" class="lazyloaded"
-													width="100%">
+												<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}"
+													title="${list.productname}" class="img-resize"> <img
+													src="<%=request.getContextPath()%>/uploads/product/${list.image}">
 												</a>
 											</div>
 											<div class="product-detail clearfix">
 												<div class="pro-text">
 													<a
 														style="color: black; font-size: 14px; text-decoration: none;"
-														#" title="Adidas EQT Cushion ADV" inspiration pack>
-														${lp.productname}</a>
+														href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="${list.productname}" inspiration pack>
+														${list.productname} </a>
 												</div>
-												<div class="pro-price">
-													<c:set var="saleprice" value="${lp.sale}" />
+												<div class="gia">
+													<c:set var="saleprice" value="${list.sale }" />
 													<c:choose>
 														<c:when test="${saleprice>0 }">
-															<p class="">
+															<p class="giaSP">
 																<fmt:formatNumber type="number" maxFractionDigits="3"
-																	value="${lp.sale}" />
-																đ
+																	value="${list.sale}" />
+																<sup>đ</sup>
 															</p>
 															<p class="giaSale">
 																<fmt:formatNumber type="number" maxFractionDigits="3"
-																	value="${lp.price}" />
-																đ
+																	value="${list.price}" />
+																<sup>đ</sup>
 															</p>
 														</c:when>
 														<c:otherwise>
-															<p class="" style="margin-top: 20px;">
+															<p class="giaSP" style="margin-top: 20px;">
 																<fmt:formatNumber type="number" maxFractionDigits="3"
-																	value="${lp.price}" />
-																đ
+																	value="${list.price}" />
+																<sup>đ</sup>
 															</p>
 														</c:otherwise>
 													</c:choose>
@@ -250,45 +203,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-	<!-- show zoom detail product -->
-	<!-- zoom -->
-	<div class="product-zoom11">
-		<div class="product-zom">
-			<div class="divclose">
-				<i class="fa fa-times-circle"></i>
-			</div>
-			<div class="owl-carousel owl-theme owl-product1">
-
-				<div class="item">
-					<img src="templates/images/detailproduct/1.jpg" alt="">
-				</div>
-				<div class="item">
-					<img src="templates/images/detailproduct/2.jpg" alt="">
-				</div>
-				<div class="item">
-					<img src="templates/images/detailproduct/3.jpg" alt="">
-				</div>
-				<div class="item">
-					<img src="templates/images/detailproduct/4.jpg" alt="">
-				</div>
-				<div class="item">
-					<img src="templates/images/detailproduct/5.jpg" alt="">
-				</div>
-				<div class="item">
-					<img src="templates/images/detailproduct/6.jpg" alt="">
-				</div>
-				<div class="item">
-					<img src="templates/images/detailproduct/7.jpg" alt="">
-				</div>
-				<div class="item">
-					<img src="templates/images/detailproduct/8.jpg" alt="">
-				</div>
-
-
-
 			</div>
 		</div>
 	</div>
@@ -345,4 +259,8 @@
 		</div>
 	</div>
 </section>
+
+
+
+
 

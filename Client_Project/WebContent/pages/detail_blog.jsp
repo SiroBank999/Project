@@ -40,7 +40,7 @@
                 <c:forEach items= "${listnews }" var="listnews">
                 <div class="item-article clearfix">                  
                   <div class="post-image">
-                    <a href=""><img src="Uploads/${listnews.image }" alt="Bài viết mẫu"></a>
+                    <a href=""><img src="uploads/news/${listnews.image }" alt="Bài viết mẫu"></a>
                   </div>                 
                   <div class="post-content">
                     <h3>
@@ -99,7 +99,7 @@
             </div>
             <div class="article-pages">
             <p>
-                <img src="Uploads/${detail_news.image}" alt="Falcon color block">
+                <img src="uploads/news/${detail_news.image}" alt="Falcon color block">
                 
               </p>
               <p>${detail_news.content }</p>

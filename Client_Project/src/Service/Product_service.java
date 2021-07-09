@@ -42,7 +42,7 @@ public class Product_service {
 
 	public List<Product> getProductnew() {
 		List<Product> list = new ArrayList<>();
-		String query = "select top 4 * from product  ";
+		String query = "select top 4 * from product";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
@@ -68,7 +68,7 @@ public class Product_service {
 
 	public List<Product> getProductByIdCate(int id) {
 		List<Product> list = new ArrayList<>();
-		String query = "select top 4 * from product where id_category =? ";
+		String query = "select top 4 * from product where id_category =?";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
@@ -121,7 +121,7 @@ public class Product_service {
 
 	public List<Product> querySearch(String nameProduct) {
 		List<Product> list = new ArrayList<>();
-		String sql = "Select * from product where productname like N'%" + nameProduct + "%'";
+		String sql = "select * from product where productname like N'%" + nameProduct + "%'";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(sql);
@@ -164,7 +164,7 @@ public class Product_service {
 
 	public List<Product> product_sale(int indexpage) {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where sale is not null order by id_product \r\n"
+		String sql = "select * from product where sale is not null order by id \r\n"
 				+ "				offset ? rows fetch next 12 rows only;";
 		PreparedStatement pstm;
 		try {
@@ -237,11 +237,12 @@ public class Product_service {
 		}
 		return list;
 	}
+	
 
 	public List<Product> product(int indexpage) {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "	select * from product order by id_product\r\n"
-				+ "			offset ? rows fetch next 12 rows only;";
+		String sql = "select * from product order by id\r\n"
+				+ "		offset ? rows fetch next 12 rows only;";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -272,7 +273,7 @@ public class Product_service {
 	}
 
 	public int Countproduct() {
-		String sql = "select count(*) from product where status =0";
+		String sql = "select count(*) from product ";
 		try {
 			conn = Database.Connect();
 			PreparedStatement pstm = conn.prepareStatement(sql);

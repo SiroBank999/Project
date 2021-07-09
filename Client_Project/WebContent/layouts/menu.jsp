@@ -13,7 +13,7 @@
             <a class="nav-link" href="index">TRANG CHỦ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="product.html">BỘ SƯU TẬP</a>
+            <a class="nav-link" href="">BỘ SƯU TẬP</a>
           </li>
           <li class="nav-item lisanpham">
             <a class="nav-link" href="product">SẢN PHẨM
@@ -28,11 +28,6 @@
               <li class="">
                 <a href="Product_new_controller" title="Sản phẩm mới"> 
                   Sản phẩm mới
-                </a>
-              </li>
-              <li class="">
-                <a href="detailproduct.html" title="Sản phẩm - Style 3"> 
-                  Sản phẩm - Style 3
                 </a>
               </li>
             </ul>

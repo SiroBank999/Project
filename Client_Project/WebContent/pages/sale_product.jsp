@@ -46,8 +46,8 @@
 										style="border: 0; padding: 0">
 										<c:forEach items="${category}" var="category">
 											<ul class="menuList-links">
-												<li class=""><a href="home.html" title="Trang chủ"><span>${category.categoryname}</span></a>
-													<img class="img-cate" src="Uploads/${category.img}"></li>
+												<li class=""><a href="category?id=${category.id}" title="Trang chủ"><span>${category.categoryname}</span></a>
+													<img class="img-cate" src="uploads/category/${category.img}"></li>
 												<br>
 											</ul>
 										</c:forEach>
@@ -154,19 +154,19 @@
 					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img fade-box">
-								<a href="detail_product?name=${hot.productName}"
-									title="${hot.productName}" class="img-resize"> <img
-									src="<%=request.getContextPath()%>/Uploads/product/${hot.img}"
-									alt="${hot.productName}" class="lazyloaded">
+								<a href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
+									title="${hot.productname}" class="img-resize"> <img
+									src="<%=request.getContextPath()%>/uploads/product/${hot.image}"
+									alt="${hot.productname}" class="lazyloaded">
 								</a>
 							</div>
 							<div class="product-detail clearfix">
 								<div class="pro-text">
 									<a
 										style="color: black; font-size: 14px; text-decoration: none;"
-										href="detail_product?name=${hot.productName}"
+										href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
 										title="Adidas EQT Cushion ADV" inspiration pack>
-										${hot.productName} </a>
+										${hot.productname} </a>
 								</div>
 								<div class="pro-price">
 									<c:set var="saleprice" value="${hot.sale}" />
