@@ -102,8 +102,7 @@
 								HỆ</a></li>
 					</ul>
 				</div>
-
-			</div>
+		</div>
 		</div>
 		<div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
 			<div class="uk-offcanvas-bar"
@@ -111,86 +110,49 @@
 
 				<button class="uk-offcanvas-close" style="color: #272727"
 					type="button" uk-close></button>
-
-				<h3
-					style="font-size: 14px; color: #272727; text-transform: uppercase; margin: 3px 0 30px 0; font-weight: 500; letter-spacing: 2px;">Tìm
-					kiếm</h3>
-				<div class="search-box wpo-wrapper-search">
-					<form action="${pageContext.request.contextPath}/search"
-						class="searchform searchform-categoris ultimate-search">
-						<div class="wpo-search-inner" style="display: inline">
-							<input type="hidden" name="type" value="product"> <input
-								required="" id="inputSearchAuto" name="timkiem" maxlength="40"
-								autocomplete="off" class="searchinput input-search search-input"
-								type="text" size="20" placeholder="Tìm kiếm sản phẩm...">
-						</div>
-						<button type="submit" class="btn-search btn"
-							id="search-header-btn">
-							<i style="font-weight: bold" class="fas fa-search"></i>
-						</button>
-					</form>
-					<div id="ajaxSearchResults"
-						class="smart-search-wrapper ajaxSearchResults"
-						style="display: none">
-						<div class="resultsContent"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="offcanvas-flip2" uk-offcanvas="flip: true; overlay: true">
-			<div class="uk-offcanvas-bar"
-				style="background: white; width: 350px;">
-
-				<button class="uk-offcanvas-close" style="color: #272727"
-					type="button" uk-close></button>
-
-				<h3
-					style="font-size: 14px; color: #272727; text-transform: uppercase; margin: 3px 0 30px 0; font-weight: 500; letter-spacing: 2px;">Giỏ
-					hàng</h3>
-				<div class="site-nav-container-last" style="color: #272727">
-					<div class="cart-view clearfix">
-						<table id="cart-view">
-							<tbody>
-								<c:forEach items="${sessionScope.order.items}" var="item">
-									<tr class="item_1">
-										<td class="img"><a href=""
-											title="Nike Air Max 90 Essential &quot;Grape&quot;"><img
-												src="uploads/product/${item.product.image}"></a></td>
-										<td><a class="pro-title-view" style="color: #272727"
-											href="" title="Nike Air Max 90 Essential &quot;Grape&quot;">${item.product.productname}</a>
-											<span class="variant">SIZE/${item.size.name}</span> <span
-											class="pro-quantity-view">${item.quantity}</span> <span
-											class="pro-price-view">
-											<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${item.product.price}"></fmt:formatNumber>đ</span>
-											<span class="remove_link remove-cart"><a href=""><i
-													style="color: #272727;" class="fas fa-times"></i></a></span></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-						<span class="line"></span>
-						<table class="table-total">
-							<tbody>
-								<tr>
-									<td class="text-left">TỔNG TIỀN:</td>
-									<td class="text-right" id="total-view-cart"><fmt:formatNumber
-											type="number" maxFractionDigits="3"
-											value="${order.getTotal()}"></fmt:formatNumber>đ</td>
-								</tr>
-								<tr>
-									<td class="distance-td"><a href=""
-										class="linktocart button dark">Xem giỏ hàng</a></td>
-									<td><a href="" class="linktocheckout button dark">Thanh
-											toán</a></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-
+          <h3 style="font-size: 14px;
+                color: #272727;
+                text-transform: uppercase;
+                margin: 3px 0 30px 0;
+                font-weight: 500; letter-spacing: 2px;">Giỏ hàng</h3>
+          <div class="site-nav-container-last" style="color:#272727">
+            <div class="cart-view clearfix">
+              <table id="cart-view">
+                <tbody>
+				<c:forEach items="${sessionScope.order.items}" var="item">
+                  <tr class="item_1">
+                    <td class="img"><a href="" title="${item.product.productname} &quot;Grape&quot;"><img
+                          src="uploads/product/${item.product.image}"></a></td>
+                    <td>
+                      <a class="pro-title-view" style="color: #272727" href="detail_product?id_product=${item.product.id}&id_category=${item.product.id_category}"
+                        title="${item.product.productname} &quot;Grape&quot;">${item.product.productname}</a>
+                      <span class="variant">SIZE/${item.size.name}</span>
+                      <span class="pro-quantity-view">${item.quantity}</span>
+                      <span class="pro-price-view"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${item.price}"></fmt:formatNumber>đ</span>
+                      <span class="remove_link remove-cart"><a href="cart_remove?id_item=${item.id}"><i style="color: #272727;"
+                            class="fas fa-times"></i></a></span>
+                    </td>
+                  </tr>
+                  </c:forEach>
+                </tbody>
+              </table>
+              <span class="line"></span>
+              <table class="table-total">
+                <tbody>
+                  <tr>
+                    <td class="text-left">TỔNG TIỀN:</td>
+                    <td class="text-right" id="total-view-cart"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()}"></fmt:formatNumber>đ</td>
+                  </tr>
+                  <tr>
+                    <td class="distance-td"><a href="" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td><a href="" class="linktocheckout button dark">Thanh toán</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
 		<div class="icon-ol">
 			<a style="color: #272727" href=""> <i class="fas fa-user-alt"></i>
 			</a> <a href="#" class="" uk-toggle="target: #offcanvas-flip"> <i

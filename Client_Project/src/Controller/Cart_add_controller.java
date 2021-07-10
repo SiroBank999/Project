@@ -17,28 +17,18 @@ import Model.Item;
 import Model.Order;
 import Service.Product_service;
 import Service.Size_service;
-
-/**
- * Servlet implementation class Cart_add_controller
- */
 @WebServlet("/cart_add")
 public class Cart_add_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	int quantity = 1;
 	int id_tmp;
+    public Cart_add_controller() {
+        super();
+    }
 
-	public Cart_add_controller() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 
 		int id;
 		Product_service ps = new Product_service();
@@ -57,7 +47,12 @@ public class Cart_add_controller extends HttpServlet {
 					item.setQuantity(quantity);
 					item.setProduct(pd);
 					item.setSize(s);
-					item.setPrice(pd.getPrice());
+					if(pd.getSale() > 0) {
+						item.setPrice(pd.getSale());
+					}else {
+						item.setPrice(pd.getPrice());
+					}
+					
 					listItems.add(item);
 					order.setItems(listItems);
 					session.setAttribute("order", order);
@@ -96,10 +91,9 @@ public class Cart_add_controller extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Size_service ss = new Size_service();
-		List<Size> list = ss.Size();
-		String size = request.getParameter("size");
-		String tmp = null;
-
+		List<Size> list =ss.Size();
+		String size =request.getParameter("size");
+		String tmp =null;
 		int id = 0;
 		for (Size s : list) {
 			tmp = s.getName();
@@ -107,7 +101,6 @@ public class Cart_add_controller extends HttpServlet {
 			if (tmp.equals(size)) {
 				id_tmp = id;
 			}
-
 		}
 		if (request.getParameter("quantity") != null) {
 			quantity = Integer.parseInt(request.getParameter("quantity"));
