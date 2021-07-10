@@ -31,7 +31,7 @@
 				<div class="group-menu">
 					<div class="page_menu_title title_block">
 						<h2>
-							Danh mục trang</span>
+							Danh mục sản phẩm</span>
 						</h2>
 					</div>
 					<div class="layered layered-category">

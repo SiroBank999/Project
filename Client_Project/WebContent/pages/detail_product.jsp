@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -20,14 +19,11 @@
 							<li class="active"><span> <span itemprop="name">${product.productname}</span>
 							</span>
 								<meta itemprop="position" content="3"></li>
-
 						</ol>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
 		<!-- detail product chính -->
 		<div class="container">
 			<div class="row">
@@ -38,7 +34,6 @@
 								<div id="carousel-simple" class="carousel slide"
 									data-ride="carousel">
 									<div class="carousel-inner" role="listbox">
-
 										<div class="carousel-item active">
 											<center>
 												<img
@@ -262,8 +257,3 @@
 		</div>
 	</div>
 </section>
-
-
-
-
-
