@@ -1,3 +1,4 @@
+
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  <div class="content">
@@ -9,37 +10,25 @@
                 </div>
             </div>
             <div class="signin-right ">
-                <form action="">
+                <form action="signup" method="post">
                     <div class="firstname form-control1 ">
-                        <input type="text"   id="firstname" placeholder="Họ">
+                        <input type="text" name="fullname"  id="firstname" placeholder="Họ và tên" required>
                     </div>
                     <div class="lastname form-control1">
-                        <input type="text" id="lastname" placeholder="Tên">
-                    </div>
-                    <div class="sex form-control1">
-                       <div class="female">
-                         
-                          <input type="radio" id="female" checked  name="sex">
-                          <label for="female">Nữ</label>
-                       </div>
-                       <div class="male">
-                        
-                        <input type="radio" id="male"  name="sex">
-                        <label for="male" >Nam</label>
-                     </div>
+                        <input type="text" name="username" id="lastname" placeholder="Tên Tài Khoản" required>
                     </div>
                     <div class="birthday form-control1">
-                        <input type="text" id="birthday" placeholder="mm/dd/yyyy">
+                        <input type="text" name="phone" id="Phone" placeholder="sdt" required >
                     </div>
                     <div class="email form-control1">
-                        <input type="email"  id="email" placeholder="Email">
+                        <input type="text" name="email" id="email" placeholder="Email" required>
                     </div>
                     <div class="password form-control1">
-                        <input type="password"  id="password" placeholder="Password">
+                        <input type="password" name="password"  id="password" placeholder="Mật Khẩu" required>
                     </div>
                     <div class="recaptcha form-control1">This site is protected by reCAPTCHA and the Google <a href="">Privacy Policy</a> and <a href="">Terms of Service</a> apply.</div>
                     <div class="submit">
-                      <p>Đăng kí</p>
+                    <input class="btn" type="submit" id="dangnhap" value="Đăng Kí">
                        
                     </div>
                     <div class="backto">
@@ -49,48 +38,6 @@
             </div>
         </div>
     </section>    
-    <section class="section section-gallery">
-      <div class="">
-        <div class="hot_sp" style="padding-top: 70px;padding-bottom: 50px;">
-          <h2 style="text-align:center;padding-top: 10px">
-            <a style="font-size: 28px;color: black;text-decoration: none" href="">Khách hàng và Runner Inn</a>
-          </h2>
-        </div>
-        <div class="list-gallery clearfix">
-          <ul class="shoes-gp">
-            <li>
-              <div class="gallery_item">
-                <img class="img-resize" src="templates/images/shoes/gallery_item_1.jpg" alt="">
-              </div>
-            </li>
-            <li>
-              <div class="gallery_item">
-                <img class="img-resize" src="templates/images/shoes/gallery_item_2.jpg" alt="">
-              </div>
-            </li>
-            <li>
-              <div class="gallery_item">
-                <img class="img-resize" src="templates/images/shoes/gallery_item_3.jpg" alt="">
-              </div>
-            </li>
-            <li>
-              <div class="gallery_item">
-                <img class="img-resize" src="templates/images/shoes/gallery_item_4.jpg" alt="">
-              </div>
-            </li>
-            <li>
-              <div class="gallery_item">
-                <img class="img-resize" src="templates/images/shoes/gallery_item_5.jpg" alt="">
-              </div>
-            </li>
-            <li>
-              <div class="gallery_item">
-                <img class="img-resize" src="templates/images/shoes/gallery_item_6.jpg" alt="">
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    
    
   </div>

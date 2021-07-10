@@ -5,11 +5,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="owl-carousel owl-theme owl-carousel-setting">
 	<div class="item">
-		<img src="templates/images/slideshow_1.jpg" class="d-block w-100"
+		<img src="templates/images/banner123.jpg" class="d-block w-100"
 			alt="...">
 	</div>
 	<div class="item">
-		<img src="templates/images/slideshow_2.jpg" class="d-block w-100"
+		<img src="templates/images/banner1232.jpg" class="d-block w-100"
 			alt="...">
 	</div>
 </div>
@@ -23,7 +23,7 @@
 					href="Product_sale_controller">Sản phẩm khuyến mãi</a>
 			</h2>
 			<div class="view-all" style="text-align: center; padding-top: -10px;">
-				<a style="color: black; text-decoration: none" href="Product_sale_controller">Xem thêm</a>
+				<a style="color: black; text-decoration: none" href="">Xem thêm</a>
 			</div>
 		</div>
 	</div>
@@ -79,12 +79,12 @@
 		<div class="container-fluid" style="padding-bottom: 50px;">
 			<div class="row">
 				<c:forEach items="${cate}" var="cate">
-					<div class="col-xs-12 col-sm-4 home-banner-pd">
+					<div class="col-xs-12 col-sm-2 home-banner-pd">
 						<div class="block-banner-category">
 							<a href="category?id=${cate.id}" class="link-banner wrap-flex-align flex-column">
 								<div class="fg-image fade-box">
 									<img class="lazyloaded" src="uploads/category/${cate.img}"
-										alt="Shoes">
+										alt="">
 								</div>
 								<figcaption class="caption_banner site-animation">
 									<p>${cate.categoryname}</p>
@@ -107,7 +107,7 @@
 							href="Product_new_controller">Sản phẩm mới</a>
 					</h2>
 					<div class="view-all" style="text-align: center;">
-						<a style="color: black; text-decoration: none" href="Product_new_controller">Xem
+						<a style="color: black; text-decoration: none" href="">Xem
 							thêm</a>
 					</div>
 				</div>
@@ -121,7 +121,7 @@
 					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img">
-								<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}"> <img src="uploads/product/${list.image}"
+								<a href="#"> <img src="uploads/product/${list.image}"
 									alt="Adidas EQT Cushion ADV" width=100%/>
 								</a>
 							</div>
@@ -129,7 +129,7 @@
 						<div class="product-detail clearfix">
 							<div class="pro-text">
 								<a style="color: black; font-size: 14px; text-decoration: none;"
-									href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="Adidas EQT Cushion ADV">
+									href="#" title="Adidas EQT Cushion ADV">
 									${list.productname} </a>
 							</div>
 							<div class="gia">
@@ -215,7 +215,7 @@
 			<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
 				<h2 style="text-align: center; padding-top: 10px">
 					<a style="font-size: 28px; color: black; text-decoration: none"
-						href="">Khách hàng và Runner Inn</a>
+						href="">F5's Styles</a>
 				</h2>
 			</div>
 			<div class="list-gallery clearfix">
@@ -260,5 +260,49 @@
 			</div>
 		</div>
 	</section>
+	    <div class="benefit">
+		<div class="container">
+			<div class="row benefit_row">
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>MIỄN PHÍ GIAO HÀNG</h6>
+							<p>với hóa đơn trên 300k</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fas fa-money-bill" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>GIÁ TIỀN HỢP LÝ</h6>
+							<p>đồ đẹp - sang chảnh</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
+							<p>đối với những sản phẩm bị lỗi</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="far fa-clock" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>MỞ CỬA TỪ</h6>
+							<p>8h00 - 21h00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<br/>
 </div>
 
