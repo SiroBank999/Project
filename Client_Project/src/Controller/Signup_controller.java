@@ -1,3 +1,4 @@
+
 package Controller;
 
 import java.io.IOException;
@@ -6,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Service.User_service;
 
 /**
  * Servlet implementation class Signup_controller
@@ -34,8 +37,25 @@ public class Signup_controller extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
+		String fullname = request.getParameter("fullname");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+		if (fullname.isEmpty() || username.isEmpty() || password.isEmpty()|| phone.isEmpty()|| email.isEmpty() ) {
+			request.setAttribute("alert",1);
+			request.getRequestDispatcher("pages/signup.jsp").forward(request, response);
+			
+		}else {
+			User_service md = new User_service();
+			md.insertAcc(fullname, username, password, phone, email, "0");
+			response.sendRedirect("signin");
+		}
+		
+
+	}
 	}
 
-}
+
