@@ -29,12 +29,8 @@ public class Cart_add_controller extends HttpServlet {
 	int id_tmp;
     public Cart_add_controller() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int id;
@@ -54,7 +50,12 @@ public class Cart_add_controller extends HttpServlet {
 					item.setQuantity(quantity);
 					item.setProduct(pd);
 					item.setSize(s);
-					item.setPrice(pd.getPrice());
+					if(pd.getSale() > 0) {
+						item.setPrice(pd.getSale());
+					}else {
+						item.setPrice(pd.getPrice());
+					}
+					
 					listItems.add(item);
 					order.setItems(listItems);
 					session.setAttribute("order", order);
@@ -97,7 +98,6 @@ public class Cart_add_controller extends HttpServlet {
 		List<Size> list =ss.Size();
 		String size =request.getParameter("size");
 		String tmp =null;
-		
 		int id = 0;
 		for(Size s:list) {
 			tmp =s.getName();
