@@ -20,19 +20,21 @@ import Service.Product_service;
 @WebServlet("/Product_sale_controller")
 public class Product_sale_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Product_sale_controller() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public Product_sale_controller() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String indexpage = request.getParameter("page");
 		if (indexpage == null) {
@@ -50,8 +52,32 @@ public class Product_sale_controller extends HttpServlet {
 		Product_service product_service = new Product_service();
 		Category_service cs = new Category_service();
 		List<Category> category = cs.getListCategory();
-		List<Product> sale = product_service.product_sale(page);
-		
+		String luachon = (String) request.getParameter("order-by");
+		List<Product> sale = null;
+		if (luachon == null) {
+			sale = product_service.product_sale(page);
+		} else if (luachon.equals("price-descending")) {
+			sale = product_service.product_sale_desc();
+		} else if (luachon.equals("price-ascending")) {
+			sale = product_service.product_sale_asc();
+		} else if (luachon.equals("created-descending")) {
+			sale = product_service.product_sale_new();
+		} else if (luachon.equals("created-ascending")) {
+			sale = product_service.product_sale_old();
+		} else if (luachon.equals("title-ascending")) {
+			sale = product_service.product_sale_nameAsc();
+		} else if (luachon.equals("title-descending")) {
+			sale = product_service.product_sale_nameDesc();
+		} else if (luachon.equals("1")) {
+			sale = product_service.product_sale_filter();
+		} else if (luachon.equals("2")) {
+			sale = product_service.product_sale_filter1();
+		} else if (luachon.equals("3")) {
+			sale = product_service.product_sale_filter2();
+		} else if (luachon.equals("4")) {
+			sale = product_service.product_sale_filter3();
+		}
+
 		request.setAttribute("endpage", endpage); // pagination
 		request.setAttribute("tag", page); // active
 		request.setAttribute("category", category);
@@ -61,9 +87,11 @@ public class Product_sale_controller extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

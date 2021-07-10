@@ -99,23 +99,6 @@
 					<h1 class="title">Tất cả sản phẩm</h1>
 					<div class="alert-no-filter"></div>
 				</div>
-				<div class="col-md-4 d-sm-none d-md-block d-none d-sm-block"
-					style="float: left">
-					<div class="option browse-tags">
-						<span class="custom-dropdown custom-dropdown--grey"> <select
-							class="sort-by custom-dropdown__select">
-								<option value="price-ascending">Giá: Tăng dần</option>
-								<option value="price-descending">Giá: Giảm dần</option>
-								<option value="title-ascending">Tên: A-Z</option>
-								<option value="title-descending">Tên: Z-A</option>
-								<option value="created-ascending">Cũ nhất</option>
-								<option value="created-descending">Mới nhất</option>
-								<option value="best-selling">Bán chạy nhất</option>
-								<option value="quantity-descending">Tồn kho: Giảm dần</option>
-						</select>
-						</span>
-					</div>
-				</div>
 			</div>
 			<div class="row">
 				<c:forEach items="${cate}" var="hot">

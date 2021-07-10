@@ -35,10 +35,32 @@ public class Product_new_controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Product_service product_service = new Product_service();
-		List<Product> sale = product_service.product_new();
 		Category_service cs = new Category_service();
 		List<Category> category = cs.getListCategory();
-		
+		String luachon=(String) request.getParameter("order-by");
+		List<Product> sale=null;
+		if(luachon==null || luachon.equals("created-descending")) {
+			sale = product_service.product_new();
+		}
+		else if(luachon.equals("price-descending")) {
+			sale=product_service.product_new_desc();
+		}else if(luachon.equals("price-ascending")) {
+			sale=product_service.product_new_asc();
+		}else if(luachon.equals("created-ascending")) {
+			sale=product_service.product_new_old();
+		}else if(luachon.equals("title-ascending")) {
+			sale=product_service.product_new_nameAsc();
+		}else if(luachon.equals("title-descending")) {
+			sale=product_service.product_new_nameDesc();
+		}else if (luachon.equals("1")) {
+			sale = product_service.product_new_filter();
+		} else if (luachon.equals("2")) {
+			sale = product_service.product_new_filter1();
+		} else if (luachon.equals("3")) {
+			sale = product_service.product_new_filter2();
+		} else if (luachon.equals("4")) {
+			sale = product_service.product_new_filter3();
+		}
 		request.setAttribute("category", category);
 		request.setAttribute("hot", sale);
 		request.setAttribute("page", "new_product");
