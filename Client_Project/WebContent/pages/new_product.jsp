@@ -12,12 +12,11 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5">
 				<ol class="breadcrumb breadcrumb-arrows">
-					<li><a href="index.html"> <span>Trang chủ</span>
+					<li><a href="index"> <span>Trang chủ</span>
 					</a></li>
-					<li><a href="Product.html"> <span>Danh mục</span>
+					<li><a href="product"> <span>Sản phẩm</span>
 					</a></li>
-					<li><span><span style="color: #777777">Tất cả
-								sản phẩm</span></span></li>
+					<li><span style="color: #777777">Sản phẩm mới</span></li>
 				</ol>
 			</div>
 		</div>
@@ -86,39 +85,7 @@
 											</ul>
 										</div>
 									</div>
-									<div class="group-filter" aria-expanded="true">
-										<div class="layered_subtitle dropdown-filter">
-											<span>Kích thước</span><span class="icon-control"><i
-												class="fa fa-minus"></i></span>
-										</div>
-										<div class="layered-content filter-size s-filter">
-
-											<ul class="check-box-list clearfix">
-
-												<li><input type="checkbox" id="data-size-p1"> <label
-													for="data-size-p1">35</label></li>
-
-												<li><input type="checkbox" id="data-size-p2"> <label
-													for="data-size-p2">36</label></li>
-
-												<li><input type="checkbox" id="data-size-p3"> <label
-													for="data-size-p3">37</label></li>
-
-												<li><input type="checkbox" id="data-size-p4"> <label
-													for="data-size-p4">38</label></li>
-
-												<li><input type="checkbox" id="data-size-p5"> <label
-													for="data-size-p5">39</label></li>
-
-												<li><input type="checkbox" id="data-size-p6"> <label
-													for="data-size-p6">40</label></li>
-
-											</ul>
-										</div>
-									</div>
-
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -128,7 +95,7 @@
 		<div class="col-md-9 col-sm-12 col-xs-12">
 			<div class="wrap-collection-title row">
 				<div class="col-md-8 col-sm-12 col-xs-12">
-					<h1 class="title">Tất cả sản phẩm</h1>
+					<h1 class="title">Sản phẩm mới</h1>
 					<div class="alert-no-filter"></div>
 				</div>
 				<div class="col-md-4 d-sm-none d-md-block d-none d-sm-block"

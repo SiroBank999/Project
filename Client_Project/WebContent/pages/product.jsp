@@ -12,12 +12,12 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5">
 				<ol class="breadcrumb breadcrumb-arrows">
-					<li><a href="index.html"> <span>Trang chủ</span>
+					<li><a href="index"> <span>Trang chủ</span>
 					</a></li>
-					<li><a href="Product.html"> <span>Danh mục</span>
+					<li><a href="product"> <span>Sản phẩm</span>
 					</a></li>
-					<li><span><span style="color: #777777">Tất cả
-								sản phẩm</span></span></li>
+					<li><span style="color: #777777">Tất cả
+								sản phẩm</span></li>
 				</ol>
 			</div>
 		</div>
@@ -46,8 +46,9 @@
 										style="border: 0; padding: 0">
 										<c:forEach items="${category}" var="category">
 											<ul class="menuList-links">
-												<li class=""><a href="category?id=${category.id}" title="Trang chủ"><span>${category.categoryname}</span></a>
-													<img class="img-cate" src="uploads/category/${category.img}"></li>
+												<li class=""><a href="category?id=${category.id}"><span>${category.categoryname}</span></a>
+													<img class="img-cate"
+													src="uploads/category/${category.img}"></li>
 												<br>
 											</ul>
 										</c:forEach>
@@ -86,39 +87,7 @@
 											</ul>
 										</div>
 									</div>
-									<div class="group-filter" aria-expanded="true">
-										<div class="layered_subtitle dropdown-filter">
-											<span>Kích thước</span><span class="icon-control"><i
-												class="fa fa-minus"></i></span>
-										</div>
-										<div class="layered-content filter-size s-filter">
-
-											<ul class="check-box-list clearfix">
-
-												<li><input type="checkbox" id="data-size-p1"> <label
-													for="data-size-p1">35</label></li>
-
-												<li><input type="checkbox" id="data-size-p2"> <label
-													for="data-size-p2">36</label></li>
-
-												<li><input type="checkbox" id="data-size-p3"> <label
-													for="data-size-p3">37</label></li>
-
-												<li><input type="checkbox" id="data-size-p4"> <label
-													for="data-size-p4">38</label></li>
-
-												<li><input type="checkbox" id="data-size-p5"> <label
-													for="data-size-p5">39</label></li>
-
-												<li><input type="checkbox" id="data-size-p6"> <label
-													for="data-size-p6">40</label></li>
-
-											</ul>
-										</div>
-									</div>
-
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -154,7 +123,8 @@
 					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img fade-box">
-								<a href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
+								<a
+									href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
 									title="${hot.productname}" class="img-resize"> <img
 									src="<%=request.getContextPath()%>/uploads/product/${hot.image}"
 									alt="${hot.productname}" class="lazyloaded">
@@ -202,8 +172,7 @@
 		<a href="product?page=${tag-1}">&laquo;</a>
 	</c:if>
 	<c:forEach begin="1" end="${endpage}" var="i">
-		<a class="${tag==i?"
-			active":""}" href="product?page=${i}">${i}</a>
+		<a class="${tag==i?" active":""}" href="product?page=${i}">${i}</a>
 	</c:forEach>
 	<c:if test="${tag < endpage}">
 		<a href="product?page=${tag+1}">&raquo;</a>

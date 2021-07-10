@@ -24,30 +24,33 @@ import Service.Size_service;
 @WebServlet("/cart_add")
 public class Cart_add_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	int quantity = 1;
 	int id_tmp;
-    public Cart_add_controller() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	public Cart_add_controller() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		int id;
 		Product_service ps = new Product_service();
 		Size_service ss = new Size_service();
-		if(request.getParameter("id_product") != null) {
+		if (request.getParameter("id_product") != null) {
 			id = Integer.parseInt(request.getParameter("id_product"));
 			Product pd = ps.getProductById(id);
 			Size s = ss.getSizeById(id_tmp);
-			if(pd != null) {
-				
-				HttpSession  session =request.getSession();
-				if(session.getAttribute("order") == null) {
+			if (pd != null) {
+
+				HttpSession session = request.getSession();
+				if (session.getAttribute("order") == null) {
 					Order order = new Order();
 					List<Item> listItems = new ArrayList<>();
 					Item item = new Item();
@@ -58,57 +61,56 @@ public class Cart_add_controller extends HttpServlet {
 					listItems.add(item);
 					order.setItems(listItems);
 					session.setAttribute("order", order);
-				}
-				else {
+				} else {
 					Order order = (Order) session.getAttribute("order");
 					List<Item> listItems = order.getItems();
-					boolean check=false;
-					for(Item item: listItems){
-						if(item.getProduct().getId() == pd.getId() && item.getSize().getId() == s.getId()) {
-							item.setQuantity(item.getQuantity()+quantity);
+					boolean check = false;
+					for (Item item : listItems) {
+						if (item.getProduct().getId() == pd.getId() && item.getSize().getId() == s.getId()) {
+							item.setQuantity(item.getQuantity() + quantity);
 							check = true;
 						}
 					}
-					if(check == false) {
+					if (check == false) {
 						Item item = new Item();
 						item.setQuantity(quantity);
 						item.setProduct(pd);
 						item.setSize(s);
 						item.setPrice(pd.getPrice());
 						listItems.add(item);
-						
+
 					}
-					
+
 					session.setAttribute("order", order);
-					
-					//session.setMaxInactiveInterval(6000);
-					
+
+					// session.setMaxInactiveInterval(6000);
+
 				}
 			}
 			response.sendRedirect("index");
-		}
-		else {
+		} else {
 			response.sendRedirect("index");
 		}
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		Size_service ss = new Size_service();
-		List<Size> list =ss.Size();
-		String size =request.getParameter("size");
-		String tmp =null;
-		
+		List<Size> list = ss.Size();
+		String size = request.getParameter("size");
+		String tmp = null;
+
 		int id = 0;
-		for(Size s:list) {
-			tmp =s.getName();
-			id =s.getId();
-			if(tmp.equals(size)) {
+		for (Size s : list) {
+			tmp = s.getName();
+			id = s.getId();
+			if (tmp.equals(size)) {
 				id_tmp = id;
 			}
-			
+
 		}
-		if(request.getParameter("quantity")!= null) {
-			quantity =Integer.parseInt(request.getParameter("quantity"));
+		if (request.getParameter("quantity") != null) {
+			quantity = Integer.parseInt(request.getParameter("quantity"));
 		}
 		doGet(request, response);
 	}
