@@ -42,7 +42,7 @@
                                                 </th>
                                              
                                                 <th scope="col" class="border-0 bg-light">
-                                                    <div class="py-2 text-uppercase">Xóa</div>
+                                                    <div class="py-2 text-uppercase">Thao tác</div>
                                                 </th>
                                             </tr>
                                         </thead>
