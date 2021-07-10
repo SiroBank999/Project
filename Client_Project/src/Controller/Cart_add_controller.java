@@ -52,7 +52,6 @@ public class Cart_add_controller extends HttpServlet {
 					}else {
 						item.setPrice(pd.getPrice());
 					}
-					
 					listItems.add(item);
 					order.setItems(listItems);
 					session.setAttribute("order", order);

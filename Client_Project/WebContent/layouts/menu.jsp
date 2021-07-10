@@ -135,15 +135,15 @@
                 <tbody>
 				<c:forEach items="${sessionScope.order.items}" var="item">
                   <tr class="item_1">
-                    <td class="img"><a href="" title="Nike Air Max 90 Essential &quot;Grape&quot;"><img
+                    <td class="img"><a href="detail_product?id_product=${item.product.id}&id_category=${item.product.id_category}" title="${item.product.productname} &quot;Grape&quot;"><img
                           src="uploads/product/${item.product.image}"></a></td>
                     <td>
-                      <a class="pro-title-view" style="color: #272727" href=""
+                      <a class="pro-title-view" style="color: #272727" href="detail_product?id_product=${item.product.id}&id_category=${item.product.id_category}"
                         title="Nike Air Max 90 Essential &quot;Grape&quot;">${item.product.productname}</a>
                       <span class="variant">SIZE/${item.size.name}</span>
                       <span class="pro-quantity-view">${item.quantity}</span>
-                      <span class="pro-price-view"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${item.product.price}"></fmt:formatNumber>đ</span>
-                      <span class="remove_link remove-cart"><a href=""><i style="color: #272727;"
+                      <span class="pro-price-view"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${item.price}"></fmt:formatNumber>đ</span>
+                      <span class="remove_link remove-cart"><a href="cart_remove?id_item=${item.id}"><i style="color: #272727;"
                             class="fas fa-times"></i></a></span>
                     </td>
                   </tr>
