@@ -28,7 +28,7 @@ public class Cart_remove_controller extends HttpServlet {
 			listItems.remove(id);
 		}
 		session.setAttribute("order", order);
-		response.sendRedirect("index");
+		response.sendRedirect("cart");
 	}
 
 }

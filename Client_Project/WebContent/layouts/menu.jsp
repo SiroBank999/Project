@@ -158,7 +158,7 @@
                     <td class="text-right" id="total-view-cart"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()}"></fmt:formatNumber>đ</td>
                   </tr>
                   <tr>
-                    <td class="distance-td"><a href="" class="linktocart button dark">Xem giỏ hàng</a></td>
+                    <td class="distance-td"><a href="cart" class="linktocart button dark">Xem giỏ hàng</a></td>
                     <td><a href="" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>

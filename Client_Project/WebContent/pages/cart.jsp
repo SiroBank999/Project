@@ -51,7 +51,7 @@
                                                 <tr>
                                                     <th scope="row">
                                                         <div class="p-2">
-                                                            <img src="Uploads/${item.product.image}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                                            <img src="uploads/product/${item.product.image}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                             <div class="ml-3 d-inline-block align-middle">
                                                                 <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block"></a>${item.product.productname}</h5><span class="text-muted font-weight-normal font-italic"></span>
                                                             </div>
@@ -60,12 +60,12 @@
                                                     <td class="align-middle"><strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${item.product.price}" /> đ</strong></td>
                                                     
                                                     <td class="align-middle">
-                                                        <a href="cart_sub?idP=${item.product.id}"><button class="btn">-</button></a> <strong>${item.quantity}</strong>
-                                                        <a href="cart_add?idP=${item.product.id}"><button class="btn">+</button></a>
+                                                        <a href="cart_sub?id_product=${item.product.id}"><button class="btn">-</button></a> <strong>${item.quantity}</strong>
+                                                        <a href="cart_add?id_product=${item.product.id}"><button class="btn">+</button></a>
                                                     </td>
                                                   
-                                                            <td class="align-middle"><a href="cart_remove?id=${item.id}" class="text-dark">
-                                                        <button type="button" class="btn btn-danger"><i class="ti-trash"></i></button>
+                                                            <td class="align-middle"><a href="cart_remove?id_item=${item.id}" class="text-dark">
+                                                        <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                                         </a>
                                                     </td>
                                                 </tr> 

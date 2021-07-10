@@ -81,9 +81,9 @@ public class Cart_add_controller extends HttpServlet {
 
 				}
 			}
-			response.sendRedirect("index");
+			response.sendRedirect("cart");
 		} else {
-			response.sendRedirect("index");
+			response.sendRedirect("cart");
 		}
 	}
 
