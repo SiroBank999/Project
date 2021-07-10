@@ -23,7 +23,7 @@
 					href="Product_sale_controller">Sản phẩm khuyến mãi</a>
 			</h2>
 			<div class="view-all" style="text-align: center; padding-top: -10px;">
-				<a style="color: black; text-decoration: none" href="">Xem thêm</a>
+				<a style="color: black; text-decoration: none" href="Product_sale_controller">Xem thêm</a>
 			</div>
 		</div>
 	</div>
@@ -107,7 +107,7 @@
 							href="Product_new_controller">Sản phẩm mới</a>
 					</h2>
 					<div class="view-all" style="text-align: center;">
-						<a style="color: black; text-decoration: none" href="">Xem
+						<a style="color: black; text-decoration: none" href="Product_new_controller">Xem
 							thêm</a>
 					</div>
 				</div>
@@ -121,7 +121,7 @@
 					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img">
-								<a href="#"> <img src="uploads/product/${list.image}"
+								<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}"> <img src="uploads/product/${list.image}"
 									alt="Adidas EQT Cushion ADV" width=100%/>
 								</a>
 							</div>
@@ -129,7 +129,7 @@
 						<div class="product-detail clearfix">
 							<div class="pro-text">
 								<a style="color: black; font-size: 14px; text-decoration: none;"
-									href="#" title="Adidas EQT Cushion ADV">
+									href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="Adidas EQT Cushion ADV">
 									${list.productname} </a>
 							</div>
 							<div class="gia">

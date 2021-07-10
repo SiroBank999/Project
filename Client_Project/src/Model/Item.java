@@ -1,12 +1,15 @@
 package Model;
+
 public class Item {
 	private int id;
 	private Product product;
 	private int quantity;
 	private double price;
 	private Size size;
+
 	public Item() {
 	}
+
 	public Item(int id, Product product, int quantity, double price, Size size) {
 		this.id = id;
 		this.product = product;
@@ -14,8 +17,6 @@ public class Item {
 		this.price = price;
 		this.size = size;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -48,23 +49,19 @@ public class Item {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
 	public Size getSize() {
 		return size;
 	}
+
 	public void setSize(Size size) {
 		this.size = size;
 	}
+
 	@Override
 	public String toString() {
 		return "Item [id=" + id + ", product=" + product + ", quantity=" + quantity + ", price=" + price + ", size="
 				+ size + "]";
 	}
-	
-	
-	
-	
-	
 
 }
-

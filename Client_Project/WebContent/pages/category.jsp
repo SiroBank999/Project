@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -12,12 +12,10 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5">
 				<ol class="breadcrumb breadcrumb-arrows">
-					<li><a href="index.html"> <span>Trang chủ</span>
-					</a></li>
-					<li><a href="Product.html"> <span>Danh mục</span>
-					</a></li>
-					<li><span><span style="color: #777777">Tất cả
-								sản phẩm</span></span></li>
+					<li><a href="index"> <span>Trang chủ</span>
+							<li><a href="#"> <span>Danh mục</span>
+							</a></li>
+							<li><span style="color: #777777">${namecate.categoryname}</span></li>
 				</ol>
 			</div>
 		</div>
@@ -46,8 +44,10 @@
 										style="border: 0; padding: 0">
 										<c:forEach items="${category}" var="category">
 											<ul class="menuList-links">
-												<li class=""><a href="home.html" title="Trang chủ"><span>${category.categoryname}</span></a>
-													<img class="img-cate" src="Uploads/${category.img}"></li>
+												<li class=""><a href="category?id=${category.id}"
+													title="Trang chủ"><span>${category.categoryname}</span></a>
+													<img class="img-cate"
+													src="uploads/category/${category.img}"></li>
 												<br>
 											</ul>
 										</c:forEach>
@@ -86,39 +86,7 @@
 											</ul>
 										</div>
 									</div>
-									<div class="group-filter" aria-expanded="true">
-										<div class="layered_subtitle dropdown-filter">
-											<span>Kích thước</span><span class="icon-control"><i
-												class="fa fa-minus"></i></span>
-										</div>
-										<div class="layered-content filter-size s-filter">
-
-											<ul class="check-box-list clearfix">
-
-												<li><input type="checkbox" id="data-size-p1"> <label
-													for="data-size-p1">35</label></li>
-
-												<li><input type="checkbox" id="data-size-p2"> <label
-													for="data-size-p2">36</label></li>
-
-												<li><input type="checkbox" id="data-size-p3"> <label
-													for="data-size-p3">37</label></li>
-
-												<li><input type="checkbox" id="data-size-p4"> <label
-													for="data-size-p4">38</label></li>
-
-												<li><input type="checkbox" id="data-size-p5"> <label
-													for="data-size-p5">39</label></li>
-
-												<li><input type="checkbox" id="data-size-p6"> <label
-													for="data-size-p6">40</label></li>
-
-											</ul>
-										</div>
-									</div>
-
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -150,53 +118,64 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-3 col-sm-6 col-xs-6 col-6">
-					<c:forEach items="${hot}" var="hot">
+				<c:forEach items="${cate}" var="hot">
+					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img fade-box">
 								<a
-									href="detail_product?name=${hot.productName}&category=${hot.categoryname}"
-									title="${hot.productName}" class="img-resize"> <img
-									src="<%=request.getContextPath()%>/Uploads/product/${hot.img}"
-									alt="${hot.productName}" class="lazyloaded">
+									href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
+									title="${hot.productname}" class="img-resize"> <img
+									src="<%=request.getContextPath()%>/uploads/product/${hot.image}"
+									alt="${hot.productname}" class="lazyloaded">
 								</a>
 							</div>
 							<div class="product-detail clearfix">
 								<div class="pro-text">
 									<a
 										style="color: black; font-size: 14px; text-decoration: none;"
-										href="detail_product?name=${hot.productName}&category=${hot.categoryname}"
+										href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
 										title="Adidas EQT Cushion ADV" inspiration pack>
-										${hot.productName} </a>
+										${hot.productname} </a>
 								</div>
-								<div class="gia">
-									<c:set var="saleprice" value="${list.sale}" />
+								<div class="pro-price">
+									<c:set var="saleprice" value="${hot.sale}" />
 									<c:choose>
-										<c:when test="${saleprice >0 }">
+										<c:when test="${saleprice > 0 }">
 											<p class="giaSP">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.sale}" />
+													value="${hot.sale}" />
 											</p>
 											<p class="giaSale">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.price}" />
+													value="${hot.price}" />
 											</p>
 										</c:when>
 										<c:otherwise>
 											<p class="giaSP" style="margin-top: 20px;">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
-													value="${list.price}" />
+													value="${hot.price}" />
 											</p>
 										</c:otherwise>
 									</c:choose>
 								</div>
 							</div>
 						</div>
-					</c:forEach>
-				</div>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>
+</div>
+<div class="pagination">
+	<c:if test="${tag > 1}">
+		<a href="product?page=${tag-1}">&laquo;</a>
+	</c:if>
+	<c:forEach begin="1" end="${endpage}" var="i">
+		<a class="${tag==i?" active":""}" href="product?page=${i}">${i}</a>
+	</c:forEach>
+	<c:if test="${tag < endpage}">
+		<a href="product?page=${tag+1}">&raquo;</a>
+	</c:if>
 </div>
 <!--gallery-->
 <section class="section section-gallery">

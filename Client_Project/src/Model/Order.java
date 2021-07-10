@@ -1,4 +1,5 @@
 package Model;
+
 import java.util.List;
 
 public class Order {
@@ -11,11 +12,10 @@ public class Order {
 	private List<Item> items;
 	private String status;
 	private double into;
-	
 
 	public Order() {
 	}
-	
+
 	public Order(int id, User user, List<Item> items, String status) {
 		this.id = id;
 		this.user = user;
@@ -23,10 +23,8 @@ public class Order {
 		this.status = status;
 
 	}
-	
 
-
-	public Order(int id, String fullname, String phone, String email, String address, String status,double into) {
+	public Order(int id, String fullname, String phone, String email, String address, String status, double into) {
 		super();
 		this.id = id;
 		this.fullname = fullname;
@@ -40,27 +38,35 @@ public class Order {
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public User getUser() {
 		return user;
 	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
+
 	public List<Item> getItems() {
 		return items;
 	}
+
 	public void setItems(List<Item> items) {
 		this.items = items;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public String getFullname() {
 		return fullname;
 	}
@@ -92,8 +98,7 @@ public class Order {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
+
 	public double getInto() {
 		return into;
 	}
@@ -103,11 +108,11 @@ public class Order {
 	}
 
 	public double getTotal() {
-		double total =0;
-		for(Item item: items ) {
-			total +=item.getPrice()*item.getQuantity();
+		double total = 0;
+		for (Item item : items) {
+			total += item.getPrice() * item.getQuantity();
 		}
-		
+
 		return total;
 	}
 
@@ -115,7 +120,5 @@ public class Order {
 	public String toString() {
 		return "Order [id=" + id + ", user=" + user + ", items=" + items + ", status=" + status + "]";
 	}
-
-	
 
 }
