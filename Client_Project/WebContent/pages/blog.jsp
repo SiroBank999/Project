@@ -50,24 +50,6 @@
 						</c:forEach>
 					</div>
 				</div>
-				<div class="menu-blog">
-					<div class="group-menu">
-						<div class="sidebarblog-title title_block">
-							<h2>
-								Danh mục blog<span class="fa fa-angle-down"></span>
-							</h2>
-						</div>
-						<div class="layered-category">
-							<c:forEach items="${category}" var="category">
-								<ul class="menuList-links">
-									<li class=""><a href="category?id=${category.id}" title="Trang chủ"><span>${category.categoryname}</span></a>
-										<img class="img-cate" src="uploads/category/${category.img}"></li>
-									<br>
-								</ul>
-							</c:forEach>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class="col-md-9 col-sm-12 col-xs-12">
@@ -76,10 +58,6 @@
 			</div>
 			<div class="blog-content">
 				<div class="list-article-content blog-posts">
-					<!-- Begin: Nội dung blog -->
-
-
-
 					<article class="blog-loop">
 						<div class="blog-post row">
 							<c:forEach items="${listNews}" var="news">

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import Model.Category;
+import Model.Product;
 
 public class Category_service {
 	Connection conn = null;
@@ -27,6 +28,25 @@ public class Category_service {
 		}
 		return list;
 	}
+	
+	public Category getnamebycategory(int id) {
+		Category pd = new Category();
+		String query = "select * from category where id =?";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				pd.setId(rs.getInt("id"));
+				pd.setCategoryname(rs.getString("categoryname"));
+				pd.setImg(rs.getString("image"));
+			}
+		} catch (Exception e) {
+		}
+		return pd;
+	}
+	
 	
 	
 

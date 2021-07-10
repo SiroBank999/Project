@@ -31,8 +31,9 @@
       <div class="row">
         <div class="col-md-6 col-sm-12 col-xs-12 box-heading-contact">
           <div class="box-map">
+        
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1025.6909825921396!2d106.6854739108858!3d10.782465761154615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f2e5ba4431f%3A0xa1e4cc4c30b79491!2zSOG6u20gMjMyIFbDtSBUaOG7iyBTw6F1LCBwaMaw4budbmcgNywgUXXhuq1uIDMsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1566967773757!5m2!1svi!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3709.742555546721!2d105.8224113144876!3d21.595969985693834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135271c187393d5%3A0x372fcecc95423953!2zU2hvcCBOZ3V54buFbiBIdeG7hw!5e0!3m2!1svi!2s!4v1625835330575!5m2!1svi!2s"
               width="100%" height="700" frameborder="0" style="border:0" allowfullscreen=""></iframe>
           </div>
         </div>
@@ -63,7 +64,7 @@
           <div class="box-send-contact">
             <h2>Gửi thắc mắc cho chúng tôi</h2>
             <p style="font-size:17px; font-weight: bold; color: #d00000;"> ${fail} </p>
-            <p style="font-size:17px; font-weight: bold; color: #219ebc;"> ${success} </p>
+            <p style="font-size:17px; font-weight: bold; color: #0077b6;"> ${success} </p>
             <div id="col-left contactFormWrapper menuList-links">
               <form accept-charset="UTF-8" action="contact" class="contact-form" method="post">
                 <div class="contact-form">
