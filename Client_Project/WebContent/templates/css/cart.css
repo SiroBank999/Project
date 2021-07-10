@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+COLOR PALETTE
+
+#FF6347 - (Tomato)
+#989898 - (Spanish Grey) - Text Color
+#F5F9F8 - (White Smoke) - Background Color
+
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Home
+	3.1 Currency
+	3.2 Language
+	3.3 Account
+	3.4 Main Navigation
+	3.5 Hamburger Menu
+	3.6 Logo
+4. Breadcrumbs
+5. Google Map
+6. Contact Us
+7. Follow Us
+8. Contact Form
+9. Newsletter
+10. Footer
+
+
+
+******************************/
+
+/***********
+1. Fonts
+***********/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900');
+
+/*********************************
+2. Body and some general stuff
+*********************************/
+
+ 
+@media screen and (max-width: 600px) { 
+table#cart tbody td .form-control { 
+width:20%; 
+display: inline !important;
+} 
+ 
+.actions .btn { 
+width:36%; 
+margin:1.5em 0;
+} 
+ 
+.actions .btn-info { 
+float:left;
+} 
+ 
+.actions .btn-danger { 
+float:right;
+} 
+ 
+table#cart thead {
+display: none;
+} 
+ 
+table#cart tbody td {
+display: block;
+padding: .6rem;
+min-width:320px;
+} 
+ 
+table#cart tbody tr td:first-child {
+background: #333;
+color: #fff;
+} 
+ 
+table#cart tbody td:before { 
+content: attr(data-th);
+font-weight: bold; 
+display: inline-block;
+width: 8rem;
+} 
+ 
+table#cart tfoot td {
+display:block;
+} 
+table#cart tfoot td .btn {
+display:block;
+}
+}
