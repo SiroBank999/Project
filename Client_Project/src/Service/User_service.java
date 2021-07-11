@@ -34,21 +34,37 @@ public class User_service {
 		return null;
 
 	}
-	public void insertAcc(String fullname,String username ,String password,String phone , String email,String status) {
-		String query = "INSERT INTO [user](fullname,username,password,phone,email,status) values(?,?,?,?,?,?)";
+	public User CheckUsername(String username) {
+		String sql="select * from [user] where username=?";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, username);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				return new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4)
+						, rs.getString(5), rs.getString(6), rs.getString(7)
+						);
+
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public  void insertAcc(User register) {
+		String query = "INSERT INTO [user](fullname,username,password,phone,email) values(?,?,?,?,?)";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
-			ps.setString(1, fullname);
-			ps.setString(2, username);
-			ps.setString(3, password);
-			ps.setString(4, phone);
-			ps.setString(5, email);
-			ps.setString(6, status);
+			ps.setString(1, register.getFullname());
+			ps.setString(2, register.getUsername());
+			ps.setString(3, register.getPassword());
+			ps.setString(4, register.getPhone());
+			ps.setString(5, register.getEmail());
 			ps.executeUpdate();
-		} catch (Exception e) {
-			
-			
+		} catch (Exception e) {			
+			e.printStackTrace();
 		}
 		
 	}

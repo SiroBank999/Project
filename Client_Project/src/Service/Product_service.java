@@ -44,7 +44,7 @@ public class Product_service {
 
 	public List<Product> getProductnew() {
 		List<Product> list = new ArrayList<>();
-		String query = "select top 4 * from product";
+		String query = "select top 4 * from product order by datesub desc";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);

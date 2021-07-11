@@ -10,29 +10,29 @@
                 </div>
             </div>
             <div class="signin-right ">
-                <form action="signup" method="post">
+                <form action="${pageContext.request.contextPath}/signup" method="post">
+                <p style="color: red;">${errou}</p>
                     <div class="firstname form-control1 ">
-                        <input type="text" name="fullname"  id="firstname" placeholder="Họ và tên" required>
+                        <input type="text" name="fullname" value="${signup.fullname}"  id="firstname" placeholder="Họ và tên" required>
                     </div>
                     <div class="lastname form-control1">
-                        <input type="text" name="username" id="lastname" placeholder="Tên Tài Khoản" required>
+                        <input type="text" name="username" value="${signup.username}" id="lastname" placeholder="Tên Tài Khoản" required>
                     </div>
                     <div class="birthday form-control1">
-                        <input type="text" name="phone" id="Phone" placeholder="sdt" required >
+                        <input type="text" name="phone" value="${signup.phone }"  id="Phone" placeholder="Ví dụ: 0123456789" required >
                     </div>
                     <div class="email form-control1">
-                        <input type="text" name="email" id="email" placeholder="Email" required>
+                        <input type="text" name="email" value="${signup.email}" id="email" placeholder="Ví dụ: a@gmail.com" required>
                     </div>
                     <div class="password form-control1">
-                        <input type="password" name="password"  id="password" placeholder="Mật Khẩu" required>
+                        <input type="password" name="password" value="${signup.password }" size="80"  id="password" placeholder="Mật Khẩu" required>
                     </div>
-                    <div class="recaptcha form-control1">This site is protected by reCAPTCHA and the Google <a href="">Privacy Policy</a> and <a href="">Terms of Service</a> apply.</div>
                     <div class="submit">
                     <input class="btn" type="submit" id="dangnhap" value="Đăng Kí">
                        
                     </div>
                     <div class="backto">
-                      <a href=""><i class="fa fa-long-arrow-alt-left"></i> Quay lại trang chủ</a>
+                      <a href="index"><i class="fa fa-long-arrow-alt-left"></i> Quay lại trang chủ</a>
                     </div>
                 </form>
             </div>
