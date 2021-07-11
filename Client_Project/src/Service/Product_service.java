@@ -318,7 +318,579 @@ public class Product_service {
 		}
 		return list;
 	}
+	public List<Product> product_sale_desc() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null order by sale desc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_asc() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null order by sale asc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_new() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null order by datesub desc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_old() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null order by datesub asc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_nameAsc() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null order by productname asc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_nameDesc() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select top 20 * from product where status='NEW' and sale is not null order by productname desc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_new_desc() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select top 20 * from product where status='NEW'  order by sale desc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_new_asc() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select top 20 * from product where status='NEW' order by sale,price asc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
 	
+	public List<Product> product_new_old() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select top 20 * from product where status='NEW' order by datesub asc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_new_nameAsc() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select top 20 * from product where status='NEW' order by productname asc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_new_nameDesc() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select top 20 * from product where status='NEW' order by productname desc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_filter() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null and sale BETWEEN 0 AND 199000";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_filter1() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null and sale BETWEEN 200000 AND 399000";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_filter2() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null and sale BETWEEN 400000 AND 800000";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_sale_filter3() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and sale is not null and sale>800000";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_new_filter() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and price BETWEEN 0 and 199000 or sale BETWEEN 0 AND 199000";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_new_filter1() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and (price is not null and sale BETWEEN 200000 AND 399000) or (price is null and sale BETWEEN 200000 AND 399000)";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_new_filter2() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and (price is not null and sale BETWEEN 400000 AND 800000) or (price is null and sale BETWEEN 400000 AND 800000)";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List<Product> product_new_filter3() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "select * from product where status='NEW' and price>800000 or sale>800000";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+
+
 
 	public static void main(String[] agrs) {
 		Product_service p = new Product_service();

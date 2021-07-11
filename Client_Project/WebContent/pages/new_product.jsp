@@ -69,22 +69,21 @@
 												class="fa fa-minus"></i></span>
 										</div>
 										<div class="layered-content bl-filter filter-price">
-											<ul class="check-box-list">
-												<li><input type="checkbox" id="p1"> <label
-													for="p1"> <span>Dưới</span> 500,000₫
+										<form method="get" action="" name="product">
+											<ul class="check-box-list" onchange="document.product.submit ()">
+												<li><input type="radio" id="p1" name="order-by" value="1"> <label
+													for="p1"> <span>Dưới</span> 200,000₫
 												</label></li>
-												<li><input type="checkbox" id="p2"> <label
-													for="p2"> 500,000₫ - 1,000,000₫ </label></li>
-												<li><input type="checkbox" id="p3"> <label
-													for="p3"> 1,000,000₫ - 1,500,000₫ </label></li>
-												<li><input type="checkbox" id="p4"> <label
-													for="p4"> 2,000,000₫ - 5,000,000₫ </label></li>
-												<li><input type="checkbox" id="p5"> <label
-													for="p5"> <span>Trên</span> 5,000,000₫
-												</label></li>
+												<li><input type="radio" id="p2" name="order-by" value="2"> <label
+													for="p2"> 200,000₫ - 400,000₫ </label></li>
+												<li><input type="radio" id="p3" name="order-by" value="3"> <label
+													for="p3"> 400,000₫ - 800,000₫ </label></li>
+												<li><input type="radio" id="p4" name="order-by" value="4"> <label
+													for="p4"> Trên 800,000đ </label></li>
 											</ul>
+											</form>
 										</div>
-									</div>
+									</div>							
 								</div>
 							</div>
 						</div>
@@ -101,17 +100,19 @@
 				<div class="col-md-4 d-sm-none d-md-block d-none d-sm-block"
 					style="float: left">
 					<div class="option browse-tags">
-						<span class="custom-dropdown custom-dropdown--grey"> <select
+						<span class="custom-dropdown custom-dropdown--grey">
+						<form method="get" action="" name="productForm">
+						 <select name="order-by" onchange="document.productForm.submit ()"
 							class="sort-by custom-dropdown__select">
 								<option value="price-ascending">Giá: Tăng dần</option>
 								<option value="price-descending">Giá: Giảm dần</option>
 								<option value="title-ascending">Tên: A-Z</option>
 								<option value="title-descending">Tên: Z-A</option>
 								<option value="created-ascending">Cũ nhất</option>
-								<option value="created-descending">Mới nhất</option>
-								<option value="best-selling">Bán chạy nhất</option>
-								<option value="quantity-descending">Tồn kho: Giảm dần</option>
+								<option value="created-descending" selected>Mới nhất</option>
+								<option value="best-selling" disabled="disabled">Bán chạy nhất</option>
 						</select>
+						</form>
 						</span>
 					</div>
 				</div>
