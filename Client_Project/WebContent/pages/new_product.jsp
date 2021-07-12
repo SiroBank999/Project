@@ -2,9 +2,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<div>
-	<div>
-		<img src="templates/images/collection_banner.jpg" alt="Products">
+<div class="owl-carousel owl-theme owl-carousel-setting">
+	<div class="item">
+		<img src="templates/images/banner123.jpg" class="d-block w-100"
+			alt="...">
+	</div>
+	<div class="item">
+		<img src="templates/images/banner1232.jpg" class="d-block w-100"
+			alt="...">
 	</div>
 </div>
 <div class="breadcrumb-shop">
@@ -45,7 +50,7 @@
 										style="border: 0; padding: 0">
 										<c:forEach items="${category}" var="category">
 											<ul class="menuList-links">
-												<li class=""><a href="category?id=${category.id}" title="Trang chủ"><span>${category.categoryname}</span></a>
+												<li class=""><a href="category?id=${category.id}" title="${category.categoryname}"><span>${category.categoryname}</span></a>
 													<img class="img-cate" src="uploads/category/${category.img}"></li>
 												<br>
 											</ul>
@@ -168,53 +173,99 @@
 </div>
 <!--gallery-->
 <section class="section section-gallery">
-	<div class="">
-		<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
-			<h2 style="text-align: center; padding-top: 10px">
-				<a style="font-size: 28px; color: black; text-decoration: none"
-					href="">Khách hàng và Runner Inn</a>
-			</h2>
+		<div class="">
+			<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
+				<h2 style="text-align: center; padding-top: 10px">
+					<a style="font-size: 28px; color: black; text-decoration: none"
+						href="">F5's Styles</a>
+				</h2>
+			</div>
+			<div class="list-gallery clearfix">
+				<ul class="shoes-gp">
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_1.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_2.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_3.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_4.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_5.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_6.jpg" alt="">
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div class="list-gallery clearfix">
-			<ul class="shoes-gp">
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_1.jpg" alt="">
+	</section>
+	<div class="benefit">
+		<div class="container">
+			<div class="row benefit_row">
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>MIỄN PHÍ GIAO HÀNG</h6>
+							<p>với hóa đơn trên 300k</p>
+						</div>
 					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_2.jpg" alt="">
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fas fa-money-bill" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>GIÁ TIỀN HỢP LÝ</h6>
+							<p>đồ đẹp - sang chảnh</p>
+						</div>
 					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_3.jpg" alt="">
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
+							<p>đối với những sản phẩm bị lỗi</p>
+						</div>
 					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_4.jpg" alt="">
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="far fa-clock" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>MỞ CỬA TỪ</h6>
+							<p>8h00 - 21h00</p>
+						</div>
 					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_5.jpg" alt="">
-					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_6.jpg" alt="">
-					</div>
-				</li>
-			</ul>
+				</div>
+			</div>
 		</div>
 	</div>
-</section>
+	<br/>
+	<br/>
+
+
 

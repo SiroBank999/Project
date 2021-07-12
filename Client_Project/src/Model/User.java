@@ -66,10 +66,21 @@ public class User {
 		this.email = email;
 		this.status = status;
 	}
+	
+	public User(String fullname, String username, String password, String phone, String email, String status) {
+		super();
+		this.fullname = fullname;
+		this.username = username;
+		this.password = password;
+		this.phone = phone;
+		this.email = email;
+		this.status = status;
+	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", fullname=" + fullname + ", username=" + username + ", password=" + password
 				+ ", phone=" + phone + ", email=" + email + ", status=" + status + "]";
 	}
+	
 	
 }

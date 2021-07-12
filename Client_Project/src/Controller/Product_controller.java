@@ -50,7 +50,28 @@ public class Product_controller extends HttpServlet {
 		Product_service product_service = new Product_service();
 		Category_service cs = new Category_service();
 		List<Category> category = cs.getListCategory();
-		List<Product> sale = product_service.product(page);
+		String luachon=(String) request.getParameter("order-by");
+		List<Product> sale=null;
+		if(luachon==null) {
+			sale = product_service.product(page);
+		}
+			else if(luachon.equals("title-ascending")) {
+				sale=product_service.product_new_nameAsc();
+			}else if(luachon.equals("title-descending")) {
+				sale=product_service.product_new_nameDesc();
+			}else if (luachon.equals("1")) {
+				sale = product_service.product_new_filter();
+			} else if (luachon.equals("2")) {
+				sale = product_service.product_new_filter1();
+			} else if (luachon.equals("3")) {
+				sale = product_service.product_new_filter2();
+			} else if (luachon.equals("4")) {
+				sale = product_service.product_new_filter3();
+			}else if(luachon.equals("created-ascending")) {
+				sale=product_service.product_new_old();
+			}else if (luachon.equals("created-descending")) {
+				sale = product_service.product_new();
+			}
 		
 		request.setAttribute("endpage", endpage); // pagination
 		request.setAttribute("tag", page); // active

@@ -2,12 +2,15 @@
 package Controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Model.User;
 import Service.User_service;
 
 /**
@@ -44,16 +47,41 @@ public class Signup_controller extends HttpServlet {
 		String password = request.getParameter("password");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
-		if (fullname.isEmpty() || username.isEmpty() || password.isEmpty()|| phone.isEmpty()|| email.isEmpty() ) {
-			request.setAttribute("alert",1);
-			request.getRequestDispatcher("pages/signup.jsp").forward(request, response);
-			
-		}else {
-			User_service md = new User_service();
-			md.insertAcc(fullname, username, password, phone, email, "0");
-			response.sendRedirect("signin");
+
+		User register = new User(fullname, username, password, phone, email, "ENABLE");
+		User user = null;
+		String errou = null;
+		User_service user_service = new User_service();
+		try {
+			user = user_service.CheckUsername(username);
+		} catch (Exception e) {
+
 		}
-		
+		if (user != null) {
+			errou = "Tên người dùng đã tồn tại!";
+		}
+		String regex_email = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+				+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+		if (!email.matches(regex_email)) {
+			errou = "Email không hợp lệ!";
+		}
+		String regexPhone = "0\\d{9}";
+		if (!phone.matches(regexPhone)) {
+			errou = "Vui lòng nhập lại số điện thoại hợp lệ";
+		}
+		if (errou == null) {
+			user_service.insertAcc(register);
+		}
+		request.setAttribute("errou", errou);
+		request.setAttribute("signup", register);
+
+		if (errou != null) {
+			request.setAttribute("page", "signup");
+			request.getRequestDispatcher("decorators/web.jsp").forward(request, response);
+		} else {
+			response.sendRedirect(request.getContextPath() + "/signin");
+		}	
 
 	}
 	}

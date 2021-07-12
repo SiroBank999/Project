@@ -12,9 +12,9 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5">
 						<ol class="breadcrumb breadcrumb-arrows">
-							<li><a href="home.html"> <span">Trang chủ</span>
+							<li><a href="index"> <span">Trang chủ</span>
 							</a></li>
-							<li><a href=""> <span>Sản phẩm</span>
+							<li><a href="product"> <span>Sản phẩm</span>
 							</a></li>
 							<li class="active"><span> <span itemprop="name">${product.productname}</span>
 							</span>
@@ -208,52 +208,96 @@
 </main>
 <!--gallery-->
 <section class="section section-gallery">
-	<div class="">
-		<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
-			<h2 style="text-align: center; padding-top: 10px">
-				<a style="font-size: 28px; color: black; text-decoration: none"
-					href="">Khách hàng và Runner Inn</a>
-			</h2>
+		<div class="">
+			<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
+				<h2 style="text-align: center; padding-top: 10px">
+					<a style="font-size: 28px; color: black; text-decoration: none"
+						href="">F5's Styles</a>
+				</h2>
+			</div>
+			<div class="list-gallery clearfix">
+				<ul class="shoes-gp">
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_1.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_2.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_3.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_4.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_5.jpg" alt="">
+						</div>
+					</li>
+					<li>
+						<div class="gallery_item">
+							<img class="img-resize"
+								src="templates/images/shoes/gallery_item_6.jpg" alt="">
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div class="list-gallery clearfix">
-			<ul class="shoes-gp">
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_1.jpg" alt="">
+	</section>
+	    <div class="benefit">
+		<div class="container">
+			<div class="row benefit_row">
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>MIỄN PHÍ GIAO HÀNG</h6>
+							<p>với hóa đơn trên 300k</p>
+						</div>
 					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_2.jpg" alt="">
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fas fa-money-bill" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>GIÁ TIỀN HỢP LÝ</h6>
+							<p>đồ đẹp - sang chảnh</p>
+						</div>
 					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_3.jpg" alt="">
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
+							<p>đối với những sản phẩm bị lỗi</p>
+						</div>
 					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_4.jpg" alt="">
+				</div>
+				<div class="col-lg-3 benefit_col">
+					<div class="benefit_item d-flex flex-row align-items-center">
+						<div class="benefit_icon"><i class="far fa-clock" aria-hidden="true"></i></div>
+						<div class="benefit_content">
+							<h6>MỞ CỬA TỪ</h6>
+							<p>8h00 - 21h00</p>
+						</div>
 					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_5.jpg" alt="">
-					</div>
-				</li>
-				<li>
-					<div class="gallery_item">
-						<img class="img-resize"
-							src="templates/images/shoes/gallery_item_6.jpg" alt="">
-					</div>
-				</li>
-			</ul>
+				</div>
+			</div>
 		</div>
 	</div>
-</section>
+	<br/>
+	<br/>

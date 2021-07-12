@@ -15,90 +15,7 @@
 </div>
 
 <!--Content-->
-<div class="content">
-	<div class="container">
-		<div class="hot_sp" style="padding-bottom: 10px;">
-			<h2 style="text-align: center; padding-top: 10px">
-				<a style="font-size: 28px; color: black; text-decoration: none"
-					href="Product_sale_controller">Sản phẩm khuyến mãi</a>
-			</h2>
-			<div class="view-all" style="text-align: center; padding-top: -10px;">
-				<a style="color: black; text-decoration: none" href="">Xem thêm</a>
-			</div>
-		</div>
-	</div>
-	<!--Product-->
-	<div class="container" style="padding-bottom: 50px;">
-		<div class="row">
-
-			<c:forEach items="${productsale}" var="list">
-				<div class="col-md-3 col-sm-6 col-xs-6 col-6">
-					<div class="product-block">
-						<div class="product-img">
-							<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}"> <img src="uploads/product/${list.image}"
-								alt="Adidas EQT Cushion ADV" width=100%>
-							</a>
-						</div>
-					</div>
-					<div class="product-detail clearfix">
-						<div class="pro-text">
-							<a style="color: black; font-size: 14px; text-decoration: none;"
-								href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="Adidas EQT Cushion ADV" inspiration pack>
-								${list.productname} </a>
-						</div>
-						<div class="gia">
-							<c:set var="saleprice" value="${list.sale}" />
-								<c:choose>
-									<c:when test="${saleprice>0 }">
-										<p class="giaSP">
-											<fmt:formatNumber type="number" maxFractionDigits="3"
-												value="${list.sale}" />
-											<sup>đ</sup>
-										</p>
-										<p class="giaSale">
-											<fmt:formatNumber type="number" maxFractionDigits="3"
-												value="${list.price}" />
-											<sup>đ</sup>
-										</p>
-									</c:when>
-									<c:otherwise>
-										<p class="giaSP" style="margin-top: 20px;">
-											<fmt:formatNumber type="number" maxFractionDigits="3"
-												value="${list.price}" />
-											<sup>đ</sup>
-										</p>
-									</c:otherwise>
-								</c:choose>
-						</div>
-					</div>
-				</div>
-			</c:forEach>
-		</div>
-	</div>
-	<section class="section wrapper-home-banner">
-		<div class="container-fluid" style="padding-bottom: 50px;">
-			<div class="row">
-				<c:forEach items="${cate}" var="cate">
-					<div class="col-xs-12 col-sm-2 home-banner-pd">
-						<div class="block-banner-category">
-							<a href="category?id=${cate.id}" class="link-banner wrap-flex-align flex-column">
-								<div class="fg-image fade-box">
-									<img class="lazyloaded" src="uploads/category/${cate.img}"
-										alt="">
-								</div>
-								<figcaption class="caption_banner site-animation">
-									<p>${cate.categoryname}</p>
-									<h2></h2>
-								</figcaption>
-							</a>
-						</div>
-					</div>
-				</c:forEach>
-
-			</div>
-		</div>
-	</section>
-	<section>
+<section>
 		<div class="content">
 			<div class="container">
 				<div class="hot_sp">
@@ -122,14 +39,14 @@
 						<div class="product-block">
 							<div class="product-img">
 								<a href="#"> <img src="uploads/product/${list.image}"
-									alt="Adidas EQT Cushion ADV" width=100%/>
+									alt="${list.productname}" width=100%/>
 								</a>
 							</div>
 						</div>
 						<div class="product-detail clearfix">
 							<div class="pro-text">
 								<a style="color: black; font-size: 14px; text-decoration: none;"
-									href="#" title="Adidas EQT Cushion ADV">
+									href="#" title="${list.productname}">
 									${list.productname} </a>
 							</div>
 							<div class="gia">
@@ -162,6 +79,92 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="section wrapper-home-banner">
+		<div class="container-fluid" style="padding-bottom: 50px;">
+			<div class="row">
+				<c:forEach items="${cate}" var="cate">
+					<div class="col-xs-12 col-sm-2 home-banner-pd">
+						<div class="block-banner-category">
+							<a href="category?id=${cate.id}" class="link-banner wrap-flex-align flex-column">
+								<div class="fg-image fade-box">
+									<img class="lazyloaded" src="uploads/category/${cate.img}"
+										alt="">
+								</div>
+								<figcaption class="caption_banner site-animation">
+									<p>${cate.categoryname}</p>
+									<h2></h2>
+								</figcaption>
+							</a>
+						</div>
+					</div>
+				</c:forEach>
+
+			</div>
+		</div>
+	</section>
+	
+	
+	<div class="content">
+	<div class="container">
+		<div class="hot_sp" style="padding-bottom: 10px;">
+			<h2 style="text-align: center; padding-top: 10px">
+				<a style="font-size: 28px; color: black; text-decoration: none"
+					href="Product_sale_controller">Sản phẩm khuyến mãi</a>
+			</h2>
+			<div class="view-all" style="text-align: center; padding-top: -10px;">
+				<a style="color: black; text-decoration: none" href="">Xem thêm</a>
+			</div>
+		</div>
+	</div>
+	<!--Product-->
+	<div class="container" style="padding-bottom: 50px;">
+		<div class="row">
+
+			<c:forEach items="${productsale}" var="list">
+				<div class="col-md-3 col-sm-6 col-xs-6 col-6">
+					<div class="product-block">
+						<div class="product-img">
+							<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}"> <img src="uploads/product/${list.image}"
+								alt="${list.productname}" width=100%>
+							</a>
+						</div>
+					</div>
+					<div class="product-detail clearfix">
+						<div class="pro-text">
+							<a style="color: black; font-size: 14px; text-decoration: none;"
+								href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="${list.productname}" inspiration pack>
+								${list.productname} </a>
+						</div>
+						<div class="gia">
+							<c:set var="saleprice" value="${list.sale}" />
+								<c:choose>
+									<c:when test="${saleprice>0 }">
+										<p class="giaSP">
+											<fmt:formatNumber type="number" maxFractionDigits="3"
+												value="${list.sale}" />
+											<sup>đ</sup>
+										</p>
+										<p class="giaSale">
+											<fmt:formatNumber type="number" maxFractionDigits="3"
+												value="${list.price}" />
+											<sup>đ</sup>
+										</p>
+									</c:when>
+									<c:otherwise>
+										<p class="giaSP" style="margin-top: 20px;">
+											<fmt:formatNumber type="number" maxFractionDigits="3"
+												value="${list.price}" />
+											<sup>đ</sup>
+										</p>
+									</c:otherwise>
+								</c:choose>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+	</div>
 	<section class="">
 		<div class="content">
 			<div class="container">
@@ -187,7 +190,7 @@
 									<a href="#" title="Adidas EQT Cushion ADV"> <img
 										class="img-resize" style="padding-bottom: 15px;"
 										src="uploads/news/${listnews.image}"
-										alt="Nike Vapormax Plus trở lại với sắc tím mộng mơ và thiết kế chuyển màu đẹp mắt">
+										alt="">
 									</a>
 								</div>
 								<div class="pro-text">
@@ -260,6 +263,7 @@
 			</div>
 		</div>
 	</section>
+	
 	    <div class="benefit">
 		<div class="container">
 			<div class="row benefit_row">
