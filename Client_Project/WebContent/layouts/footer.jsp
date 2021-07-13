@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <footer class="main-footer">
 	<div class="container">
@@ -63,7 +64,7 @@
 										data-small-header="false" data-adapt-container-width="true"
 										data-hide-cover="false" data-show-facepile="true">
 										<blockquote cite="   " class="fb-xfbml-parse-ignore">
-											<a href="https://phuxuan.edu.vn/">MERGE 5 SHOP</a>
+											<a href="https://phuxuan.edu.vn/">F5'S SHOP</a>
 										</blockquote>
 									</div>
 								</div>
@@ -81,8 +82,8 @@
 				style="text-align: center; padding-bottom: 15px;">
 				<p>
 					Copyright © 2021 <a href="https://runner-inn.myharavan.com">
-						PXU Library</a>. <a target="_blank"
-						href="https://www.facebook.com/henrynguyen202">Powered by PXU
+						F5 Library</a>. <a target="_blank"
+						href="https://www.facebook.com/henrynguyen202">Powered by F5
 						Team</a>
 				</p>
 			</div>
