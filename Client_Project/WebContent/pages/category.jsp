@@ -67,7 +67,7 @@
 		<div class="col-md-9 col-sm-12 col-xs-12">
 			<div class="wrap-collection-title row">
 				<div class="col-md-8 col-sm-12 col-xs-12">
-					<h1 class="title">Tất cả sản phẩm</h1>
+					<h1 class="title">Tất cả sản phẩm: ${namecate.categoryname} </h1>
 					<div class="alert-no-filter"></div>
 				</div>
 			</div>
