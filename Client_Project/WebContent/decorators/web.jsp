@@ -23,7 +23,6 @@
 <link rel="stylesheet" href="templates/plugins/uikit/uikit.min.css" />
 <link rel="stylesheet" type="text/scss" href="templates/css/sign.scss">
 <link rel="stylesheet" type="text/css" href="templates/css/checkout.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <title>Shop thời trang</title>
   
 </head>
