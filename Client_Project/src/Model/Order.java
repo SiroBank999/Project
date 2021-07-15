@@ -12,6 +12,7 @@ public class Order {
 	private List<Item> items;
 	private String status;
 	private double into;
+	
 
 	public Order() {
 	}
@@ -31,6 +32,18 @@ public class Order {
 		this.phone = phone;
 		this.email = email;
 		this.address = address;
+		this.status = status;
+		this.into = into;
+	}
+	
+
+	public Order(String fullname, String phone, String email, String address, User user, String status, double into) {
+		super();
+		this.fullname = fullname;
+		this.phone = phone;
+		this.email = email;
+		this.address = address;
+		this.user = user;
 		this.status = status;
 		this.into = into;
 	}

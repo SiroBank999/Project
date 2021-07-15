@@ -157,7 +157,7 @@
                   </tr>
                   <tr>
                     <td class="distance-td"><a href="cart" class="linktocart button dark">Xem giỏ hàng</a></td>
-                    <td><a href="" class="linktocheckout button dark">Thanh toán</a></td>
+                    <td><a href="checkout" class="linktocheckout button dark">Thanh toán</a></td>
                   </tr>
                 </tbody>
               </table>
