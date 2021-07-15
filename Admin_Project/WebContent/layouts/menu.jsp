@@ -41,6 +41,19 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic-3" aria-expanded="false" aria-controls="ui-basic">
+              <i class="ti-palette menu-icon"></i>
+              <span class="menu-title">Quản lý doanh thu</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic-3">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="doanhthuthang">Theo tháng</a></li>
+                <li class="nav-item"> <a class="nav-link" href="order_manager">Theo sản phẩm</a></li>
+              </ul>
+            </div>
+          </li>
        	  <c:if test="${sessionScope.admin.level == 1}">
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">

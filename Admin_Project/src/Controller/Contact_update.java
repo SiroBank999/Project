@@ -1,28 +1,26 @@
 package Controller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.Contact;
 import Service.Contact_service;
 
 /**
- * Servlet implementation class Contact_manager
+ * Servlet implementation class User_update
  */
-@WebServlet("/contact_manager")
-public class Contact_manager extends HttpServlet {
+@WebServlet("/contact_update")
+public class Contact_update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private int id;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Contact_manager() {
+    public Contact_update() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,19 +29,20 @@ public class Contact_manager extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Contact_service  cm = new Contact_service();
-		List<Contact> list = cm.getContact();
-		request.setAttribute("contact",list);
-		request.setAttribute("page","contact");
-		
+		id =Integer.parseInt(request.getParameter("id"));
+		request.setAttribute("page", "contact_update");
 		request.getRequestDispatcher("decorators/admin.jsp").forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		String status =request.getParameter("status_1");
+		Contact_service um = new Contact_service();
+		um.updatesContact(status, id);
+		response.sendRedirect("contact_manager");
 	}
 
 }
