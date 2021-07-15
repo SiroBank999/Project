@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -21,10 +22,10 @@
 <!-- UIkit CSS -->
 <link rel="stylesheet" href="templates/plugins/uikit/uikit.min.css" />
 <link rel="stylesheet" type="text/scss" href="templates/css/sign.scss">
-
-
+<link rel="stylesheet" type="text/css" href="templates/css/checkout.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <title>Shop thời trang</title>
-
+  
 </head>
 
 <body>
@@ -45,6 +46,7 @@
 	<script src="templates/js/home.js"></script>
 	<script src="templates/js/count.js"></script>
 	<script src="templates/js/script.js"></script>
+	<script src="templates/js/checkout.js"></script>
 	<script src="templates/plugins/uikit/uikit.min.js"></script>
 	<script src="templates/plugins/uikit/uikit-icons.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
