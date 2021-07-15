@@ -6,9 +6,23 @@ public class Contact {
 	private String phone;
 	private String email;
 	private String content;
+	private String status;
+	
 	public Contact() {
 		
 	}
+	
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -47,5 +61,19 @@ public class Contact {
 		this.email = email;
 		this.content = content;
 	}
+
+
+	public Contact(int id, String name, String phone, String email, String content, String status) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+		this.content = content;
+		this.status = status;
+	}
+
+	
+	
 	
 }
