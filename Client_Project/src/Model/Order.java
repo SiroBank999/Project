@@ -3,7 +3,7 @@ package Model;
 import java.util.List;
 
 public class Order {
-	private int id;
+	private String id;
 	private String fullname;
 	private String phone;
 	private String email;
@@ -17,7 +17,7 @@ public class Order {
 	public Order() {
 	}
 
-	public Order(int id, User user, List<Item> items, String status) {
+	public Order(String id, User user, List<Item> items, String status) {
 		this.id = id;
 		this.user = user;
 		this.items = items;
@@ -25,7 +25,7 @@ public class Order {
 
 	}
 
-	public Order(int id, String fullname, String phone, String email, String address, String status, double into) {
+	public Order(String id, String fullname, String phone, String email, String address, String status, double into) {
 		super();
 		this.id = id;
 		this.fullname = fullname;
@@ -48,11 +48,11 @@ public class Order {
 		this.into = into;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
