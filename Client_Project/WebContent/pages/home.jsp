@@ -33,12 +33,11 @@
 		<!--Product-->
 		<div class="container product" style="width: 100%; margin: auto;">
 			<div class="row">
-
 				<c:forEach items="${productnew}" var="list">
-					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
+					<div class="col-md-3 col-sm-6 col-xs-6 col-6" style="margin-top:25px">
 						<div class="product-block">
 							<div class="product-img">
-								<a href="#"> <img src="uploads/product/${list.image}"
+								<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}"> <img src="uploads/product/${list.image}"
 									alt="${list.productname}" width=100%/>
 								</a>
 							</div>
@@ -46,7 +45,7 @@
 						<div class="product-detail clearfix">
 							<div class="pro-text">
 								<a style="color: black; font-size: 14px; text-decoration: none;"
-									href="#" title="${list.productname}">
+									href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="${list.productname}">
 									${list.productname} </a>
 							</div>
 							<div class="gia">
@@ -80,7 +79,7 @@
 		</div>
 	</section>
 
-	<section class="section wrapper-home-banner">
+	<section class="section wrapper-home-banner" style="margin-top:70px">
 		<div class="container-fluid" style="padding-bottom: 50px;">
 			<div class="row">
 				<c:forEach items="${cate}" var="cate">
