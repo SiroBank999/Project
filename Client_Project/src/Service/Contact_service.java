@@ -22,7 +22,7 @@ public class Contact_service {
 			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				list.add(new Contact(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
+				list.add(new Contact(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5), rs.getString(6)));
 			}
 		} catch (Exception e) {
 		}
@@ -31,7 +31,7 @@ public class Contact_service {
 	}
 	
 	public void insertContact(String fullname,String phone, String email,String content) {
-		String query = "insert into contact(fullname,phone,email,content) values(?,?,?,?)";
+		String query = "insert into contact(fullname,phone,email,content,status) values(?,?,?,?,N'Chưa phản hồi')";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);

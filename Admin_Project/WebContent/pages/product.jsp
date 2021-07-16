@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <div class="content-wrapper">
 	<div class="row">
 		<div class="col-lg-12 grid-margin stretch-card">
@@ -114,8 +115,8 @@
 										<td><fmt:formatNumber type="number" maxFractionDigits="3"
 												value="${pr.sale}" /> đ</td>
 										<td>${pr.date}</td>
-										<td><div class="a"
-												style="overflow: hidden; max-width: 27ch;">${pr.describe}</div></td>
+										<c:set var="msg" value="${pr.describe}"/>
+										<td><div class="a">${fn:substring(msg, 0, 38)}...</div></td>
 										<td><div class="b" style="width: 170px;">${pr.fabric}</div></td>
 										<td><div class="b" style="width: 40px;">${pr.status}</div></td>
 										<td>${pr.id_category}</td>
