@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Controller.API_PAYMENT;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 public class Config {
 
     public static String vnp_PayUrl = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    public static String vnp_Returnurl = "http://localhost:8080/Client_Project/vnpay_api/vnpay_return.jsp";
+    public static String vnp_Returnurl = "http://localhost:8080/Client_Project/vnpay_api/vnpay_ipn.jsp";
     public static String vnp_TmnCode = "Y7X8BTNO";
     public static String vnp_HashSecret = "SVEENWWDYMKVBPRRDZQIMXCWNNQZLZNS";
     public static String vnp_apiUrl = "http://sandbox.vnpayment.vn/merchant_webapi/merchant.html";
