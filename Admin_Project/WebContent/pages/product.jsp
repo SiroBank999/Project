@@ -112,7 +112,7 @@
 										<td><div class="a" style="width: 10px;">${pr.id}</div></td>
 										<td>${pr.productname}</td>
 										<td><center>
-												<img src="./uploads/product/${pr.image}"
+												<img src="<%=request.getContextPath()%>/uploads/product/${pr.image}"
 													style="width: 80px; height: 80px" alt="">
 											</center></td>
 										<td><fmt:formatNumber type="number" maxFractionDigits="3"
