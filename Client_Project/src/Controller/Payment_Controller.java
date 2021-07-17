@@ -52,6 +52,10 @@ public class Payment_Controller extends HttpServlet {
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
 		HttpSession  session =request.getSession();
+		session.setAttribute("fullname", fullname);
+		session.setAttribute("phone", phone);
+		session.setAttribute("email", email);
+		session.setAttribute("address", address);
 		User user = (User) session.getAttribute("user");
 		Order order = (Order) session.getAttribute("order");
 		Order_service order_sv = new Order_service();
