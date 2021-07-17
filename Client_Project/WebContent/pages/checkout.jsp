@@ -61,7 +61,7 @@
 				
 
 					<li class="list-group-item d-flex justify-content-between"><span>Tổng[Bao gồm VAT]</span>
-						<strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()*1.05}" /> ₫</strong></li>
+						<strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()}" /> ₫</strong></li>
 				</ul>
 			</div>
 			<div class="col-md-8 order-md-1">

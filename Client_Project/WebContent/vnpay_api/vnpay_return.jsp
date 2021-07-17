@@ -1,4 +1,4 @@
-<%@page import="Controller.Config"%>
+<%@page import="Controller.API_PAYMENT.Config"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%-- 
@@ -67,11 +67,11 @@
                 </div>    
                 <div class="form-group">
                     <label >Số tiền:</label>
-                    <label><%=request.getParameter("vnp_Amount")%></label>
+                    <label><%=Integer.parseInt(request.getParameter("vnp_Amount"))/100%>đ</label>
                 </div>  
                 <div class="form-group">
                     <label >Nội dung thanh toán:</label>
-                    <label><%=request.getParameter("vnp_OrderInfo")%></label>
+                    <label><%=request.getParameter("vnp_OrderInfo") %></label>
                 </div> 
                 <div class="form-group">
                     <label >Mã phản hồi (vnp_ResponseCode):</label>

@@ -35,15 +35,14 @@
                 <form action="vnpayajax" id="frmCreateOrder" method="post">        
                     <div class="form-group">
                         <label for="language">Loại hàng hóa </label>
-                        <select name="ordertype" id="ordertype" class="form-control">
-                            <option value="topup">Nạp tiền điện thoại</option>
-                            <option value="billpayment">Thanh toán hóa đơn</option>
+                        <select name="ordertype" id="ordertype" class="form-control">                       
                             <option value="fashion">Thời trang</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="amount">Số tiền</label>
-                        <input class="form-control" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." id="amount" max="100000000" min="1" name="amount" type="number" value="" />
+                        
+                        <input class="form-control" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." id="amount" max="100000000"  min="1" name="amount" type="number" value="${order.getTotal()}" readonly="readonly"/>
                     </div>
                     <div class="form-group">
                         <label for="OrderDescription">Nội dung thanh toán</label>

@@ -120,13 +120,13 @@ public class Order {
 		this.into = into;
 	}
 
-	public double getTotal() {
+	public int getTotal() {
 		double total = 0;
 		for (Item item : items) {
 			total += item.getPrice() * item.getQuantity();
 		}
 
-		return total;
+		return (int) ((int) total*1.05);
 	}
 
 	@Override

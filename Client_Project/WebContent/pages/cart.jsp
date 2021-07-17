@@ -94,11 +94,11 @@
                                 <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Thành tiền</div>
                                 <div class="p-4">
                                     <ul class="list-unstyled mb-4">
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()}" /></strong></li>
+                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()/1.05}" /></strong></li>
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển</strong><strong>Miễn phí</strong></li>
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong>5%<strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()*0.05}" />đ</strong></li>
+                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong>5%<strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()/1.05*0.05}" />đ</strong></li>
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
-                                            <h5 class="font-weight-bold"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()*1.05}" /> ₫</h5>
+                                            <h5 class="font-weight-bold"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${order.getTotal()}" /> ₫</h5>
                                         </li>
                                     </ul><a href="checkout" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
                                 </div>

@@ -1,4 +1,6 @@
-<%@page import="Controller.*"%>
+<%@page import="Controller.API_PAYMENT.*"%>
+<%@page import="Model.*"%>
+<%@page import="Service.*"%>
 <%@page contentType="application/json; charset=UTF-8"%>
 <%-- 
     Document   : vnpay_ipn
@@ -14,6 +16,7 @@
 <%@page import="java.util.Enumeration"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
+<%@page import="java.util.Random"%>
 
 <%
     //Begin process return from VNPAY
@@ -46,9 +49,53 @@
             if ("00".equals(request.getParameter("vnp_ResponseCode"))) {
                 //Xu ly thanh toan thanh cong
                 // out.print("GD Thanh cong");
+                String fullname = (String)session.getAttribute("fullname");
+                String phone = (String)session.getAttribute("phone");
+                String email = (String)session.getAttribute("email");
+                String address = (String)session.getAttribute("address");
+                String CHAR_LIST ="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        		int RANDOM_STRING_LENGTH = 10;
+        		Random rnd = new Random();
+                StringBuilder sb = new StringBuilder(RANDOM_STRING_LENGTH);
+                for (int i = 0; i <RANDOM_STRING_LENGTH; i++) {
+                    sb.append(CHAR_LIST.charAt(rnd.nextInt(CHAR_LIST.length())));
+                }
+        		User user = (User) session.getAttribute("user");
+        		Order order = (Order) session.getAttribute("order");
+        		Order_service order_sv = new Order_service();
+        		Order_detail_service ordService = new Order_detail_service();
+        		List<Item> listitem =order.getItems();
+        		List<Order> listOrder =order_sv.getListOrder();
+        		String MADH ="";
+        		for(Order or: listOrder) {
+        				MADH ="DH-"+ sb;
+        				if(MADH.equals(or.getId())) {
+        					continue;
+        				}else{
+        					break;
+        				}
+        		}
+        		if(order != null) {
+    				if(user == null) {
+    					order_sv.insertOrder(fullname, phone, email, address,1, order.getTotal(),MADH);
+    					
+    				}else {
+    					order_sv.insertOrder(fullname, phone, email, address, user.getId(), order.getTotal(),MADH);
+    					
+    				}
+    				for(Item item : listitem) {
+    					System.out.println(item.getQuantity()+MADH+item.getProduct().getId()+item.getSize().getId());
+    					ordService.insertOrderDetail(item.getQuantity(),MADH,item.getProduct().getId(),item.getSize().getId());
+    				}
+    			}
+    			session.removeAttribute("order");
+    			request.getRequestDispatcher("vnpay_return.jsp").forward(request, response);
+                
+                
             } else {
                 //Xu ly thanh toan khong thanh cong
                 //  out.print("GD Khong thanh cong");
+            	request.getRequestDispatcher("vnpay_return.jsp").forward(request, response);
             }
             out.print ("{\"RspCode\":\"00\",\"Message\":\"Confirm Success\"}");
         } else {
