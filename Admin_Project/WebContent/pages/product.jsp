@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <div class="content-wrapper">
 	<div class="row">
 		<div class="col-lg-12 grid-margin stretch-card">
@@ -60,7 +61,11 @@
 										</div>
 										<div class="form-group">
 											<label for="exampleTextarea1">Mô tả</label>
-											<textarea class="form-control" name="describe_1" rows="4"></textarea>
+											<textarea class="form-control" id="editor" name="describe_1"
+												rows="4"></textarea>
+											<script type="text/javascript">
+								CKEDITOR.replace('editor');
+							</script>
 										</div>
 										<div class="form-group">
 											<label for="exampleInputPassword1">Chất liệu</label> <input
@@ -115,7 +120,7 @@
 										<td><fmt:formatNumber type="number" maxFractionDigits="3"
 												value="${pr.sale}" /> đ</td>
 										<td>${pr.date}</td>
-										<c:set var="msg" value="${pr.describe}"/>
+										<c:set var="msg" value="${pr.describe}" />
 										<td><div class="a">${fn:substring(msg, 0, 38)}...</div></td>
 										<td><div class="b" style="width: 170px;">${pr.fabric}</div></td>
 										<td><div class="b" style="width: 40px;">${pr.status}</div></td>

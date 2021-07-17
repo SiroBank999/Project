@@ -27,8 +27,7 @@
 							<div class="input-group col-xs-12" style="color: #6c757d">
 								<input type="text" class="form-control file-upload-info"
 									name="images" disabled placeholder="Upload Image"
-									value="${pd.image}"> <span
-									class="input-group-append">
+									value="${pd.image}"> <span class="input-group-append">
 									<button class="file-upload-browse btn btn-primary"
 										type="button">Chọn</button>
 								</span>
@@ -64,7 +63,11 @@
 						</div>
 						<div class="form-group">
 							<label for="exampleTextarea1">Mô tả</label>
-							<textarea class="form-control" name="describe" rows="4">${pd.describe}</textarea>
+							<textarea class="form-control" id="editor" name="describe"
+								rows="4">${pd.describe}</textarea>
+							<script type="text/javascript">
+								CKEDITOR.replace('editor');
+							</script>
 						</div>
 						<div class="form-group">
 							<label for="exampleFormControlSelect">Danh mục</label> <select
