@@ -21,13 +21,19 @@
 								type="text" class="form-control" name="productname"
 								placeholder="Tên sản phẩm" value="${pd.productname}">
 						</div>
+						
 						<div class="form-group">
-							<label>Ảnh</label> <input type="file" name="photo"
+							<label for="exampleInputUsername1">Ảnh cũ</label> <input
+								type="text" class="form-control" name="img1"
+								placeholder="Ảnh sản phẩm" value="${pd.image}">
+						</div>
+						<div class="form-group">
+							<label>Ảnh mới </label> <input type="file" name="photo"
 								class="file-upload-default">
 							<div class="input-group col-xs-12" style="color: #6c757d">
 								<input type="text" class="form-control file-upload-info"
-									name="images" disabled placeholder="Upload Image"
-									value="${pd.image}"> <span class="input-group-append">
+									name="images" disabled placeholder="Upload Image">
+								<span class="input-group-append">
 									<button class="file-upload-browse btn btn-primary"
 										type="button">Chọn</button>
 								</span>
