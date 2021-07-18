@@ -49,7 +49,7 @@
             </a>
             <div class="collapse" id="ui-basic-3">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="doanhthuthang">Theo tháng</a></li>
+                <li class="nav-item"> <a class="nav-link" href="doanhthu">Theo thời gian</a></li>
                 <li class="nav-item"> <a class="nav-link" href="order_manager">Theo sản phẩm</a></li>
               </ul>
             </div>
