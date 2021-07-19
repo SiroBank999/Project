@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -44,6 +45,9 @@ public class Product_update extends HttpServlet {
 			String fabric = request.getParameter("fabric");
 			String image1 = request.getParameter("img1"); // ảnh cũ
 
+			if (price == sale) {
+				sale = 0;
+			} 
 			if (image1.length() != 0) {
 				Category_service cm = new Category_service();
 				Product_service pm = new Product_service();
@@ -85,7 +89,6 @@ public class Product_update extends HttpServlet {
 			}
 			part.write(realPart + "/" + image);
 			pm.updateProduct(productname, price, sale, image, datesub, describe, id_category, fabric, status, idpm);
-
 		} catch (Exception e) {
 
 		}

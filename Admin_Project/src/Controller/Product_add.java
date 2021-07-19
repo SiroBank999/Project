@@ -44,6 +44,10 @@ public class Product_add extends HttpServlet {
 			String describe = request.getParameter("describe_1");
 			String category = request.getParameter("category_1");
 			String fabric = request.getParameter("fabric_1");
+			
+			if(price == sale) {
+				sale = 0;
+			} 
 			Category_service cm = new Category_service();
 			List<Category> listCate = cm.getListCategory();
 			String categoryname =null;

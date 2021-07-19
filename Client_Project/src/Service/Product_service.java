@@ -320,7 +320,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_desc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null order by sale desc";
+		String sql = "select * from product where sale is not null order by sale desc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -350,7 +350,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_asc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null order by sale asc";
+		String sql = "select * from product where sale is not null order by sale asc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -380,7 +380,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_new() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null order by datesub desc";
+		String sql = "select * from product where sale is not null order by datesub desc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -410,7 +410,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_old() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null order by datesub asc";
+		String sql = "select * from product where sale is not null order by datesub asc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -440,7 +440,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_nameAsc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null order by productname asc";
+		String sql = "select * from product where sale is not null order by productname asc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -470,7 +470,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_nameDesc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where status='NEW' and sale is not null order by productname desc";
+		String sql = "select top 20 * from product where sale is not null order by productname desc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -500,7 +500,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_desc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where status='NEW'  order by sale desc";
+		String sql = "select top 20 * from product order by sale desc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -530,7 +530,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_asc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where status='NEW' order by sale,price asc";
+		String sql = "select top 20 * from product order by sale,price asc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -561,7 +561,7 @@ public class Product_service {
 	
 	public List<Product> product_new_old() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where status='NEW' order by datesub asc";
+		String sql = "select top 20 * from product where order by datesub asc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -591,7 +591,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_nameAsc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where status='NEW' order by productname asc";
+		String sql = "select top 20 * from product where order by productname asc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -621,7 +621,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_nameDesc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where status='NEW' order by productname desc";
+		String sql = "select top 20 * from product where order by productname desc";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -651,7 +651,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_filter() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null and sale BETWEEN 0 AND 199000";
+		String sql = "select * from product where and sale is not null and sale BETWEEN 0 AND 199000";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -681,7 +681,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_filter1() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null and sale BETWEEN 200000 AND 399000";
+		String sql = "select * from product where and sale is not null and sale BETWEEN 200000 AND 399000";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -711,7 +711,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_filter2() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null and sale BETWEEN 400000 AND 800000";
+		String sql = "select * from product where sale is not null and sale BETWEEN 400000 AND 800000";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -741,7 +741,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_filter3() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and sale is not null and sale>800000";
+		String sql = "select * from product where sale is not null and sale>800000";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -771,7 +771,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_filter() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and price BETWEEN 0 and 199000 or sale BETWEEN 0 AND 199000";
+		String sql = "select * from product where price BETWEEN 0 and 199000 or sale BETWEEN 0 AND 199000";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -801,7 +801,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_filter1() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and (price is not null and sale BETWEEN 200000 AND 399000) or (price is null and sale BETWEEN 200000 AND 399000)";
+		String sql = "select * from product where (price is not null and sale BETWEEN 200000 AND 399000) or (price is null and sale BETWEEN 200000 AND 399000)";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -831,7 +831,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_filter2() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and (price is not null and sale BETWEEN 400000 AND 800000) or (price is null and sale BETWEEN 400000 AND 800000)";
+		String sql = "select * from product where (price is not null and sale BETWEEN 400000 AND 800000) or (price is null and sale BETWEEN 400000 AND 800000)";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
@@ -861,7 +861,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_filter3() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where status='NEW' and price>800000 or sale>800000";
+		String sql = "select * from product where price>800000 or sale>800000";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();

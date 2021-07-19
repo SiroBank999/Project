@@ -8,6 +8,17 @@
 				<div class="card-body">
 					<h4 class="card-title">Quản lý danh mục</h4>
 
+					<form method="get" action="" name="productForm">
+						<select name="order-by" onchange="document.productForm.submit ()"
+							class="sort-by custom-dropdown__select" style="width:170px; height:30px;
+							border: 1px solid #ccc; border-radius: 10px 10px">
+							<option value="normal">Lựa chọn sắp xếp</option>
+							<option value="normal">Mặc định</option>
+							<option value="title-ascending">Tên: A-Z</option>
+							<option value="title-descending">Tên: Z-A</option>
+						</select>
+					</form>
+
 					<div class="table-responsive pt-3">
 						<table class="table table-bordered">
 							<thead>
@@ -20,7 +31,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${listCate}" var="list">
+								<c:forEach items="${hot}" var="list">
 									<tr>
 										<td style="width: 90px;">${list.id }</td>
 										<td style="width: 100px;">${list.categoryname}</td>
@@ -43,18 +54,18 @@
 					<br>
 					<div class="text-center">
 						<c:if test="${tag >1 }">
-							<a class="btn btn-outline-secondary btn-rounded"
+							<a class="btn btn-outline-dark btn-rounded"
 								href="category_manager?index=${tag-1}">&laquo;</a>
 						</c:if>
 
 						<c:forEach begin="1" end="${andPag}" var="i">
 
 							<a
-								class="${tag == i?'active':''} btn btn-outline-secondary btn-rounded"
+								class="${tag == i?'active':''} btn btn-outline-dark btn-rounded"
 								href="category_manager?index=${i}">${i}</a>
 						</c:forEach>
 						<c:if test="${tag < andPag }">
-							<a class="btn btn-outline-secondary btn-rounded "
+							<a class="btn btn-outline-dark btn-rounded "
 								href="category_manager?index=${tag+1}">&raquo;</a>
 						</c:if>
 					</div>
