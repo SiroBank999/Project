@@ -12,10 +12,7 @@
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="index">TRANG CHỦ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">BỘ SƯU TẬP</a>
-          </li>
+          </li>        
           <li class="nav-item lisanpham">
             <a class="nav-link" href="product">SẢN PHẨM
               <i class="fa fa-chevron-down" aria-hidden="true"></i>

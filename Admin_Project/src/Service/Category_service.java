@@ -3,6 +3,7 @@ package Service;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import Model.Category;
@@ -118,20 +119,20 @@ public class Category_service {
 			while (rs.next()) {
 				pd.setId(rs.getInt(1));
 				pd.setCategoryname(rs.getString(2));
-				pd.setImg(rs.getString(3));		
+				pd.setImg(rs.getString(3));
 			}
 		} catch (Exception e) {
 		}
 		return pd;
 	}
-	
+
 	public void updateCategory(String categoryname, String img, int id) {
 		String query = "UPDATE category SET categoryname = ?,image=? WHERE id =?";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
-			ps.setString(1, categoryname);			
-			ps.setString(2, img);			
+			ps.setString(1, categoryname);
+			ps.setString(2, img);
 			ps.setInt(3, id);
 			ps.executeQuery();
 
@@ -139,12 +140,59 @@ public class Category_service {
 
 		}
 	}
+
+	public List<Category> category_new_nameAsc() {
+		List<Category> list = new ArrayList<Category>();
+		String sql = "select * from category order by categoryname asc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Category pr = new Category();
+				pr.setId(rs.getInt(1));
+				pr.setCategoryname(rs.getString(2));
+				pr.setImg(rs.getString(3));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
 	
+	public List<Category> category_new_nameDesc() {
+		List<Category> list = new ArrayList<Category>();
+		String sql = "select * from category order by categoryname desc";
+		PreparedStatement pstm;
+		try {
+			conn = Database.Connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Category pr = new Category();
+				pr.setId(rs.getInt(1));
+				pr.setCategoryname(rs.getString(2));
+				pr.setImg(rs.getString(3));
+				list.add(pr);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+
 	public static void main(String[] agrs) {
 		Category_service n = new Category_service();
 		n.updateCategory("a", "b", 10);
 		System.out.println("thanh cong");
 	}
-
 
 }

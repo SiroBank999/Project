@@ -59,12 +59,12 @@
 						<div class="footer-content">
 							<div id="fb-root">
 								<div class="footer-static-content">
-									<div class="fb-page" data-href="https://phuxuan.edu.vn/"
+									<div class="fb-page" data-href="https://www.facebook.com/F5-shop-109416108077091"
 										data-tabs="timeline" data-width="" data-height="215"
 										data-small-header="false" data-adapt-container-width="true"
 										data-hide-cover="false" data-show-facepile="true">
 										<blockquote cite="   " class="fb-xfbml-parse-ignore">
-											<a href="https://phuxuan.edu.vn/">F5'S SHOP</a>
+											<a href="https://www.facebook.com/F5-shop-109416108077091">F5'S SHOP</a>
 										</blockquote>
 									</div>
 								</div>
@@ -83,7 +83,7 @@
 				<p>
 					Copyright © 2021 <a href="https://runner-inn.myharavan.com">
 						F5 Library</a>. <a target="_blank"
-						href="https://www.facebook.com/henrynguyen202">Powered by F5
+						href="https://www.facebook.com/F5-shop-109416108077091">Powered by F5
 						Team</a>
 				</p>
 			</div>
