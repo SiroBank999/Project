@@ -68,6 +68,21 @@ public class User_service {
 		}
 		
 	}
+	public void updateUser(String fullname, String phone ,String email,String password,int id) {
+		String query ="UPDATE [user] SET fullname=?, phone=?,email=?, password=? WHERE id =?";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, fullname);
+			ps.setString(2, phone);
+			ps.setString(3, email);
+			ps.setString(4, password);
+			ps.setInt(5, id);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 	public static void main(String[] args) {
 		User_service m = new User_service();
 	User n = m.CheckUser("", "");
