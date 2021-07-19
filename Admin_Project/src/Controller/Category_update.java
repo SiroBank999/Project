@@ -35,6 +35,13 @@ public class Category_update extends HttpServlet {
 		try {
 			int idpm = Integer.parseInt(request.getParameter("id_c"));
 			String categoryname = request.getParameter("categoryname_c");
+			String image1 = request.getParameter("img1");
+			
+			if (image1.length() != 0) {
+				Category_service pm = new Category_service();		
+				pm.updateCategory(categoryname, image1, idpm);
+			}
+
 			System.out.print(idpm);
 			System.out.println(categoryname);
 			Part part = request.getPart("photo1");

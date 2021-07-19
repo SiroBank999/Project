@@ -44,7 +44,7 @@ public class Product_service {
 
 	public List<Product> Allproduct(int indexpage) {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product order by id offset ? rows fetch next 12 rows only;";
+		String sql = "select * from product order by id desc offset ? rows fetch next 12 rows only;";
 		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();

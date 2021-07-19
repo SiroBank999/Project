@@ -67,17 +67,18 @@
 							<div class="product-content-desc-1">
 								<div class="product-title">
 									<h1 style="font-size: 23px">${product.productname}</h1>
-									<span id="pro_sku" style="color: #495057; font-size: 16px">Mã: S-0015-${product.id}</span>
+									<span id="pro_sku" style="color: #495057; font-size: 16px">Mã:
+										S-0015-${product.id}</span>
 								</div>
-						
+
 								<c:set var="saleprice" value="${product.sale}" />
 								<c:choose>
 									<c:when test="${saleprice > 0 }">
 										<div class="product-price" id="price-preview"
 											style="color: #545051; font-size: 15px; font-weight: bold">
 											Giá sale: <s style="margin-right: 16px"> <fmt:formatNumber
-													type="number" maxFractionDigits="3" value="${product.price}" />
-												<sup>đ</sup>
+													type="number" maxFractionDigits="3"
+													value="${product.price}" /> <sup>đ</sup>
 											</s> <b class="product-price" id="price-preview"
 												style="color: #d02b28; font-size: 19px; font-weight: bold">
 												<fmt:formatNumber type="number" maxFractionDigits="3"
@@ -94,19 +95,21 @@
 											<sup>đ</sup>
 										</div>
 									</c:otherwise>
-								</c:choose>											
+								</c:choose>
 								<h6 style="margin-top: 5px;">Chọn size</h6>
-								
-								<form id="add-item-form" action="cart_add?id_product=${product.id}" method="post"
+
+								<form id="add-item-form"
+									action="cart_add?id_product=${product.id}" method="post"
 									class="variants clearfix" style="margin-top: -3px;">
-									<div class="styled-select" style="margin-top: -3px; font-size: 17px">
-									<select name="size">
-										<c:forEach items="${sz}" var="size">
-											<option>${size.name}</option>
-										</c:forEach>
-									</select> <span class="fa fa-sort-desc" style="margin-top: 3px;"><i
-										class="fas fa-caret-down"></i></span>
-								</div>
+									<div class="styled-select"
+										style="margin-top: -3px; font-size: 17px">
+										<select name="size">
+											<c:forEach items="${sz}" var="size">
+												<option>${size.name}</option>
+											</c:forEach>
+										</select> <span class="fa fa-sort-desc" style="margin-top: 3px;"><i
+											class="fas fa-caret-down"></i></span>
+									</div>
 									<div class="selector-actions">
 										<div class="quantity-area clearfix">
 											<div class="quantity buttons_added">
@@ -116,30 +119,46 @@
 													pattern="" inputmode=""> <input type="button"
 													value="+" class="plus">
 											</div>
-											
+
 										</div>
-										<div class="wrap-addcart clearfix">
-											<div class="row-flex">
-												<button type="submit"
-													class="button btn-addtocart addtocart-modal">Thêm
-													vào</a></button>
-												<button type="button" class="buy-now button"
-													style="display: block;">Mua ngay</button>
+										<c:if test="${product.price != 0}">
+											<div class="wrap-addcart clearfix">
+												<div class="row-flex">
+													<button type="submit"
+														class="button btn-addtocart addtocart-modal">
+														Thêm vào</a>
+													</button>
+													<button type="button" class="buy-now button"
+														style="display: block;">Mua ngay</button>
+												</div>
 											</div>
-										</div>
+										</c:if>
 									</div>
 								</form>
+								<c:if test="${product.price == 0}">
+									<div class="wrap-addcart clearfix">
+										<div class="row-flex">
+											<button type="submit"
+												class="button btn-addtocart addtocart-modal"
+												style="cursor: no-drop;" disable>
+												Thêm vào</a>
+											</button>
+											<button type="button" class="buy-now button"
+												style="display: block; cursor: no-drop;" disable>Mua
+												ngay</button>
+										</div>
+									</div>
+								</c:if>
 								<div class="product-description">
 									<div class="title-bl">
 										<h2 style="font-size: 17px">Mô tả</h2>
 									</div>
-									
+
 									<div class="description-content">
 										<div class="description-productdetail">
 											<p style="font-size: 16px; text-align: justify;">
-											<span> <b> Chất
-													liệu:</b> ${product.fabric}</span><br> <br>
-												<span>${product.describe}</span> 
+												<span> <b> Chất liệu:</b> ${product.fabric}
+												</span><br> <br> <span>${product.describe}</span>
 											</p>
 										</div>
 									</div>
@@ -157,7 +176,8 @@
 									<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 										<div class="product-block">
 											<div class="product-img fade-box">
-												<a href="detail_product?id_product=${list.id}&id_category=${list.id_category}"
+												<a
+													href="detail_product?id_product=${list.id}&id_category=${list.id_category}"
 													title="${list.productname}" class="img-resize"> <img
 													src="<%=request.getContextPath()%>/uploads/product/${list.image}">
 												</a>
@@ -166,7 +186,8 @@
 												<div class="pro-text">
 													<a
 														style="color: black; font-size: 14px; text-decoration: none;"
-														href="detail_product?id_product=${list.id}&id_category=${list.id_category}" title="${list.productname}" inspiration pack>
+														href="detail_product?id_product=${list.id}&id_category=${list.id_category}"
+														title="${list.productname}" inspiration pack>
 														${list.productname} </a>
 												</div>
 												<div class="gia">
@@ -208,96 +229,104 @@
 </main>
 <!--gallery-->
 <section class="section section-gallery">
-		<div class="">
-			<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
-				<h2 style="text-align: center; padding-top: 10px">
-					<a style="font-size: 28px; color: black; text-decoration: none"
-						href="">F5's Styles</a>
-				</h2>
-			</div>
-			<div class="list-gallery clearfix">
-				<ul class="shoes-gp">
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_1.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_2.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_3.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_4.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_5.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_6.jpg" alt="">
-						</div>
-					</li>
-				</ul>
-			</div>
+	<div class="">
+		<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
+			<h2 style="text-align: center; padding-top: 10px">
+				<a style="font-size: 28px; color: black; text-decoration: none"
+					href="">F5's Styles</a>
+			</h2>
 		</div>
-	</section>
-	    <div class="benefit">
-		<div class="container">
-			<div class="row benefit_row">
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>MIỄN PHÍ GIAO HÀNG</h6>
-							<p>với hóa đơn trên 300k</p>
-						</div>
+		<div class="list-gallery clearfix">
+			<ul class="shoes-gp">
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_1.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_2.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_3.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_4.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_5.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_6.jpg" alt="">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<div class="benefit">
+	<div class="container">
+		<div class="row benefit_row">
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fa fa-truck" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>MIỄN PHÍ GIAO HÀNG</h6>
+						<p>với hóa đơn trên 300k</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fas fa-money-bill" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>GIÁ TIỀN HỢP LÝ</h6>
-							<p>đồ đẹp - sang chảnh</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fas fa-money-bill" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>GIÁ TIỀN HỢP LÝ</h6>
+						<p>đồ đẹp - sang chảnh</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
-							<p>đối với những sản phẩm bị lỗi</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fa fa-undo" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
+						<p>đối với những sản phẩm bị lỗi</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="far fa-clock" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>MỞ CỬA TỪ</h6>
-							<p>8h00 - 21h00</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="far fa-clock" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>MỞ CỬA TỪ</h6>
+						<p>8h00 - 21h00</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<br/>
-	<br/>
+</div>
+<br />
+<br />

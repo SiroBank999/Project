@@ -73,12 +73,10 @@
 												placeholder="Chất liệu">
 										</div>
 										<div class="form-group">
-											<label for="exampleFormControlSelect3">Trạng thái</label> <select
-												class="form-control form-control-sm" name="status_1">
-												<option>NEW</option>
-												<option>HẾT HÀNG</option>
+											<label for="exampleFormControlSelect3">Trạng thái</label> <input
+												type="text" class="form-control" name="status_1"
+												placeholder="Trạng thái">
 
-											</select>
 										</div>
 										<button type="submit" class="btn btn-success mr-2">Thêm
 											mới</button>
@@ -112,7 +110,7 @@
 										<td><div class="a" style="width: 10px;">${pr.id}</div></td>
 										<td>${pr.productname}</td>
 										<td><center>
-												<img src="./uploads/product/${pr.image}"
+												<img src="<%=request.getContextPath()%>/uploads/product/${pr.image}"
 													style="width: 80px; height: 80px" alt="">
 											</center></td>
 										<td><fmt:formatNumber type="number" maxFractionDigits="3"
@@ -139,20 +137,20 @@
 							</tbody>
 						</table>
 						<br>
-						<div class="text-center">
+						<div class="text-center" style="margin-bottom: 14px">
 							<c:if test="${tag >1 }">
-								<a class="btn btn-outline-secondary btn-rounded"
+								<a class="btn btn-outline-dark btn-rounded"
 									href="product_manager?index=${tag-1}">&laquo;</a>
 							</c:if>
 
 							<c:forEach begin="1" end="${andPag}" var="i">
 
 								<a
-									class="${tag == i?'active':''} btn btn-outline-secondary btn-rounded"
+									class="${tag == i?'active':''} btn btn-outline-dark btn-rounded"
 									href="product_manager?index=${i}">${i}</a>
 							</c:forEach>
 							<c:if test="${tag < andPag }">
-								<a class="btn btn-outline-secondary btn-rounded "
+								<a class="btn btn-outline-dark btn-rounded "
 									href="product_manager?index=${tag+1}">&raquo;</a>
 							</c:if>
 						</div>
