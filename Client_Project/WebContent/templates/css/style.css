@@ -429,7 +429,7 @@ ul.navbar-nav {
 /*end search*/
 @media ( min-width : 769px) {
 	.icon-ol {
-		letter-spacing: 8px;
+		letter-spacing: 1px;
 	}
 	.icon-ol a:hover {
 		text-decoration: none;
@@ -438,7 +438,7 @@ ul.navbar-nav {
 
 @media ( max-width : 768px) {
 	.icon-ol {
-		letter-spacing: 5px;
+		letter-spacing: 1px;
 	}
 	.icon-ol a:hover {
 		text-decoration: none;
@@ -2934,7 +2934,7 @@ label[for="product-select-option-2"] {
 	}
 }
 
-/* Setting varian mÃ u sáº¯c */
+/* Setting varian mÃ u sáº¯c */
 .color.swatch-element label.cam span {
 	background: #fb4727 !important;
 }
@@ -4290,3 +4290,35 @@ select:focus {
 	margin-bottom: 0px;
 	color: #51545f;
 }
+
+
+.desc { color:#000000;}
+        .desc a {color:#000000;}
+        
+        .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+        .dropdown dd { position:relative; }
+        .dropdown li, .dropdown a, .dropdown a:visited { color:#000000; text-decoration:none; outline:none;}
+        .dropdown a:hover { color:#ffffff;}
+        .dropdown dt a:hover { color:#ffffff; }
+        .dropdown dt a { display:block; 
+                        }
+        .dropdown dt a span {cursor:pointer; display:block; padding:5px;}
+        .dropdown dd ul {
+                          background:#fff none repeat scroll 0 0;
+                          border:1px solid #000000;
+                          color:#000000;
+                          display:none;
+                          left:0px;
+                          padding:00px 0px;
+                          position:absolute;
+                          top:2px;
+                          width:auto;
+                          min-width:130px;
+                          list-style:none;
+                          }
+        .dropdown span.value { display:none;}
+        .dropdown dd ul li a { padding:5px; display:block;}
+        .dropdown dd ul li a:hover { background-color:#7d7b7b;}
+        
+        
+        .flagvisibility { display:none;}

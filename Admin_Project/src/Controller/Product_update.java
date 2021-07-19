@@ -79,12 +79,14 @@ public class Product_update extends HttpServlet {
 					id_category = Integer.valueOf(categoryname);
 				}
 			}
+
 			Part part = request.getPart("photo");
 			Product_service pm = new Product_service();
 
 			String realPart = "C:\\Users\\Nhat Thinh\\Documents\\NEW\\Project\\Admin_Project\\WebContent\\uploads";
 			String image = Path.of(part.getSubmittedFileName()).getFileName().toString();
 			if (!Files.exists(Path.of(realPart))) {
+
 				Files.createDirectory(Path.of(realPart));
 			}
 			part.write(realPart + "/" + image);

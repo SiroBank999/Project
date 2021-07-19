@@ -46,6 +46,7 @@
 	<script src="templates/js/count.js"></script>
 	<script src="templates/js/script.js"></script>
 	<script src="templates/js/checkout.js"></script>
+	<script src="templates/js/drop.js"></script>
 	<script src="templates/plugins/uikit/uikit.min.js"></script>
 	<script src="templates/plugins/uikit/uikit-icons.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
