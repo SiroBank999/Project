@@ -10,12 +10,13 @@
 				<div class="card-body">
 					<p class="card-title mb-0 text-center">ĐƠN HÀNG #${order.id}</p>
 					<br>
+					<form action="order_detail" method="post">
 					<div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Họ và tên</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" value="${order.fullname}"/>
+                            <input type="text" name="fullname" class="form-control" value="${order.fullname}"/>
                           </div>
                         </div>
                       </div>
@@ -23,7 +24,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Điện thoại</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" value="${order.phone}" />
+                            <input type="text" name="phone" class="form-control" value="${order.phone}" />
                           </div>
                         </div>
                       </div>
@@ -33,7 +34,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Email</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" value="${order.email}" />
+                            <input type="text" name ="email" class="form-control" value="${order.email}" />
                           </div>
                         </div>
                       </div>
@@ -41,7 +42,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Địa chỉ</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" value="${order.address}" />
+                            <input type="text" name="address" class="form-control" value="${order.address}" />
                           </div>
                         </div>
                       </div>
@@ -59,7 +60,7 @@
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Trạng thái</label>
                           <div class="col-sm-9">
-                            <select class="form-control" >
+                            <select class="form-control" name="status" >
                               <option style="font-size: 15px;">${order.status}</option>
                               <option>Đang xử lý</option>
                               <option>Đang giao</option>
@@ -104,6 +105,7 @@
 							<button type="submit" class="btn btn-sm btn-success">Cập nhật</button>
 						</div>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>

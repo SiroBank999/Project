@@ -20,6 +20,7 @@ import Service.Order_service;
 @WebServlet("/order_detail")
 public class Order_detail_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	String id ;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -33,7 +34,7 @@ public class Order_detail_controller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
+		id = request.getParameter("id");
 		Order_service service = new Order_service();
 		Order order = service.getOrderById(id);
 		Item_order_service item_order_service = new Item_order_service();
@@ -48,8 +49,17 @@ public class Order_detail_controller extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
+		String fullname = request.getParameter("fullname");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+		String adress = request.getParameter("address");
+		String status = request.getParameter("status");
+		Order_service service = new Order_service();
+		service.UpdateOrder(id, fullname, phone, email, adress,status);
+		response.sendRedirect("order_detail?id="+id+"");
+		
 	}
 
 }

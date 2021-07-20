@@ -12,6 +12,22 @@ public class Order_service {
 	Connection conn = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
+	public void UpdateOrder(String id,String fullname,String phone, String email ,String address,String status) {
+		String query = "UPDATE [order] SET fullname = ? , phone =?, email = ?, address = ?,status =? WHERE id = ?";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, fullname);
+			ps.setString(2, phone);
+			ps.setString(3, email);
+			ps.setString(4, address);
+			ps.setString(5, status);
+			ps.setString(6, id);
+			ps.execute();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 	public Order getOrderById(String id) {
 		String query = "select * from [order] where id = ?";
 		Order order = new Order();
