@@ -16,7 +16,7 @@ public class Statistic_service {
 
 	public List<Statistic> getRevenueMonth(){
 		List<Statistic> list=new ArrayList<>();
-		String sql="select  MONTH([date]) as [date], SUM([into]) as [into] from [order] where year([date])=year(getDate()) group by MONTH([date])";
+		String sql="select  MONTH([date]) as [date], SUM([into]) as [into] from [order] where year([date])=year(getDate()) and status=N'Hoàn thành' group by MONTH([date])";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(sql);
@@ -36,7 +36,7 @@ public class Statistic_service {
 	}
 	public List<Statistic> getStatisticYear(){
 		List<Statistic> list=new ArrayList<>();
-		String sql="select Year([date]) as [date], SUM([into]) as [into] from [order] group by Year([date])";
+		String sql="select Year([date]) as [date], SUM([into]) as [into] from [order] where status=N'Hoàn thành' group by Year([date])";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(sql);
@@ -55,7 +55,7 @@ public class Statistic_service {
 		
 	}
 	public int getTotalOrder() {
-		String query = "select count(*) from [order]";
+		String query = "select count(*) from [order] where status=N'Hoàn thành'";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
@@ -72,7 +72,7 @@ public class Statistic_service {
 
 	public List<Order> pagingOrder(int index) {
 		List<Order> list = new ArrayList<>();
-		String query = "select id,fullname,phone,address,date,[into] from [order] order by date desc offset ? rows fetch next 8 rows only";
+		String query = "select id,fullname,phone,address,date,[into] from [order] where status=N'Hoàn thành' order by date desc offset ? rows fetch next 8 rows only";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
@@ -96,7 +96,7 @@ public class Statistic_service {
 	}
 	public List<Order> querySearch(String dayStart, String dayEnd) {
 		List<Order> list = new ArrayList<>();
-		String sql = "SELECT * FROM [order] WHERE [date] BETWEEN '"+dayStart+"' AND '"+dayEnd+"'";
+		String sql = "SELECT * FROM [order] WHERE status=N'Hoàn thành' and [date] BETWEEN '"+dayStart+"' AND '"+dayEnd+"'";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(sql);
