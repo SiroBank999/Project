@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.Category;
+import Model.Order;
 import Model.Product;
 
 public class Product_service {
@@ -127,7 +128,7 @@ public class Product_service {
 	}
 
 	public void updateProduct(String productname, int price, int sale, String image, String datesub, String describe,
-			 int id_cate, String fabric, String status, int id) {
+			int id_cate, String fabric, String status, int id) {
 		String query = "UPDATE product SET productname=?,price=?, sale=?,image=?, datesub =? ,describe=?,id_category=?,fabric=?,status=? WHERE id =?";
 		try {
 			conn = Database.Connect();
@@ -148,6 +149,34 @@ public class Product_service {
 
 		}
 
+	}
+
+	public List<Product> Searchproduct(String tensanpham) {
+		List<Product> list = new ArrayList<>();
+		String query = "select * from product where productname like ?";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, "%" + tensanpham + "%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+		} catch (Exception e) {
+
+		}
+		return list;
 	}
 
 }
