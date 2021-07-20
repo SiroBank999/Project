@@ -32,6 +32,8 @@ public class Info_user_controller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		HttpSession  session =request.getSession();
 		User user = (User)session.getAttribute("user");
 			id = user.getId();
@@ -44,7 +46,8 @@ public class Info_user_controller extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String fullname = request.getParameter("Fullname");
 		String password = request.getParameter("Password");
 		String phone = request.getParameter("Phone");

@@ -64,7 +64,7 @@ public class Product_add extends HttpServlet {
 			Part part =request.getPart("photo1");
 			Product_service pm = new  Product_service();
 			
-			String realPart ="E:\\Project\\Admin_Project\\WebContent\\uploads";
+			String realPart ="C:\\Users\\Nhat Thinh\\Documents\\NEW\\Project\\Admin_Project\\WebContent\\uploads";
 			String image =Path.of(part.getSubmittedFileName()).getFileName().toString();
 			if(!Files.exists(Path.of(realPart))) {
 				Files.createDirectory(Path.of(realPart));

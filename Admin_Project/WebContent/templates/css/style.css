@@ -21440,4 +21440,12 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+#sortable .ui-state-hightlight{
+	cursor: move !important;
+	padding: 24px;
+	background-color: #d8e2dc;
+	border: 1px dotted #ccc;
+	margin-top: 12px;
+}
 /*# sourceMappingURL=maps/style.css.map */

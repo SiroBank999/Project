@@ -10,12 +10,11 @@
 				<div class="card-body">
 					<h4 class="card-title">Quản lý sản phẩm</h4>
 					<p class="card-description float-right">
-
 						<button type="button" class="btn btn-success btn-rounded"
 							data-toggle="modal" data-target="#myModal">Thêm sản phẩm
 						</button>
 					</p>
-					<!-- The Modal -->					
+					<!-- The Modal -->
 					<div class="modal" id="myModal">
 						<div class="col-md-12 grid-margin stretch-card modal-dialog">
 							<div class="card modal-content">
@@ -87,7 +86,7 @@
 						</div>
 					</div>
 					<form action="${pageContext.request.contextPath}/Searchproduct"
-						method="get" style="width:400px">
+						method="get" style="width: 400px">
 						<div class="input-group">
 							<div class="input-group-prepend hover-cursor"
 								id="navbar-search-icon">
@@ -99,7 +98,8 @@
 								id="navbar-search-input" placeholder="Tìm kiếm..."
 								aria-label="search" aria-describedby="search">
 						</div>
-					</form> <br>
+					</form>
+					<br>
 					<div class="table-responsive">
 						<table class="table table-bordered" style="width: 75%;">
 							<thead>
@@ -118,8 +118,7 @@
 								</tr>
 							</thead>
 							<tbody>
-
-								<c:forEach items="${listproduct}" var="pr">
+								<c:forEach items="${search_product}" var="pr">
 									<tr>
 										<td><div class="a" style="width: 10px;">${pr.id}</div></td>
 										<td>${pr.productname}</td>
