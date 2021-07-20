@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="templates/plugins/uikit/uikit.min.css" />
 <link rel="stylesheet" type="text/scss" href="templates/css/sign.scss">
 <link rel="stylesheet" type="text/css" href="templates/css/checkout.css">
+<link rel="stylesheet" type="text/css" href="templates/css/introduce.css">
 <title>Shop thời trang</title>
   
 </head>
