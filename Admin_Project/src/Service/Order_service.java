@@ -12,6 +12,30 @@ public class Order_service {
 	Connection conn = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
+	public Order getOrderById(String id) {
+		String query = "select * from [order] where id = ?";
+		Order order = new Order();
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				order.setId(rs.getString("id"));
+				order.setFullname(rs.getString("fullname"));
+				order.setPhone(rs.getString("phone"));
+				order.setEmail(rs.getString("email"));
+				order.setAddress(rs.getString("address"));
+				order.setDate(rs.getDate("date"));
+				order.setInto(rs.getDouble("into"));
+				order.setStatus(rs.getString("status"));
+				
+			}
+		} catch (Exception e) {
+
+		}
+		return order;
+	}
 	public int getTotalOrderNew() {
 		String query = "select count(*) from [order]";
 		try {

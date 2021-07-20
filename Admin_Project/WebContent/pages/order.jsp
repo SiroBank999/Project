@@ -79,7 +79,7 @@
 												<td><label class="badge badge-success">${pr.status }</label></td>
 											</c:when>
 										</c:choose>
-										<td><a class="border btn-sm "> <i
+										<td><a class="border btn-sm " href="order_detail?id=${pr.id}"> <i
 												class="ti-eye text-success"></i>
 										</a></td>
 									</tr>
