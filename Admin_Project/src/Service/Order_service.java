@@ -173,4 +173,89 @@ public class Order_service {
 		}
 		return list;
 	}
+	public List<Order> SearchOrder(String donhang) {
+		List<Order> list = new ArrayList<>();
+		String query = "select id,fullname,phone,address,date,[status],[into] from [order] where id like '"+donhang+"' or fullname like N'%"+donhang+"%' or phone like '"+donhang+"'";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Order od=new Order();
+				od.setId(rs.getString("id"));
+				od.setFullname(rs.getString("fullname"));
+				od.setPhone(rs.getString("phone"));
+				od.setAddress(rs.getString("address"));
+				od.setDate(rs.getDate("date"));
+				od.setStatus(rs.getString("status"));
+				od.setInto(rs.getDouble("into"));
+				
+				list.add(od);
+			}
+		} catch (Exception e) {
+
+		}
+		return list;
+	}
+	public int getTotalOrderAdmin() {
+		int sum = 0;
+		String sql = "select sum([into]) from [order] where status=N'Hoàn thành' and month([date])=MONTH(getDate())";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				sum = rs.getInt(1);
+			}
+		} catch (Exception e) {
+
+		}
+		return sum;
+	}
+	public int getCustomer() {
+		int count = 0;
+		String sql = "select count(distinct id_user) from [order]";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (Exception e) {
+
+		}
+		return count;
+	}
+	public int getOrder() {
+		int count = 0;
+		String sql = "select count(id) from [order] where status=N'Đơn mới'";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (Exception e) {
+
+		}
+		return count;
+	}
+	public int getUserNew() {
+		int count = 0;
+		String sql = "	select count(id) from [user] where id not in(select id_user from [order],[user]) \r\n"
+				+ "";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (Exception e) {
+
+		}
+		return count;
+	}
 }

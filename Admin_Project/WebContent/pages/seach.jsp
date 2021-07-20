@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <div class="content-wrapper">
 	<div class="row">
@@ -31,17 +30,7 @@
 							</ul>
 						</div>
 						<div class="col-md-6"></div>
-						<div class="col-md-2">
-							<form method="get" action="" name="productForm">
-								<select name="donhang" onchange="document.productForm.submit ()">
-									<option value="tatca">Tất cả</option>
-									<option value="donmoi">Đơn mới</option>
-									<option value="dangxuli">Đang xử lí</option>
-									<option value="hoanthanh">Hoàn thành</option>
-									<option value="dahuy">Đã hủy</option>
-								</select>
-							</form>
-						</div>
+						<div class="col-md-2"></div>
 					</div>
 					<div class="table-responsive">
 						<table class="table">
@@ -59,7 +48,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${listOrderNew}" var="pr">
+								<c:forEach items="${search_order}" var="pr">
 									<tr>
 										<td>${pr.id }</td>
 										<td>${pr.fullname }</td>
@@ -82,32 +71,13 @@
 												<td><label class="badge badge-success">${pr.status }</label></td>
 											</c:when>
 										</c:choose>
-										<td><a class="border btn-sm " href="order_detail?id=${pr.id}"> <i
+										<td><a class="border btn-sm "> <i
 												class="ti-eye text-success"></i>
 										</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<c:if test="${luachon==NULL }">
-							<div class="text-center">
-								<c:if test="${tag >1 }">
-									<a class="btn btn-outline-secondary btn-rounded"
-										href="order_manager?index=${tag-1}">&laquo;</a>
-								</c:if>
-
-								<c:forEach begin="1" end="${andPag}" var="i">
-
-									<a
-										class="${tag == i?'active':''} btn btn-outline-secondary btn-rounded"
-										href="order_manager?index=${i}">${i}</a>
-								</c:forEach>
-								<c:if test="${tag < andPag }">
-									<a class="btn btn-outline-secondary btn-rounded "
-										href="order_manager?index=${tag+1}">&raquo;</a>
-								</c:if>
-							</div>
-						</c:if>
 					</div>
 				</div>
 			</div>

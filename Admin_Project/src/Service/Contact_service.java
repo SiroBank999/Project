@@ -14,7 +14,7 @@ public class Contact_service {
 	ResultSet rs = null;
 	public List<Contact> getContact(){
 		List<Contact> list = new ArrayList<>();
-		String query = "SELECT * FROM contact";
+		String query = "SELECT * FROM contact where status=N'Chưa phản hồi'";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
