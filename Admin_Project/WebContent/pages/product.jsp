@@ -22,7 +22,7 @@
 								<div class="card-body">
 									<h4 class="card-title">Thêm sản phẩm mới</h4>
 									<form class="forms-sample" action="product_add" method="post"
-										enctype="multipart/form-data">
+										enctype="multipart/form-data">										
 										<div class="form-group">
 											<label for="exampleInputUsername1">Tên sản phẩm</label> <input
 												type="text" class="form-control" name="productname_1"

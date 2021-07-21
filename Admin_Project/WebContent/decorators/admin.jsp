@@ -16,8 +16,7 @@
 	href="templates/vendors/base/vendor.bundle.base.css">
 <link rel="stylesheet" href="templates/css/style.css">
 <link rel="shortcut icon" href="templates/images/favicon.png" />
-<script type="text/javascript"
-	src="ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 
 
 </head>
@@ -44,6 +43,8 @@
 	<script src="templates/js/file-upload.js"></script>
 	<script src="templates/js/delete.js"></script>
 	<script src="templates/js/delete_cate.js"></script>
-
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="templates/js/category_sort.js"></script>
 </body>
 </html>

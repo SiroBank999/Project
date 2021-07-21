@@ -30,7 +30,7 @@
 
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="sortable">
 								<c:forEach items="${hot}" var="list">
 									<tr>
 										<td style="width: 90px;">${list.id }</td>
