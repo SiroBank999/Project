@@ -1,0 +1,30 @@
+.page_404 {
+	padding: 100px 0;
+	background: #fff;
+	font-family: 'Arvo', serif;
+	padding-left: 190px;
+}
+
+.Error {
+	font-size: 90px;
+}
+
+.four_zero_four_bg h3 {
+	font-size: 80px;
+}
+
+.link_404 {
+	color: #fff !important;
+	padding: 10px 20px;
+	background: #39ac31;
+	margin: 20px 0;
+	display: inline-block;
+}
+
+p {
+	font-size: 19px;
+}
+
+.contant_box_404 {
+	margin-top: -50px;
+}

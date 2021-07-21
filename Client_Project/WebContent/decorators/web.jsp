@@ -24,6 +24,7 @@
 <link rel="stylesheet" type="text/scss" href="templates/css/sign.scss">
 <link rel="stylesheet" type="text/css" href="templates/css/checkout.css">
 <link rel="stylesheet" type="text/css" href="templates/css/introduce.css">
+<link rel="stylesheet" href="templates/css/404.css">
 <title>Shop thời trang</title>
   
 </head>
