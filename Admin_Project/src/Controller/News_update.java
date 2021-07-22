@@ -3,6 +3,7 @@ package Controller;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -12,52 +13,52 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import Service.Category_service;
+import Service.News_service;
 
+/**
+ * Servlet implementation class News_update
+ */
 @MultipartConfig
-@WebServlet("/category_update")
-public class Category_update extends HttpServlet {
+@WebServlet("/news_update")
+public class News_update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public Category_update() {
-		super();
-		// TODO Auto-generated constructor stub
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+
 		try {
-			int idpm = Integer.parseInt(request.getParameter("id_c"));
-			String categoryname = request.getParameter("categoryname_c");
-			String image1 = request.getParameter("img1");
-			
-			if (image1.length() != 0) {
-				Category_service pm = new Category_service();		
-				pm.updateCategory(categoryname, image1, idpm);
-			}
-
-			System.out.print(idpm);
-			System.out.println(categoryname);
-			Part part = request.getPart("photo1");
-			Category_service pm = new Category_service();
-
+			News_service ns = new News_service();
+			int idnw = Integer.parseInt(request.getParameter("id"));
+			String title = request.getParameter("title");
+			String describe = request.getParameter("describe");
+			String content = request.getParameter("content");
+			String images = request.getParameter("images");
+			ns.updateNews(title, images, describe, content, 0, idnw);
+			Part part = request.getPart("photo");
 			String realPart = "E:\\Project\\Admin_Project\\WebContent\\uploads";
 			String image = Path.of(part.getSubmittedFileName()).getFileName().toString();
 			if (!Files.exists(Path.of(realPart))) {
+
 				Files.createDirectory(Path.of(realPart));
 			}
-			part.write(realPart + "\\" + image);
-			System.out.println(categoryname + image);
-			pm.updateCategory(categoryname, image, idpm);
+			part.write(realPart + "/" + image);
+			ns.updateNews(title, image, describe, content, 0, idnw);
+			
 		} catch (Exception e) {
 
 		}
-		response.sendRedirect("category_manager");
+
+		response.sendRedirect("news");
 	}
 }

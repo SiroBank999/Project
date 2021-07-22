@@ -26,7 +26,7 @@ public class Category_add extends HttpServlet {
 			Part part =request.getPart("photo_cate");
 			Category_service ct = new Category_service();
 			//String realPart =request.getServletContext().getRealPath("/Uploads");
-			String realPart ="C:\\Users\\Nhat Thinh\\Documents\\NEW\\Project\\Admin_Project\\WebContent\\uploads";
+			String realPart ="E:\\Project\\Admin_Project\\WebContent\\uploads";
 			String filename =Path.of(part.getSubmittedFileName()).getFileName().toString();
 			if(!Files.exists(Path.of(realPart))) {
 				Files.createDirectory(Path.of(realPart));

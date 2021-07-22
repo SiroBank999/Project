@@ -7,20 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.UserModel;
+import Service.News_service;
+
+
 
 /**
- * Servlet implementation class User_update
+ * Servlet implementation class News_delete
  */
-@WebServlet("/user_update")
-public class User_update extends HttpServlet {
+@WebServlet("/news_delete")
+public class News_delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private int id;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public User_update() {
+    public News_delete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,18 +30,20 @@ public class User_update extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		id =Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("page", "user_update");
-		request.getRequestDispatcher("decorators/admin.jsp").forward(request, response);
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		int id  = Integer.parseInt(request.getParameter("id_news"));
+		News_service nw = new News_service();
+		nw.deleteNewsbyId(id);
+		response.sendRedirect("news");
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String status = request.getParameter("status_1");
-		UserModel um = new UserModel();
-		um.updateUser_admin(status, id);
-		response.sendRedirect("user_manager");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
