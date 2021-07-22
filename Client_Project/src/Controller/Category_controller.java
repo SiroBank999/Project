@@ -36,13 +36,25 @@ public class Category_controller extends HttpServlet {
 		// TODO Auto-generated method stub
 		int id =Integer.parseInt(request.getParameter("id"));
 		Product_service cs = new Product_service();
-		List<Product> cate = cs.getproductbycategory(id);
+		List<Product> cate = null;
 		Category_service sv = new Category_service();
 		List<Category> category = sv.getListCategory();
 		Category gr = sv.getnamebycategory(id);
+		String luachon=(String) request.getParameter("order-by");
+		if(luachon==null) {
+			cate = cs.getproductbycategory(id);
+		} else if(luachon.equals("1")) {
+			cate=cs.getproductbycategoryFilter1(id);
+		}else if(luachon.equals("2")) {
+			cate=cs.getproductbycategoryFilter2(id);
+		}else if(luachon.equals("3")) {
+			cate=cs.getproductbycategoryFilter3(id);
+		}else if(luachon.equals("4")) {
+			cate=cs.getproductbycategoryFilter4(id);
+		}
 		
 		request.setAttribute("cate", cate); // list
-		request.setAttribute("namecate", gr); // lấy name ở link
+		request.setAttribute("namecate", gr); // láº¥y name á»Ÿ link
 		request.setAttribute("category", category); // category
 		
 		request.setAttribute("page", "category");

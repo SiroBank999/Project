@@ -58,7 +58,48 @@
 										</c:forEach>
 									</div>
 								</div>
-							</div>							
+							</div>
+							<div class="layered">
+								<p
+									class="title_block d-block d-sm-none d-none d-sm-block d-md-none"
+									data-toggle="collapse" href="#collapseExample2" role="button"
+									aria-expanded="false" aria-controls="collapseExample2">
+									Bộ lọc sản phẩm <span><i class="fa fa-angle-down"
+										data-toggle="collapse" href="#collapseExample2" role="button"
+										aria-expanded="false" aria-controls="collapseExample2"></i></span>
+								</p>
+								<div class="block_content collapse" id="collapseExample2">
+									<div class="group-filter" aria-expanded="true">
+										<div class="layered_subtitle dropdown-filter">
+											<span>Giá sản phẩm</span><span class="icon-control"><i
+												class="fa fa-minus"></i></span>
+										</div>
+										<div class="layered-content bl-filter filter-price">
+											<form method="get" action="" name="product">
+												<ul class="check-box-list">
+													<li><input type="radio" id="p1" name="order-by"
+														value="1"> <a style="color: black; font-size: 14px; text-decoration: none;"
+															href="category?id=<%=request.getParameter("id")%>&order-by=1"><span>Dưới</span>
+																200,000₫
+													</a></li>
+													<li><input type="radio" id="p2" name="order-by"
+														value="2"> <label for="p2"><a style="color: black; font-size: 14px; text-decoration: none;"
+															href="category?id=<%=request.getParameter("id")%>&order-by=2">
+																200,000₫ - 400,000₫ </a></label></li>
+													<li><input type="radio" id="p3" name="order-by"
+														value="3"> <label for="p3"> <a style="color: black; font-size: 14px; text-decoration: none;"
+															href="category?id=<%=request.getParameter("id")%>&order-by=3">400,000₫
+																- 800,000₫ </a></label></li>
+													<li><input type="radio" id="p4" name="order-by"
+														value="4"> <label for="p4"><a style="color: black; font-size: 14px; text-decoration: none;"
+															href="category?id=<%=request.getParameter("id")%>&order-by=4">
+																Trên 800,000đ</a> </label></li>
+												</ul>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -67,7 +108,7 @@
 		<div class="col-md-9 col-sm-12 col-xs-12">
 			<div class="wrap-collection-title row">
 				<div class="col-md-8 col-sm-12 col-xs-12">
-					<h1 class="title">Tất cả sản phẩm: ${namecate.categoryname} </h1>
+					<h1 class="title">Tất cả sản phẩm: ${namecate.categoryname}</h1>
 					<div class="alert-no-filter"></div>
 				</div>
 			</div>
@@ -76,8 +117,7 @@
 					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img fade-box">
-								<a
-									href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
+								<a href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
 									title="${hot.productname}" class="img-resize"> <img
 									src="<%=request.getContextPath()%>/uploads/product/${hot.image}"
 									alt="${hot.productname}" class="lazyloaded">
@@ -133,96 +173,104 @@
 </div>
 <!--gallery-->
 <section class="section section-gallery">
-		<div class="">
-			<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
-				<h2 style="text-align: center; padding-top: 10px">
-					<a style="font-size: 28px; color: black; text-decoration: none"
-						href="">F5's Styles</a>
-				</h2>
-			</div>
-			<div class="list-gallery clearfix">
-				<ul class="shoes-gp">
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_1.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_2.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_3.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_4.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_5.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_6.jpg" alt="">
-						</div>
-					</li>
-				</ul>
-			</div>
+	<div class="">
+		<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
+			<h2 style="text-align: center; padding-top: 10px">
+				<a style="font-size: 28px; color: black; text-decoration: none"
+					href="">F5's Styles</a>
+			</h2>
 		</div>
-	</section>
-	    <div class="benefit">
-		<div class="container">
-			<div class="row benefit_row">
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>MIỄN PHÍ GIAO HÀNG</h6>
-							<p>với hóa đơn trên 300k</p>
-						</div>
+		<div class="list-gallery clearfix">
+			<ul class="shoes-gp">
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_1.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_2.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_3.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_4.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_5.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_6.jpg" alt="">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<div class="benefit">
+	<div class="container">
+		<div class="row benefit_row">
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fa fa-truck" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>MIỄN PHÍ GIAO HÀNG</h6>
+						<p>với hóa đơn trên 300k</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fas fa-money-bill" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>GIÁ TIỀN HỢP LÝ</h6>
-							<p>đồ đẹp - sang chảnh</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fas fa-money-bill" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>GIÁ TIỀN HỢP LÝ</h6>
+						<p>đồ đẹp - sang chảnh</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
-							<p>đối với những sản phẩm bị lỗi</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fa fa-undo" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
+						<p>đối với những sản phẩm bị lỗi</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="far fa-clock" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>MỞ CỬA TỪ</h6>
-							<p>8h00 - 21h00</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="far fa-clock" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>MỞ CỬA TỪ</h6>
+						<p>8h00 - 21h00</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<br/>
-	<br/>
+</div>
+<br />
+<br />

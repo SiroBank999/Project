@@ -561,8 +561,7 @@ public class Product_service {
 	
 	public List<Product> product_new_old() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where order by datesub asc";
-		PreparedStatement pstm;
+		String sql = "select top 20 * from product order by datesub asc";
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -591,8 +590,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_nameAsc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where order by productname asc";
-		PreparedStatement pstm;
+		String sql = "select top 20 * from product order by productname asc";
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -621,8 +619,7 @@ public class Product_service {
 	}
 	public List<Product> product_new_nameDesc() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select top 20 * from product where order by productname desc";
-		PreparedStatement pstm;
+		String sql = "select top 20 * from product order by productname desc";
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -651,8 +648,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_filter() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where and sale is not null and sale BETWEEN 0 AND 199000";
-		PreparedStatement pstm;
+		String sql = "select * from product where sale is not null and sale BETWEEN 0 AND 199000";
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -681,8 +677,7 @@ public class Product_service {
 	}
 	public List<Product> product_sale_filter1() {
 		List<Product> list = new ArrayList<Product>();
-		String sql = "select * from product where and sale is not null and sale BETWEEN 200000 AND 399000";
-		PreparedStatement pstm;
+		String sql = "select * from product where sale is not null and sale BETWEEN 200000 AND 399000";
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -712,7 +707,6 @@ public class Product_service {
 	public List<Product> product_sale_filter2() {
 		List<Product> list = new ArrayList<Product>();
 		String sql = "select * from product where sale is not null and sale BETWEEN 400000 AND 800000";
-		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -742,7 +736,6 @@ public class Product_service {
 	public List<Product> product_sale_filter3() {
 		List<Product> list = new ArrayList<Product>();
 		String sql = "select * from product where sale is not null and sale>800000";
-		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -772,7 +765,6 @@ public class Product_service {
 	public List<Product> product_new_filter() {
 		List<Product> list = new ArrayList<Product>();
 		String sql = "select * from product where price BETWEEN 0 and 199000 or sale BETWEEN 0 AND 199000";
-		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -802,7 +794,6 @@ public class Product_service {
 	public List<Product> product_new_filter1() {
 		List<Product> list = new ArrayList<Product>();
 		String sql = "select * from product where (price is not null and sale BETWEEN 200000 AND 399000) or (price is null and sale BETWEEN 200000 AND 399000)";
-		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -832,7 +823,6 @@ public class Product_service {
 	public List<Product> product_new_filter2() {
 		List<Product> list = new ArrayList<Product>();
 		String sql = "select * from product where (price is not null and sale BETWEEN 400000 AND 800000) or (price is null and sale BETWEEN 400000 AND 800000)";
-		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -862,7 +852,6 @@ public class Product_service {
 	public List<Product> product_new_filter3() {
 		List<Product> list = new ArrayList<Product>();
 		String sql = "select * from product where price>800000 or sale>800000";
-		PreparedStatement pstm;
 		try {
 			conn = Database.Connect();
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -889,7 +878,114 @@ public class Product_service {
 
 		return list;
 	}
-
+	public List<Product> getproductbycategoryFilter1(int id) {
+		List<Product> list = new ArrayList<>();
+		String query = "select * from product inner join category on "
+				+ "product.id_category = category.id where [category].[id]=? and (price BETWEEN 0 and 199000 or sale BETWEEN 0 AND 199000)";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+		} catch (Exception e) {
+		}
+		return list;
+	}
+	public List<Product> getproductbycategoryFilter2(int id) {
+		List<Product> list = new ArrayList<>();
+		String query = "select * from product inner join category on "
+				+ "product.id_category = category.id where [category].[id]=? and (price is not null and sale BETWEEN 200000 AND 399000) or (price is null and sale BETWEEN 200000 AND 399000)";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+		} catch (Exception e) {
+		}
+		return list;
+	}
+	public List<Product> getproductbycategoryFilter3(int id) {
+		List<Product> list = new ArrayList<>();
+		String query = "select * from product inner join category on "
+				+ "product.id_category = category.id where [category].[id]=? and (price is not null and sale BETWEEN 400000 AND 800000) or (price is null and sale BETWEEN 400000 AND 800000)";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+		} catch (Exception e) {
+		}
+		return list;
+	}
+	public List<Product> getproductbycategoryFilter4(int id) {
+		List<Product> list = new ArrayList<>();
+		String query = "select * from product inner join category on "
+				+ "product.id_category = category.id where [category].[id]=? and (price>800000 or sale>800000)";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Product pr = new Product();
+				pr.setId(rs.getInt(1));
+				pr.setProductname(rs.getString(2));
+				pr.setPrice(rs.getInt(3));
+				pr.setSale(rs.getInt(4));
+				pr.setImage(rs.getString(5));
+				pr.setDate(rs.getDate(6));
+				pr.setDescribe(rs.getString(7));
+				pr.setId_category(rs.getInt(8));
+				pr.setFabric(rs.getString(9));
+				pr.setStatus(rs.getString(10));
+				list.add(pr);
+			}
+		} catch (Exception e) {
+		}
+		return list;
+	}
 
 
 	public static void main(String[] agrs) {
