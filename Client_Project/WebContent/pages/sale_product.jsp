@@ -50,8 +50,10 @@
 										style="border: 0; padding: 0">
 										<c:forEach items="${category}" var="category">
 											<ul class="menuList-links">
-												<li class=""><a href="category?id=${category.id}" title="${category.categoryname}"><span>${category.categoryname}</span></a>
-													<img class="img-cate" src="uploads/category/${category.img}"></li>
+												<li class=""><a href="category?id=${category.id}"
+													title="${category.categoryname}"><span>${category.categoryname}</span></a>
+													<img class="img-cate"
+													src="uploads/category/${category.img}"></li>
 												<br>
 											</ul>
 										</c:forEach>
@@ -74,21 +76,26 @@
 												class="fa fa-minus"></i></span>
 										</div>
 										<div class="layered-content bl-filter filter-price">
-										<form method="get" action="" name="product">
-											<ul class="check-box-list" onchange="document.product.submit ()">
-												<li><input type="radio" id="p1" name="order-by" value="1"> <label
-													for="p1"> <span>Dưới</span> 200,000₫
-												</label></li>
-												<li><input type="radio" id="p2" name="order-by" value="2"> <label
-													for="p2"> 200,000₫ - 400,000₫ </label></li>
-												<li><input type="radio" id="p3" name="order-by" value="3"> <label
-													for="p3"> 400,000₫ - 800,000₫ </label></li>
-												<li><input type="radio" id="p4" name="order-by" value="4"> <label
-													for="p4"> Trên 800,000đ </label></li>
-											</ul>
+											<form method="get" action="" name="product">
+												<ul class="check-box-list"
+													onchange="document.product.submit ()">
+													<li><input type="radio" id="p1" name="order-by"
+														value="1"> <label for="p1"> <span>Dưới</span>
+															200,000₫
+													</label></li>
+													<li><input type="radio" id="p2" name="order-by"
+														value="2"> <label for="p2"> 200,000₫ -
+															400,000₫ </label></li>
+													<li><input type="radio" id="p3" name="order-by"
+														value="3"> <label for="p3"> 400,000₫ -
+															800,000₫ </label></li>
+													<li><input type="radio" id="p4" name="order-by"
+														value="4"> <label for="p4"> Trên 800,000đ
+													</label></li>
+												</ul>
 											</form>
 										</div>
-									</div>							
+									</div>
 								</div>
 							</div>
 						</div>
@@ -105,19 +112,21 @@
 				<div class="col-md-4 d-sm-none d-md-block d-none d-sm-block"
 					style="float: left">
 					<div class="option browse-tags">
-						<span class="custom-dropdown custom-dropdown--grey"> 
-						<form method="get" action="" name="productForm"><select name="order-by"
-							class="sort-by custom-dropdown__select" onchange="document.productForm.submit ()">
-							<option value="macdinh" selected>Mặc định</option>
-								<option value="price-ascending" >Giá: Tăng dần</option>
-								<option value="price-descending" >Giá: Giảm dần</option>
-								<option value="title-ascending" >Tên: A-Z</option>
-								<option value="title-descending" >Tên: Z-A</option>
-								<option value="created-ascending" >Cũ nhất</option>
-								<option value="created-descending">Mới nhất</option>
-								<option value="best-selling" disabled="disabled">Bán chạy nhất</option>
-						</select>
-						</form>
+						<span class="custom-dropdown custom-dropdown--grey">
+							<form method="get" action="" name="productForm">
+								<select name="order-by" class="sort-by custom-dropdown__select"
+									onchange="document.productForm.submit ()">
+									<option value="macdinh" selected>Mặc định</option>
+									<option value="price-ascending">Giá: Tăng dần</option>
+									<option value="price-descending">Giá: Giảm dần</option>
+									<option value="title-ascending">Tên: A-Z</option>
+									<option value="title-descending">Tên: Z-A</option>
+									<option value="created-ascending">Cũ nhất</option>
+									<option value="created-descending">Mới nhất</option>
+									<option value="best-selling" disabled="disabled">Bán
+										chạy nhất</option>
+								</select>
+							</form>
 						</span>
 					</div>
 				</div>
@@ -127,7 +136,8 @@
 					<div class="col-md-3 col-sm-6 col-xs-6 col-6">
 						<div class="product-block">
 							<div class="product-img fade-box">
-								<a href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
+								<a
+									href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
 									title="${hot.productname}" class="img-resize"> <img
 									src="<%=request.getContextPath()%>/uploads/product/${hot.image}"
 									alt="${hot.productname}" class="lazyloaded">
@@ -138,7 +148,7 @@
 									<a
 										style="color: black; font-size: 14px; text-decoration: none;"
 										href="detail_product?id_product=${hot.id}&id_category=${hot.id_category}"
-										title="Adidas EQT Cushion ADV" inspiration pack>
+										title="${hot.productname}" inspiration pack>
 										${hot.productname} </a>
 								</div>
 								<div class="pro-price">
@@ -171,110 +181,118 @@
 	</div>
 </div>
 <div class="pagination">
-	<c:if test="${tag > 1}">
-		<a href="Product_sale_controller?page=${tag-1}">&laquo;</a>
-	</c:if>
-	<c:forEach begin="1" end="${endpage}" var="i">
-		<a class="${tag==i?"
-			active":""}" href="Product_sale_controller?page=${i}">${i}</a>
-	</c:forEach>
-	<c:if test="${tag < endpage}">
-		<a href="Product_sale_controller?page=${tag+1}">&raquo;</a>
-	</c:if>
+		<c:if test="${tag > 1}">
+			<a href="Product_sale_controller?page=${tag-1}">&laquo;</a>
+		</c:if>
+		<c:forEach begin="1" end="${endpage}" var="i">
+			<a class="${tag==i?"
+				active":""}" href="Product_sale_controller?page=${i}">${i}</a>
+		</c:forEach>
+		<c:if test="${tag < endpage}">
+			<a href="Product_sale_controller?page=${tag+1}">&raquo;</a>
+		</c:if>
 </div>
 <!--gallery-->
 <section class="section section-gallery">
-		<div class="">
-			<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
-				<h2 style="text-align: center; padding-top: 10px">
-					<a style="font-size: 28px; color: black; text-decoration: none"
-						href="">F5's Styles</a>
-				</h2>
-			</div>
-			<div class="list-gallery clearfix">
-				<ul class="shoes-gp">
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_1.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_2.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_3.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_4.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_5.jpg" alt="">
-						</div>
-					</li>
-					<li>
-						<div class="gallery_item">
-							<img class="img-resize"
-								src="templates/images/shoes/gallery_item_6.jpg" alt="">
-						</div>
-					</li>
-				</ul>
-			</div>
+	<div class="">
+		<div class="hot_sp" style="padding-top: 70px; padding-bottom: 50px;">
+			<h2 style="text-align: center; padding-top: 10px">
+				<a style="font-size: 28px; color: black; text-decoration: none"
+					href="">F5's Styles</a>
+			</h2>
 		</div>
-	</section>
-	<div class="benefit">
-		<div class="container">
-			<div class="row benefit_row">
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>MIỄN PHÍ GIAO HÀNG</h6>
-							<p>với hóa đơn trên 300k</p>
-						</div>
+		<div class="list-gallery clearfix">
+			<ul class="shoes-gp">
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_1.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_2.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_3.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_4.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_5.jpg" alt="">
+					</div>
+				</li>
+				<li>
+					<div class="gallery_item">
+						<img class="img-resize"
+							src="templates/images/shoes/gallery_item_6.jpg" alt="">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<div class="benefit">
+	<div class="container">
+		<div class="row benefit_row">
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fa fa-truck" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>MIỄN PHÍ GIAO HÀNG</h6>
+						<p>với hóa đơn trên 300k</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fas fa-money-bill" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>GIÁ TIỀN HỢP LÝ</h6>
-							<p>đồ đẹp - sang chảnh</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fas fa-money-bill" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>GIÁ TIỀN HỢP LÝ</h6>
+						<p>đồ đẹp - sang chảnh</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
-							<p>đối với những sản phẩm bị lỗi</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="fa fa-undo" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>HOÀN TRẢ TRONG 30 NGÀY</h6>
+						<p>đối với những sản phẩm bị lỗi</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="far fa-clock" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>MỞ CỬA TỪ</h6>
-							<p>8h00 - 21h00</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon">
+						<i class="far fa-clock" aria-hidden="true"></i>
+					</div>
+					<div class="benefit_content">
+						<h6>MỞ CỬA TỪ</h6>
+						<p>8h00 - 21h00</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<br/>
-	<br/>
+</div>
+<br />
+<br />
 

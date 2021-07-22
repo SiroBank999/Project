@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/Controller/Category_controller.java=UTF-8
 encoding//src/Controller/Signin_controller.java=UTF-8
 encoding//src/Controller/Signup_controller.java=UTF-8
 encoding//src/Service/Database.java=UTF-8
