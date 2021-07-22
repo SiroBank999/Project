@@ -1,13 +1,16 @@
 package Model;
 
+import java.sql.Date;
+
 public class News {
 	private int id ;
 	private String title;
 	private String describe;
 	private String image;
 	private String content;
+	private Date datesub;
 	private int id_admin;
-	private String type;
+	private int status ;
 	public News() {
 		
 	}
@@ -41,32 +44,42 @@ public class News {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	public Date getDatesub() {
+		return datesub;
+	}
+	public void setDatesub(Date datesub) {
+		this.datesub = datesub;
+	}
 	public int getId_admin() {
 		return id_admin;
 	}
 	public void setId_admin(int id_admin) {
 		this.id_admin = id_admin;
 	}
-	public String getType() {
-		return type;
+	
+	public int getStatus() {
+		return status;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setStatus(int status) {
+		this.status = status;
 	}
-	public News(int id, String title, String describe, String image, String content, int id_admin, String type) {
+	public News(int id, String title, String describe, String image, String content,Date datesub, int id_admin, int status) {
 		this.id = id;
 		this.title = title;
 		this.describe = describe;
 		this.image = image;
 		this.content = content;
+		this.datesub = datesub;
 		this.id_admin = id_admin;
-		this.type = type;
+		this.status = status;
 	}
 	@Override
 	public String toString() {
 		return "News [id=" + id + ", title=" + title + ", describe=" + describe + ", image=" + image + ", content="
-				+ content + ", id_admin=" + id_admin + ", type=" + type + "]";
+				+ content + ", datesub=" + datesub + ", id_admin=" + id_admin + ", status=" + status + "]";
 	}
+	
 	
 
 	
