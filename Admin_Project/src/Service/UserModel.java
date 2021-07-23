@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import Object.User;
+import Model.User;
 
 public class UserModel {
 	Connection conn = null;
@@ -15,9 +15,9 @@ public class UserModel {
 	ResultSet rs = null;
 	public List<User> getListUser(){
 		List<User> list = new ArrayList<>();
-		String query = "select * from user";
+		String query = "select * from [user]";
 		try {
-			conn = Database.ketNoi();
+			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
 			while(rs.next()) {
@@ -32,9 +32,9 @@ public class UserModel {
 	}
 	public User CheckUser(String username, String password) {
 
-		String query = "select * from user  where username=? and password=? and status='ENABLE'";
+		String query = "select * from [user]  where username=? and password=? and status='ENABLE'";
 		try {
-			conn = Database.ketNoi();
+			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
 			ps.setString(1, username);
 			ps.setString(2, password);
@@ -52,9 +52,9 @@ public class UserModel {
 
 	}
 	public void updateUser_admin(String status,int id) {
-		String query ="UPDATE user SET status=? WHERE id =?";
+		String query ="UPDATE [user] SET status=? WHERE id =?";
 		try {
-			conn = Database.ketNoi();
+			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
 			ps.setString(1, status);
 			ps.setInt(2, id);
@@ -64,9 +64,9 @@ public class UserModel {
 		}
 	}
 	public void updatePassUser(String pass,int id) {
-		String query ="UPDATE user SET password=? WHERE id =?";
+		String query ="UPDATE [user] SET password=? WHERE id =?";
 		try {
-			conn = Database.ketNoi();
+			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
 			ps.setString(1, pass);
 			ps.setInt(2, id);
@@ -76,9 +76,9 @@ public class UserModel {
 		}
 	}
 	public void insertAcc(String fullname,String username ,String password,String phone , String email,String status) {
-		String query = "INSERT INTO user(fullname,username,password,phone,email,status) values(?,?,?,?,?,?)";
+		String query = "INSERT INTO [user](fullname,username,password,phone,email,status) values(?,?,?,?,?,?)";
 		try {
-			conn = Database.ketNoi();
+			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
 			ps.setString(1, fullname);
 			ps.setString(2, username);

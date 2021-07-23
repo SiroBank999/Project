@@ -4,7 +4,7 @@ import java.sql.Connection;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import Object.Admin;
+import Model.Admin;
 
 
 public class AdminModel {
@@ -14,9 +14,9 @@ public class AdminModel {
 
 	public Admin CheckAcc(String username, String password) {
 
-		String query = "select * from admin  where username=? and pass=?";
+		String query = "select * from admin  where username=? and password=?";
 		try {
-			conn = Database.ketNoi();
+			conn = Database.Connect();
 			ps = conn.prepareStatement(query);
 			ps.setString(1, username);
 			ps.setString(2, password);
@@ -33,7 +33,7 @@ public class AdminModel {
 	}
 	public static void main(String[] args) {
 		AdminModel m = new AdminModel();
-		String n = m.CheckAcc("admin", "123456").toString();
+		String n = m.CheckAcc("an", "123").toString();
 		System.out.print(n);
 
 	}
