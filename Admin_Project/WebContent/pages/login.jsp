@@ -8,17 +8,17 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Royal Pet Admin</title>
+  <title>F5 SHOP</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="templates/admin/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="templates/admin/vendors/base/vendor.bundle.base.css">
+  <link rel="stylesheet" href="templates/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="templates/vendors/base/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="templates/admin/css/style.css">
+  <link rel="stylesheet" href="templates/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="templates/admin/images/favicon.png" />
+  <link rel="shortcut icon" href="templates/images/favicon.png" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo-mini text-center">
-                <img src="templates/admin/images/logo-mini.svg" width="100px" alt="logo">
+                <img src="templates/images/logo.png" width="100px" alt="logo">
               </div>
               <br>
               <c:if test="${alert == 1}">
@@ -39,10 +39,10 @@
               </c:if>
               <form class="pt-3" action="login" method="post">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" name="Username" placeholder="Username">
+                  <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" name="Username" placeholder="Tài Khoản">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="Password" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="Password" placeholder="Mật Khẩu">
                 </div>
                 <div class="form-group mt-3">
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">ĐĂNG NHẬP</button>
@@ -59,11 +59,11 @@
     <!-- page-body-wrapper ends -->
   </div>
 
-  <script src="templates/admin/vendors/base/vendor.bundle.base.js"></script>
-  <script src="templates/admin/js/off-canvas.js"></script>
-  <script src="templates/admin/js/hoverable-collapse.js"></script>
-  <script src="templates/admin/js/template.js"></script>
-  <script src="templates/admin/js/todolist.js"></script>
+  <script src="templates/vendors/base/vendor.bundle.base.js"></script>
+  <script src="templates/js/off-canvas.js"></script>
+  <script src="templates/js/hoverable-collapse.js"></script>
+  <script src="templates/js/template.js"></script>
+  <script src="templates/js/todolist.js"></script>
 </body>
 
 </html>

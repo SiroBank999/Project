@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import Model.AdminModel;
-import Object.Admin;
+import Service.Admin_service;
+import Model.Admin;
 
 @WebServlet("/login")
 public class Login_controller extends HttpServlet {
@@ -18,17 +18,17 @@ public class Login_controller extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("pages/admin/login.jsp").forward(request, response);
+		request.getRequestDispatcher("pages/login.jsp").forward(request, response);
 	
 	}  
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("Username");
 		String password = request.getParameter("Password");
-		AdminModel am = new AdminModel();
+		Admin_service am = new Admin_service();
 		Admin admin = am.CheckAcc(username, password);
 		if (admin == null) {
 			request.setAttribute("alert", 1);
-			request.getRequestDispatcher("pages/admin/login.jsp").forward(request, response);
+			request.getRequestDispatcher("pages/login.jsp").forward(request, response);
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("admin", admin);

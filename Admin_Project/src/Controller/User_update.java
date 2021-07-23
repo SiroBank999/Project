@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.UserModel;
+import Service.User_Service;
 
 /**
  * Servlet implementation class User_update
@@ -38,7 +38,7 @@ public class User_update extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String status = request.getParameter("status_1");
-		UserModel um = new UserModel();
+		User_Service um = new User_Service();
 		um.updateUser_admin(status, id);
 		response.sendRedirect("user_manager");
 	}
