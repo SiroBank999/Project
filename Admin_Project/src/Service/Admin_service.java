@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import Model.Admin;
 
 
-public class AdminModel {
+public class Admin_service {
 	Connection conn = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
@@ -32,7 +32,7 @@ public class AdminModel {
 
 	}
 	public static void main(String[] args) {
-		AdminModel m = new AdminModel();
+		Admin_service m = new Admin_service();
 		String n = m.CheckAcc("an", "123").toString();
 		System.out.print(n);
 

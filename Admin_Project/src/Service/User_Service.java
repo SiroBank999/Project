@@ -9,7 +9,7 @@ import java.util.List;
 
 import Model.User;
 
-public class UserModel {
+public class User_Service {
 	Connection conn = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
@@ -100,7 +100,7 @@ public class UserModel {
 	
 	
 	public static void main(String[] args) {
-		UserModel m = new UserModel();
+		User_Service m = new User_Service();
 		m.updateUser_admin("ENABLE", 1);
 
 	}

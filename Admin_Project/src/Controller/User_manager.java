@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Service.UserModel;
+import Service.User_Service;
 import Model.User;
 
 /**
@@ -31,7 +31,7 @@ public class User_manager extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		UserModel um = new UserModel();
+		User_Service um = new User_Service();
 		List<User> list =um.getListUser();
 		request.setAttribute("listUser", list);
 		request.setAttribute("page", "user");
