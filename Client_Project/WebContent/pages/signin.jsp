@@ -28,7 +28,7 @@
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">ĐĂNG NHẬP</h3>
 		      	<form action="signin" method="post" class="signin-form">
-		      	<p style="color: red;">${errou}</p>
+		      	<p style="color:#d00000; font-weight: 500;">${errou}</p>
 		      		<div class="form-group">
 		      			<input type="text" name="Username" class="form-control" placeholder="Tên Đăng Nhập" required>
 		      		</div>

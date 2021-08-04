@@ -91,7 +91,7 @@
 										<td><div class="a" style="width: 10px;">${nw.id}</div></td>
 										<td>${nw.title}</td>
 										<td>
-												<img src="./uploads/${nw.image}"
+												<img src="<%=request.getContextPath()%>/uploads/news/${nw.image}"
 													style="width: 80px; height: 80px" alt=""/>
 											</td>
 										<td>${nw.describe}</td>
