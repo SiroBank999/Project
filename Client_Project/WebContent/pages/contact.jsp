@@ -54,7 +54,7 @@
               </li>
               <li>
                 <p>Email chúng tôi</p>
-                <p><strong>germeshop@gmail.com</strong></p>
+                <p><strong>f5shop@gmail.com</strong></p>
               </li>
               <li>
                 <p>Điện thoại</p>

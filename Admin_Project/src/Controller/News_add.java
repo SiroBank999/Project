@@ -47,7 +47,7 @@ public class News_add extends HttpServlet {
 			String content = request.getParameter("Content");
 			Part part =request.getPart("photo_news");
 			News_service nm = new News_service();
-			String realPart ="E:\\Project\\Admin_Project\\WebContent\\uploads";
+			String realPart ="C:\\Users\\Nhat Thinh\\Documents\\NEW\\Project\\Admin_Project\\WebContent\\uploads";
 			String image =Path.of(part.getSubmittedFileName()).getFileName().toString();
 			if(!Files.exists(Path.of(realPart))) {
 				Files.createDirectory(Path.of(realPart));

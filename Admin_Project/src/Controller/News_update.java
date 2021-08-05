@@ -46,7 +46,7 @@ public class News_update extends HttpServlet {
 			String images = request.getParameter("images");
 			ns.updateNews(title, images, describe, content, 0, idnw);
 			Part part = request.getPart("photo");
-			String realPart = "E:\\Project\\Admin_Project\\WebContent\\uploads";
+			String realPart = "C:\\Users\\Nhat Thinh\\Documents\\NEW\\Project\\Admin_Project\\WebContent\\uploads";
 			String image = Path.of(part.getSubmittedFileName()).getFileName().toString();
 			if (!Files.exists(Path.of(realPart))) {
 
