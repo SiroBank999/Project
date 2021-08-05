@@ -109,7 +109,7 @@
 					<div class="d-flex flex-wrap mb-5">
 						<div class="mr-5 mt-3">
 							<p class="text-muted">Trạng thái</p>
-							<h3>362</h3>
+							<h3>62</h3>
 						</div>
 						<div class="mr-5 mt-3">
 							<p class="text-muted">Người dùng mới</p>
@@ -117,7 +117,7 @@
 						</div>
 						<div class="mr-5 mt-3">
 							<p class="text-muted">Trò chuyện</p>
-							<h3>524</h3>
+							<h3><%=request.getAttribute("contact")%></h3>
 						</div>
 						<div class="mt-3">
 							<p class="text-muted">Phản hồi</p>

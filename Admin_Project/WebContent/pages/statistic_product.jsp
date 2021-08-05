@@ -16,15 +16,14 @@ Statistic_service statistic = new Statistic_service();
 
 	function drawChart() {
 		var data = new google.visualization.DataTable();
-		data.addColumn('string', 'Tháng');
-		data.addColumn('number', 'Tổng');
-		<%for (Statistic rv : statistic.getRevenueMonth()) {%>
-		data.addRows([ [ 'Tháng <%=rv.getMonth()%>',<%=rv.getTotals()%>
-	] ]);
-<%}%>
+		data.addColumn('string', 'Tên sản phẩm');
+		data.addColumn('number', 'Số lượng');
+		<%for (Statistic rv : statistic.top5Sales()) 
+		{%>data.addRows([[ '<%=rv.getNameproduct()%>',<%=rv.getAmount()%>]]);
+		<%}%>
 	var options = {
-			'title' : 'DOANH THU THEO THÁNG (Năm hiện tại)',
-			'width' : 1050,
+			'title' : 'TOP 5 SẢN PHẨM BÁN CHẠY TRONG THÁNG',
+			'width' : 950,
 			'height' : 400
 		};
 
@@ -35,48 +34,40 @@ Statistic_service statistic = new Statistic_service();
 </script>
 <div style="margin: 20px 10px 20px 20px;">
 	<div class="row">
-		<div class="col-md-8" style="margin-top: 7px;">
-			<form method="get"
-				action="${pageContext.request.contextPath}/search_statistic">
-				<label>Từ ngày:</label> <input type="date" name="dayStart">
-				<label>Đến ngày:</label> <input type="date" name="dayEnd"> <input
-					type="submit" value="Tìm kiếm">
-			</form>
+		<div class="col-md-8">
 		</div>
 		<div class="col-md-2">
 			<button class="btn btn-success btn-rounded" data-toggle="modal"
-				data-target="#dialog1">Doanh thu tháng</button>
+				data-target="#dialog1">Thống kê</button>
 		</div>
 		<div class="col-md-2">
 			<button class="btn btn-success btn-rounded" data-toggle="modal"
-				data-target="#dialog2">Doanh thu năm</button>
+				data-target="#dialog2">Theo danh mục</button>
 		</div>
 	</div>
 </div>
 
 <div class="table-responsive">
-	<table class="table table-bordered" style="width: 100%;">
+	<table class="table table-bordered" style="width: 90%;margin-left: 45px;">
 		<thead>
 			<tr>
-				<th style="width: 150px;">Mã đơn hàng</th>
-				<th style="width: 150px;">Họ tên KH</th>
-				<th>Số điện thoại</th>
-				<th>Địa chỉ</th>
-				<th>Ngày</th>
-				<th>Tổng tiền</th>
+				<th style="width: 400px;text-align: center;">Tên sản phẩm</th>
+				<th style="width: 180px;text-align: center;">Giá bán</th>
+				<th style="width: 130px;text-align: center;">Số lượng</th>
+				<th style="text-align: center;">Thành tiền</th>
+
 			</tr>
 		</thead>
 		<tbody>
 
-			<c:forEach items="${listOrder}" var="pr">
+			<c:forEach items="${listRevPr}" var="pr">
 				<tr>
-					<td><div class="a" style="width: 10px;">${pr.id}</div></td>
-					<td>${pr.fullname}</td>
-					<td>${pr.phone}</td>
-					<td>${pr.address}</td>
-					<td>${pr.date}</td>
-					<td><fmt:formatNumber type="number" maxFractionDigits="3"
-							value="${pr.into}" /> đ</td>
+					<td><div class="a">${pr.nameproduct}</div></td>
+					<td><div style="float: right;"><fmt:formatNumber type="number" maxFractionDigits="3"
+							value="${pr.price}" /> đ</div></td>
+					<td><div style="float: right;">${pr.amount}</div></td>
+					<td><div style="float: right;"><fmt:formatNumber type="number" maxFractionDigits="3"
+							value="${pr.totals}" /> đ</div></td>
 				</tr>
 
 			</c:forEach>
@@ -84,23 +75,6 @@ Statistic_service statistic = new Statistic_service();
 		</tbody>
 	</table>
 	<br>
-	<div class="text-center">
-		<c:if test="${tag >1 }">
-			<a class="btn btn-outline-secondary btn-rounded"
-				href="doanhthu?index=${tag-1}">&laquo;</a>
-		</c:if>
-
-		<c:forEach begin="1" end="${andPag}" var="i">
-
-			<a
-				class="${tag == i?'active':''} btn btn-outline-secondary btn-rounded"
-				href="doanhthu?index=${i}">${i}</a>
-		</c:forEach>
-		<c:if test="${tag < andPag }">
-			<a class="btn btn-outline-secondary btn-rounded "
-				href="doanhthu?index=${tag+1}">&raquo;</a>
-		</c:if>
-	</div>
 </div>
 <div class="modal fade" id="dialog1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
@@ -110,6 +84,7 @@ Statistic_service statistic = new Statistic_service();
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
@@ -120,20 +95,19 @@ Statistic_service statistic = new Statistic_service();
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Tên danh mục');
       data.addColumn('number', 'Tổng');
-      <%
-		for (Statistic rv : statistic.getStatisticYear()) {
-		%>
+      <%for (Statistic rv : statistic.totalCate()) 
+		{%>
       data.addRows([
-        ['<%=rv.getYear()%>',<%=rv.getTotals()%>]
+        ['<%=rv.getNameproduct()%>',<%=rv.getAmount()%>]
       ]);
-<%
-		}
-		%>
+<%}%>
       var options = {
+    		  position: 'top', 
     		  fontSize: 18,
-    		  title : 'DOANH THU TỪNG NĂM',
     		  width : 700,
-  			height : 500,
+    			height : 500,
+        title: 'Doanh thu sản phẩm theo danh mục',
+        sliceVisibilityThreshold: .2
       };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
