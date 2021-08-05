@@ -36,7 +36,7 @@ public class Statistic_service {
 	}
 	public List<Statistic> getStatisticYear(){
 		List<Statistic> list=new ArrayList<>();
-		String sql="select Year([date]) as [date], SUM([into]) as [into] from [order] where status=N'Hoàn thành' group by Year([date])";
+		String sql="select Year([date]) as [date], SUM([into]) as [into] from [order] where status=N'Hoàn thành' group by Year([date]) order by Year([date]) desc";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(sql);
@@ -117,5 +117,72 @@ public class Statistic_service {
 		}
 		return list;
 	}
-	
+	public List<Statistic> getRevenueProduct(){
+		List<Statistic> list=new ArrayList<>();
+		String sql="select product.productname as [productname],price as [price],sum(amount) as [amount],sum(price*amount) as [tong] from order_detail,product,[order] \r\n"
+				+ "where order_detail.id_product=product.id and order_detail.id_order=[order].id and [order].[status]=N'Hoàn thành' \r\n"
+				+ "group by product.productname,price order by sum(amount) desc";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Statistic revenue=new Statistic();
+				revenue.setNameproduct(rs.getString("productname"));
+				revenue.setPrice(rs.getDouble("price"));
+				revenue.setAmount(rs.getInt("amount"));
+				revenue.setTotals(rs.getDouble("tong"));
+				
+				list.add(revenue);
+			}
+		} catch (Exception e) {
+
+		}
+		return list;
+		
+	}
+	public List<Statistic> top5Sales(){
+		List<Statistic> list=new ArrayList<>();
+		String sql="select top 5 product.productname as [productname], sum(amount) as [amount] from order_detail,product,[order] \r\n"
+				+ "where order_detail.id_product=product.id and [order].id=order_detail.id_order and month([date])=month(getDate()) and year([date])=year(getDate()) and [order].status=N'Hoàn thành'\r\n"
+				+ "group by product.productname order by sum(amount) desc";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Statistic revenue=new Statistic();
+				revenue.setNameproduct(rs.getString("productname"));
+				revenue.setAmount(rs.getInt("amount"));
+				
+				list.add(revenue);
+			}
+		} catch (Exception e) {
+
+		}
+		return list;
+		
+	}
+	public List<Statistic> totalCate(){
+		List<Statistic> list=new ArrayList<>();
+		String sql="select categoryname as [productname],sum(price*amount) as [amount] from order_detail,category,product,[order] \r\n"
+				+ "where order_detail.id_product=product.id and [order].id=order_detail.id_order and product.id_category=category.id\r\n"
+				+ "and month([date])=month(getDate()) and [order].status=N'Hoàn thành' group by categoryname";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Statistic revenue=new Statistic();
+				revenue.setNameproduct(rs.getString("productname"));
+				revenue.setAmount(rs.getInt("amount"));
+				
+				list.add(revenue);
+			}
+		} catch (Exception e) {
+
+		}
+		return list;
+		
+	}
 }

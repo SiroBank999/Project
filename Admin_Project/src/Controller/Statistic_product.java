@@ -9,35 +9,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.Order;
+import Model.Statistic;
 import Service.Statistic_service;
 
-@WebServlet ("/doanhthu")
-public class Statistic_month extends HttpServlet{
+@WebServlet ("/doanhthusanpham")
+public class Statistic_product extends HttpServlet {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	public Statistic_product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		String indexPage = request.getParameter("index");
-		if(indexPage == null) {
-			indexPage = "1";
-		}
-		int index = Integer.parseInt(indexPage);
+		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");		
 		Statistic_service cm = new Statistic_service();
-		int count =cm.getTotalOrder();
-		int andPage =count/8;
-		if(count % 8 != 0) {
-			andPage++;
-		}
-		List<Order> list = cm.pagingOrder(index);
-		request.setAttribute("listOrder", list);
-		request.setAttribute("andPag",andPage);
-		request.setAttribute("tag", index);
-		request.setAttribute("page", "statistic");
+		List<Statistic> list = cm.getRevenueProduct();
+		request.setAttribute("listRevPr", list);
+	
+		request.setAttribute("page", "statistic_product");
 		request.getRequestDispatcher("decorators/admin.jsp").forward(request, response);
 	}
 	@Override

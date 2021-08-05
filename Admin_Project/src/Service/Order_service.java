@@ -215,7 +215,22 @@ public class Order_service {
 	}
 	public int getTotalOrderAdmin() {
 		int sum = 0;
-		String sql = "select sum([into]) from [order] where status=N'Hoàn thành' and month([date])=MONTH(getDate())";
+		String sql = "select sum([into]) from [order] where status=N'Hoàn thành' and month([date])=month(getDate()) and year([date])=year(getDate())";
+		try {
+			conn = Database.Connect();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				sum = rs.getInt(1);
+			}
+		} catch (Exception e) {
+
+		}
+		return sum;
+	}
+	public int getContact() {
+		int sum = 0;
+		String sql = "select count(content) from contact";
 		try {
 			conn = Database.Connect();
 			ps = conn.prepareStatement(sql);

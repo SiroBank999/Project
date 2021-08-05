@@ -5,6 +5,8 @@ public class Statistic {
 	private String month;
 	private String nameproduct;
 	private int year;
+	private int amount;
+	private double price;
 
 	public double getTotals() {
 		return totals;
@@ -36,6 +38,22 @@ public class Statistic {
 
 	public void setYear(int year) {
 		this.year = year;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	@Override
