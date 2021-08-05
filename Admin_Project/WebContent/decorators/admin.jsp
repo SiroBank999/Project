@@ -15,7 +15,7 @@
 <link rel="stylesheet"
 	href="templates/vendors/base/vendor.bundle.base.css">
 <link rel="stylesheet" href="templates/css/style.css">
-<link rel="shortcut icon" href="templates/images/favicon.png" />
+<link rel="shortcut icon" href="uploads/avt.png" />
 <script type="text/javascript"
 	src="ckeditor/ckeditor.js"></script>
 

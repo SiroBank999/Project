@@ -19,14 +19,15 @@
 <link rel="stylesheet" href="templates/css/owl.theme.default.min.css"
 	type="text/css">
 <link rel="stylesheet" type="text/css" href="templates/css/style.css">
-<!-- UIkit CSS -->
+<link rel="shortcut icon" href="uploads/logo.png">
 <link rel="stylesheet" href="templates/plugins/uikit/uikit.min.css" />
 <link rel="stylesheet" type="text/scss" href="templates/css/sign.scss">
 <link rel="stylesheet" type="text/css" href="templates/css/checkout.css">
-<link rel="stylesheet" type="text/css" href="templates/css/introduce.css">
+<link rel="stylesheet" type="text/css"
+	href="templates/css/introduce.css">
 <link rel="stylesheet" href="templates/css/404.css">
-<title>Shop thời trang</title>
-  
+<title>F5 shop</title>
+
 </head>
 
 <body>
@@ -54,6 +55,8 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 		crossorigin="anonymous"></script>
+	<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+	<div class="elfsight-app-b83d94a6-9a15-416d-8109-639e20d9ea81"></div>
 </body>
 
 </html>

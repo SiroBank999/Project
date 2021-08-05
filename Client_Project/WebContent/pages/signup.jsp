@@ -28,7 +28,7 @@
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">ĐĂNG KÍ</h3>
 		      	<form action="${pageContext.request.contextPath}/signup" method="post" class="signin-form">
-		      	<p style="color: red;">${errou}</p>
+		      	<p style="color:#d00000; font-weight: 500;">${errou}</p>
 		      		<div class="form-group">
 		      			<input type="text" name="fullname" value="${signup.fullname}" class="form-control" placeholder="Họ Và Tên" required>
 		      		</div>

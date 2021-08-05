@@ -48,7 +48,7 @@
 								<li><span>Địa chỉ:</span> 232/6 Nguyễn Huệ, TP.Huế, Vietnam</li>
 								<li><span>Điện thoại:</span> 84 234 7306888 – 84 905984286</li>
 								<li><span>Fax:</span> 84 234 7306888 – 84 905984286</li>
-								<li><span>Mail:</span> germeshop@gmail.com</li>
+								<li><span>Mail:</span> f5shop@gmail.com</li>
 							</ul>
 						</div>
 					</div>
@@ -64,7 +64,7 @@
 										data-small-header="false" data-adapt-container-width="true"
 										data-hide-cover="false" data-show-facepile="true">
 										<blockquote cite="   " class="fb-xfbml-parse-ignore">
-											<a href="https://www.facebook.com/F5-shop-109416108077091">F5'S SHOP</a>
+											<a href="https://www.facebook.com/F5-shop-109416108077091">F5 SHOP</a>
 										</blockquote>
 									</div>
 								</div>

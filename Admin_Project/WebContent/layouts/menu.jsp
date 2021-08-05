@@ -20,7 +20,6 @@
                 <li class="nav-item"> <a class="nav-link" href="product_manager">Sản phẩm</a></li>
                 <li class="nav-item"> <a class="nav-link" href="category_manager">Danh mục</a></li>
                 <li class="nav-item"> <a class="nav-link" href="order_manager">Đơn hàng</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">Thuộc tính</a></li>
               </ul>
             </div>
           </li>
@@ -34,7 +33,7 @@
             <div class="collapse" id="ui-basic-2">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="contact_manager">Liên hệ</a></li>            
-                 <li class="nav-item"> <a class="nav-link" href="#">Tin tức - Sự kiện</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="news">Tin tức - Sự kiện</a></li>
               </ul>
             </div>
           </li>
